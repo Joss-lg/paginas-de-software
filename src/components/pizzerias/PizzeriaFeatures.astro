@@ -1,46 +1,67 @@
----
----
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-20">
-      <h2 class="text-3xl font-extrabold text-gray-900">
-        Aumenta la eficiencia de tu mostrador y ofrece un servicio excelente.
+    <div class="text-center mb-16">
+      <span class="bg-orange-100 text-orange-700 font-semibold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
+        Operación Ágil
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4">
+        Aumenta la eficiencia de tu mostrador y ofrece un servicio excelente<span class="text-orange-600">.</span>
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-x-12 gap-y-16">
-      <!-- Feature 1 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
+      
+      <!-- Feature 1: Pedidos y Clientes -->
+      <div class="bg-gray-50 rounded-3xl p-6 border border-gray-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white mb-6 shadow-inner aspect-[16/10] flex items-center justify-center">
+          <img 
+            src="/images/pizzeria-pos.png" 
+            alt="Interfaz de Toma de Pedidos POS" 
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+          />
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Pedidos y Clientes</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Genera pedidos y registra clientes[cite: 1] de forma inmediata. Accede rápidamente a tus especialidades para no hacer esperar a nadie.
-        </p>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Pedidos y Clientes</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Genera pedidos y registra clientes de forma inmediata. Accede rápidamente a tus especialidades para no hacer esperar a nadie.
+          </p>
+        </div>
       </div>
 
-      <!-- Feature 2 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      <!-- Feature 2: Impresión Inmediata -->
+      <div class="bg-gray-50 rounded-3xl p-6 border border-gray-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white mb-6 shadow-inner aspect-[16/10] flex items-center justify-center">
+          <img 
+            src="/images/ticket-print.png" 
+            alt="Modal de impresión de tickets" 
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+          />
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Impresión Inmediata</h3>
-        <p class="text-gray-600 leading-relaxed">
-          El sistema imprime tickets automáticamente tras cada venta[cite: 1], coordinando la caja y la cocina sin errores.
-        </p>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Impresión Inmediata</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            El sistema imprime tickets tras cada venta, coordinando la caja y la cocina sin errores.
+          </p>
+        </div>
       </div>
 
-      <!-- Feature 3 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      <!-- Feature 3: Seguridad y Roles -->
+      <div class="bg-gray-50 rounded-3xl p-6 border border-gray-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white mb-6 shadow-inner aspect-[16/10] flex items-center justify-center">
+          <img 
+            src="/images/admin-roles.png" 
+            alt="Panel de seguridad y roles" 
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+          />
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Seguridad y Roles</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Se maneja por roles y permisos[cite: 1] estrictos. Protege tu información y autoriza devoluciones solo con el pin de administrador.
-        </p>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Seguridad y Roles</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Se maneja por roles y permisos estrictos. Protege tu información y autoriza devoluciones solo con el pin de administrador.
+          </p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>

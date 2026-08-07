@@ -17,6 +17,7 @@ import EcosistemaRestaurante from '../components/restaurantes/EcosistemaRestaura
     <EcosistemaRestaurante />
     
     <!-- CTA Final -->
+
     <section class="bg-gray-50 py-24 border-t border-gray-200">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
