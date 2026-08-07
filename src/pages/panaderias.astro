@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroPanaderia from '../components/panaderia/HeroPanaderia.astro';
+import Caracteristicas from '../components/panaderia/Caracteristicas.astro';
+import ModulosOperativos from '../components/panaderia/ModulosOperativos.astro';
+import PlanesPrecios from '../components/panaderia/PlanesPrecios.astro';
+import DemoSeccion from '../components/panaderia/DemoSeccion.astro';
+---
+
+<Layout title="Software Punto de Venta para Panaderías | Sistema POS">
+  <!-- Enlace estructural preparado para la vista común (sin interactuar con el navbar/sidebar) -->
+  <div id="vista-comun-enlace" data-common-view-route="/comun/catalogo-sistemas" class="hidden"></div>
+
+  <main class="overflow-hidden">
+    <HeroPanaderia />
+    <Caracteristicas />
+    <ModulosOperativos />
+    <PlanesPrecios />
+    <DemoSeccion />
+  </main>
+</Layout>

@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import PizzeriaHero from '../components/pizzerias/PizzeriaHero.astro';
+import PizzeriaFeatures from '../components/pizzerias/PizzeriaFeatures.astro';
+import PizzeriaDetails from '../components/pizzerias/PizzeriaDetails.astro';
+import PizzeriaEcosystem from '../components/pizzerias/PizzeriaEcosystem.astro';
+---
+
+<Layout title="Software Punto de Venta para Pizzerías | Ollintem">
+  <Navbar />
+  
+  <main class="pt-16 bg-white">
+    <PizzeriaHero />
+    <PizzeriaFeatures />
+    <PizzeriaDetails />
+    <PizzeriaEcosystem />
+    
+    <!-- CTA Final estilo Point -->
+    <section class="bg-gray-50 py-24 border-t border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
+          Mantén el control total de tu pizzería en tiempo real<span class="text-orange-600">.</span>
+        </h2>
+        <p class="text-xl text-gray-600 mb-10">
+          Diseñado específicamente para la agilidad en mostrador[cite: 1].
+        </p>
+        <a href="/#planes" class="inline-block bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded hover:bg-orange-700 shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1">
+          Contratar hoy mismo
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center">
+      <p class="mb-4 md:mb-0">© 2026 Ollintem. Todos los derechos reservados.</p>
+      <div class="flex space-x-6">
+        <a href="#" class="hover:text-white transition-colors">Soporte</a>
+        <a href="#" class="hover:text-white transition-colors">Términos</a>
+        <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
