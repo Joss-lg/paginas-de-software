@@ -1,28 +1,69 @@
 ---
+// Hero.astro
 ---
-<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-3xl mx-auto">
-      <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4 border border-blue-200">El modelo SaaS definitivo[cite: 1]</span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
-        Potencia tu negocio gastronómico con <span class="text-blue-600">Ollintem</span>
+<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-50">
+  <!-- Fondo decorativo: Cuadrícula sutil moderna -->
+  <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  
+  <!-- Luces de fondo en colores Azul Esmeralda (teal) y Verde Menta (emerald) -->
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full overflow-hidden -z-10 pointer-events-none">
+    <div class="absolute -top-40 right-0 md:-right-40 w-[30rem] h-[30rem] bg-teal-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse"></div>
+    <div class="absolute top-40 -left-20 md:-left-40 w-[30rem] h-[30rem] bg-emerald-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-30"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- Etiqueta superior (Badge) -->
+      <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-teal-50 text-teal-800 text-sm font-semibold mb-6 border border-teal-200 shadow-sm">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+        <span class="flex h-2 w-2 rounded-full bg-emerald-500 absolute"></span>
+        El ecosistema SaaS para tu empresa
+      </span>
+
+      <!-- Título Principal -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+        Centraliza y escala tu negocio con <br class="hidden md:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
+          Sistemas Ollintem
+        </span>
       </h1>
-      <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
-        Sistemas punto de venta en la nube diseñados para agilizar el mostrador de tu Pizzería o Restaurante. Toma el control total de tus ventas, comandas e inventario.
+
+      <!-- Subtítulo -->
+      <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+        Descubre nuestro catálogo de plataformas de gestión. Desde potentes puntos de venta hasta administración integral, todo bajo un modelo de suscripción que crece contigo.
       </p>
+
+      <!-- Botones de Acción (CTAs) -->
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#planes" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
-          Ver Planes
+        <a href="#sistemas" class="bg-teal-600 text-white px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-teal-700 transition-all shadow-lg shadow-teal-600/30 hover:shadow-teal-600/50 hover:-translate-y-0.5 duration-300">
+          Explorar Catálogo
         </a>
-        <a href="#sistemas" class="bg-white text-gray-800 border border-gray-300 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all shadow-sm">
-          Explorar Sistemas
+        <a href="#contacto" class="bg-white text-slate-700 border border-slate-200 px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+          Agendar Demostración
         </a>
       </div>
     </div>
-  </div>
-  <!-- Fondo decorativo (estilo moderno) -->
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full overflow-hidden -z-10">
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-    <div class="absolute top-40 -left-40 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+    <!-- Mockup de Interfaz (Gran gancho visual para hacer scroll) -->
+    <div class="mt-16 mx-auto max-w-5xl relative group perspective">
+      <!-- Sombra brillante detrás del mockup -->
+      <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+      
+      <!-- Contenedor de la imagen del sistema -->
+      <div class="relative rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden aspect-video flex items-center justify-center bg-slate-50 transform transition-transform duration-500 hover:scale-[1.01]">
+        
+        <!-- IDEA: Reemplaza este div con una imagen real (<img>) de uno de tus mejores sistemas -->
+        <div class="text-slate-400 text-center px-4">
+          <svg class="mx-auto h-16 w-16 mb-4 text-teal-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <p class="font-medium text-lg">Coloca aquí un pantallazo de tu mejor sistema</p>
+          <p class="text-sm mt-2">La gente amará ver cómo luce la plataforma antes de comprar.</p>
+        </div>
+        
+      </div>
+    </div>
+
   </div>
 </section>
