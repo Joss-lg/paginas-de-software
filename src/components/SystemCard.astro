@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  features: string[];
+  icon: string;
+  color: string;
+}
+
+const { title, description, features, icon, color } = Astro.props;
+---
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-xl transition-shadow duration-300 relative overflow-hidden group">
+  <div class={`absolute top-0 left-0 w-full h-1 ${color}`}></div>
+  <div class="flex items-center gap-4 mb-6">
+    <div class={`p-3 rounded-xl ${color.replace('bg-', 'bg-opacity-10 text-')}`}>
+      <span class="text-3xl" set:html={icon} />
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900">{title}</h3>
+  </div>
+  <p class="text-gray-600 mb-6 min-h-[48px]">{description}</p>
+  <ul class="space-y-3">
+    {features.map((feature) => (
+      <li class="flex items-start">
+        <svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span class="text-gray-700">{feature}</span>
+      </li>
+    ))}
+  </ul>
+</div>
