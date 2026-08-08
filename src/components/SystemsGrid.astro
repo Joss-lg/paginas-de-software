@@ -1,0 +1,146 @@
+---
+// SystemsGrid.astro
+
+const sistemas = [
+  {
+    title: "Pizzerías",
+    description: "Control total de tu pizzería, desde la toma del pedido, comandas en cocina, hasta la entrega.",
+    icon: "🍕",
+    status: "disponible",
+    link: "/pizzerias" 
+  },
+  {
+    title: "Restaurantes",
+    description: "Agiliza tu servicio de mesas y delivery con un sistema de comandas inteligente y rápido.",
+    icon: "🍽️",
+    status: "disponible",
+    link: "/restaurantes"
+  },
+  {
+    title: "Panaderías",
+    description: "Gestión precisa de inventario de insumos, control de producción y venta ágil al mostrador.",
+    icon: "🥖",
+    status: "disponible",
+    link: "/panaderias"
+  },
+  {
+    title: "Control Escolar",
+    description: "Administración integral de alumnos, calificaciones, colegiaturas y reportes académicos.",
+    icon: "🎓",
+    status: "en_proceso",
+    link: "#"
+  },
+  {
+    title: "Abarroteras",
+    description: "Punto de venta optimizado para alto volumen de transacciones y control de inventario masivo.",
+    icon: "🛒",
+    status: "en_proceso",
+    link: "#"
+  },
+  {
+    title: "Ferreterías",
+    description: "Gestión de miles de SKUs, cotizaciones dinámicas y facturación rápida en mostrador.",
+    icon: "🛠️",
+    status: "en_proceso",
+    link: "#"
+  },
+  {
+    title: "Farmacias",
+    description: "Manejo estricto de lotes, control de caducidades y dispensación de medicamentos.",
+    icon: "💊",
+    status: "en_proceso",
+    link: "#"
+  },
+  {
+    title: "Gimnasios",
+    description: "Control de accesos, membresías recurrentes y administración de clases en tiempo real.",
+    icon: "🏋️",
+    status: "en_proceso",
+    link: "#"
+  }
+];
+---
+
+<section id="sistemas" class="relative py-24 bg-slate-50 overflow-hidden border-y border-slate-200/60">
+  
+  <!-- Patrón de fondo tecnológico -->
+  <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image: radial-gradient(#0F766E 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16">
+      <span class="inline-block py-1 px-3 rounded-full bg-teal-100/50 text-teal-700 text-sm font-semibold mb-4 border border-teal-200">
+        Ecosistema SaaS
+      </span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+        Catálogo de Soluciones Empresariales
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Plataformas modulares con bases de datos relacionales de alto rendimiento. Arquitectura diseñada a la medida para escalar las operaciones de tu sector.
+      </p>
+    </div>
+
+    <!-- Grid adaptable -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {sistemas.map((sistema) => (
+        <a 
+          href={sistema.status === 'disponible' ? sistema.link : '#'} 
+          class={`group relative flex flex-col p-6 rounded-[2rem] border transition-all duration-500 overflow-hidden ${
+            sistema.status === 'disponible' 
+              ? 'bg-white border-slate-200 hover:border-teal-500/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1.5 cursor-pointer z-10' 
+              : 'bg-slate-100/50 border-slate-200/60 cursor-default opacity-85 hover:opacity-100'
+          }`}
+        >
+          <!-- Resplandor de fondo al pasar el cursor (solo disponibles) -->
+          {sistema.status === 'disponible' && (
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+          )}
+
+          <!-- Encabezado de la tarjeta (Icono y Badge) -->
+          <div class="flex justify-between items-start mb-6">
+            <div class={`w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm transition-transform duration-500 group-hover:scale-110 ${
+              sistema.status === 'disponible' 
+                ? 'bg-gradient-to-br from-teal-100 to-emerald-50 border border-teal-200' 
+                : 'bg-slate-200 border border-slate-300'
+            }`}>
+              {sistema.icon}
+            </div>
+
+            <!-- Badge de Estado -->
+            {sistema.status === 'en_proceso' ? (
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-slate-600 uppercase tracking-wider border border-slate-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                Próximamente
+              </span>
+            ) : (
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-100/80 px-2.5 py-1 text-[10px] font-bold text-emerald-700 uppercase tracking-wider border border-emerald-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Activo
+              </span>
+            )}
+          </div>
+          
+          <!-- Contenido -->
+          <h3 class={`text-xl font-bold mb-3 transition-colors duration-300 ${
+            sistema.status === 'disponible' ? 'text-slate-900 group-hover:text-teal-700' : 'text-slate-700'
+          }`}>
+            {sistema.title}
+          </h3>
+          
+          <p class="text-slate-500 text-sm leading-relaxed flex-grow">
+            {sistema.description}
+          </p>
+
+          <!-- Flecha indicadora (solo si está disponible) -->
+          {sistema.status === 'disponible' && (
+            <div class="mt-6 flex items-center text-teal-600 font-bold text-sm group-hover:text-teal-700">
+              Explorar plataforma
+              <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
