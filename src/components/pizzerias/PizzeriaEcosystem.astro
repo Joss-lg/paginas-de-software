@@ -22,27 +22,27 @@
     </div>
 
     <!-- Contenedor Bento Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(320px,auto)]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
 
-      <!-- Tarjeta 1: Analítica y Flujo de Caja -->
-      <div class="md:col-span-2 group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 overflow-hidden flex flex-col justify-between">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+      <!-- Tarjeta 1: Reportes y caja -->
+      <div class="md:col-span-1 group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
         
-        <div class="relative z-10 mb-8 md:w-3/5">
+        <div class="relative z-10 mb-6">
           <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6 shadow-inner">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <h3 class="text-2xl font-bold text-slate-900 mb-3">Reportes y caja</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
-            Obtén reportes de ventas diarios y mensuales. Visualiza entradas, salidas y cortes de caja en tiempo real desde un panel intuitivo.
+            Obtén reportes de ventas diarios y mensuales. Visualiza entradas, salidas y cortes de caja en tiempo real.
           </p>
         </div>
 
-        <div class="relative z-10 mt-auto -mb-8 -mr-8 md:-mr-12 transform group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-500">
-          <img 
-            src="/public/corte-mensual.webp" 
+        <div class="relative z-10 flex-1 flex rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner mt-4">
+           <img 
+            src="/public/caja.webp" 
             alt="Dashboard financiero de la pizzería" 
-            class="w-full object-cover rounded-tl-2xl shadow-2xl border-t border-l border-slate-200"
+            class="w-full h-full min-h-[180px] object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
@@ -51,44 +51,66 @@
       <div class="md:col-span-1 group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-lg hover:shadow-2xl hover:border-amber-500/50 transition-all duration-500 overflow-hidden flex flex-col justify-between">
         <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl group-hover:bg-amber-500/40 transition-colors duration-500"></div>
 
-        <div class="relative z-10">
+        <div class="relative z-10 mb-6">
           <div class="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 text-amber-400 flex items-center justify-center mb-6">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Gestión de delivery</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-8">
+          <p class="text-slate-400 text-sm leading-relaxed">
             Coordina tus pedidos a domicilio eficazmente. Mantén el control de tus repartidores para asegurar entregas rápidas.
           </p>
         </div>
 
-        <div class="relative z-10 mt-auto rounded-xl overflow-hidden border border-slate-700 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+        <div class="relative z-10 flex-1 flex mt-2 rounded-xl overflow-hidden border border-slate-700 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
           <img 
             src="/public/modulo-delivery.webp" 
             alt="Módulo de asignación de repartidores" 
-            class="w-full h-40 object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+            class="w-full h-full min-h-[180px] object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
           />
         </div>
       </div>
 
-      <!-- Tarjeta 3: Gestión de Menú y Gastos -->
-      <div class="md:col-span-3 group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 overflow-hidden flex flex-col md:flex-row items-center gap-8">
+      <!-- Tarjeta 3: Menú y Gastos Operativos -->
+      <div class="md:col-span-1 group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
         
-        <div class="md:w-1/2 relative z-10">
+        <div class="relative z-10 mb-6">
           <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6 shadow-inner">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
           </div>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Menú y gastos operativos</h3>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Menú y gastos</h3>
           <p class="text-slate-600 text-sm leading-relaxed">
             Administra tu menú y registra tus gastos diarios. Mantén tus costos e ingresos siempre bajo control.
           </p>
         </div>
 
-        <div class="md:w-1/2 relative z-10 w-full h-full min-h-[200px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-inner group-hover:shadow-md transition-shadow">
+        <div class="relative z-10 flex-1 flex rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner mt-4">
            <img 
-            src="/public/modulo-categorias-gastos.webp" 
+            src="/public/menu.webp" 
             alt="Gestión de categorías de pizza y registro de gastos" 
-            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+            class="w-full h-full min-h-[180px] object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
           />
+        </div>
+      </div>
+
+      <!-- Tarjeta 4: Multi-sucursales (Ancho completo abajo) -->
+      <div class="md:col-span-3 group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-200 transition-all duration-500 overflow-hidden flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2 relative z-10">
+          <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6 shadow-inner">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Multi-sucursales y control centralizado</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Administra múltiples sucursales de tu pizzería desde una misma cuenta. Compara rendimiento, supervisa ventas globales y gestiona permisos de personal de forma unificada.
+          </p>
+        </div>
+
+        <div class="md:w-1/2 relative z-10 w-full h-full min-h-[200px] bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl border border-orange-400 overflow-hidden shadow-inner group-hover:shadow-md transition-shadow flex items-center justify-center p-8 text-white text-center">
+          <div>
+            <span class="text-4xl mb-2 block">🍕📊🚀</span>
+            <h4 class="font-bold text-lg mb-1">Escala tu negocio</h4>
+            <p class="text-orange-100 text-xs">Control total de todas tus terminales en un solo lugar</p>
+          </div>
         </div>
       </div>
 

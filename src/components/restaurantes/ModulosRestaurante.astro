@@ -9,7 +9,6 @@ const planesRestaurante = [
     msi3: "1,996.67",
     msi6: "998.33",
     destacado: false,
-    imagen: "/images/planes/basico.webp",
     caracteristicas: [
       "1 estación de cobro (Caja)",
       "Módulo POS y alta de productos/bebidas",
@@ -27,7 +26,6 @@ const planesRestaurante = [
     msi6: "1,665.00",
     destacado: true,
     etiqueta: "MÁS POPULAR",
-    imagen: "/images/planes/profesional.webp",
     caracteristicas: [
       "Hasta 3 estaciones (Caja + 2 Comanderas para Meseros)",
       "Gestión y asignación de mesas en mapa",
@@ -44,7 +42,6 @@ const planesRestaurante = [
     msi3: "4,330.00",
     msi6: "2,165.00",
     destacado: false,
-    imagen: "/images/planes/premium.webp",
     caracteristicas: [
       "Estaciones y comanderas ilimitadas",
       "Módulo de comandas de cocina + módulo para mesas",
@@ -85,14 +82,10 @@ const planesRestaurante = [
           )}
 
           <div>
-            <!-- Banner / Imagen Miniatura del Plan -->
-            <div class="mb-5 rounded-xl overflow-hidden border border-slate-800 aspect-[16/9] bg-slate-950">
-              <img src={plan.imagen} alt={`Vista del ${plan.nombre}`} loading="lazy" class="w-full h-full object-cover" />
-            </div>
-
             <h3 class="text-2xl font-bold text-white">{plan.nombre}</h3>
-            <p class="text-xs text-slate-400 mt-1 min-h-[32px]">{plan.subtitulo}</p>
+            <p class="text-xs text-slate-400 mt-1.5 min-h-[32px]">{plan.subtitulo}</p>
 
+            <!-- Bloque de Precio y Facilidades -->
             <div class="mt-6 p-4 rounded-xl bg-slate-950/80 border border-slate-800/80">
               <div class="flex items-baseline gap-1">
                 <span class="text-3xl font-black text-white">${plan.precioMensual}</span>
@@ -115,6 +108,7 @@ const planesRestaurante = [
               </div>
             </div>
 
+            <!-- Lista de Características -->
             <ul class="mt-6 space-y-3">
               {plan.caracteristicas.map((item) => (
                 <li class="flex items-start gap-2.5 text-sm text-slate-300">

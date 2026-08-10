@@ -3,7 +3,7 @@
 <section class="bg-gradient-to-br from-[#3a2618] to-[#634e3f] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-[#2d1d12]">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
-            <!-- Etiqueta con texto ligeramente más claro para contrastar con el fondo oscuro -->
+            <!-- Etiqueta -->
             <span class="inline-block bg-[#c48b47]/20 text-[#f4d4a4] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                 Software Punto de Venta
             </span>
@@ -13,25 +13,48 @@
                 Software punto de venta para <span class="underline decoration-[#c48b47] decoration-4">panaderías</span>.
             </h1>
             
-            <!-- Párrafo en gris claro para lectura suave -->
+            <!-- Párrafo -->
             <p class="text-lg sm:text-xl text-gray-300 font-medium leading-relaxed">
                 Acelera tus cobros y toma el control total de tus insumos con un sistema POS diseñado para entornos de alta demanda.
             </p>
             
-            <div class="pt-4">
-                <a href="#demo" class="inline-flex items-center justify-center bg-[#c48b47] hover:bg-[#a87132] text-white font-bold px-6 py-3 rounded-xl shadow-md transition duration-200">
-                    Contáctanos
-                </a>
+          <!-- Contenedor de botones -->
+<div class="pt-4 flex flex-col sm:flex-row gap-4">
+    <!-- Botón Principal con flecha y animación de crecimiento -->
+    <a href="#demo" class="inline-flex items-center justify-center gap-2 bg-[#c48b47] hover:bg-[#a87132] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:scale-105 group">
+        Agendar demostración
+        <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+    </a>
+    
+    <!-- Botón de Precios con animación de crecimiento -->
+    <a href="#planes" class="inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 font-bold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
+        Ver tarifas
+    </a>
+</div>
+            <!-- Garantías -->
+            <div class="flex flex-wrap gap-x-6 gap-y-3 pt-2">
+                <div class="flex items-center gap-2 text-gray-200 font-medium text-sm sm:text-base">
+                    <svg class="w-5 h-5 text-[#c48b47]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Basado en la nube</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-200 font-medium text-sm sm:text-base">
+                    <svg class="w-5 h-5 text-[#c48b47]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Accesos controlados</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-200 font-medium text-sm sm:text-base">
+                    <svg class="w-5 h-5 text-[#c48b47]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Sin instalaciones</span>
+                </div>
             </div>
         </div>
 
-        <!-- Tarjeta contenedora con la imagen de la interfaz y efectos de animación -->
+        <!-- Tarjeta contenedora con la imagen -->
         <div class="group relative flex justify-center p-3 sm:p-4 border-2 border-[#c48b47]/60 rounded-3xl bg-white shadow-xl transition-all duration-500 ease-out hover:-translate-y-3 hover:border-[#c48b47] hover:shadow-[0_20px_40px_-10px_rgba(196,139,71,0.45)] overflow-hidden">
             
-            <!-- Capa de brillo decorativo al pasar el cursor -->
             <div class="absolute inset-0 bg-gradient-to-br from-[#c48b47]/0 via-[#c48b47]/5 to-[#c48b47]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none z-20"></div>
 
-            <!-- Marco interno e imagen del Dashboard -->
             <div class="relative z-10 w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-sm">
                 <img 
                     src="/public/imagen-de-interfaz-panaderia.webp" 
