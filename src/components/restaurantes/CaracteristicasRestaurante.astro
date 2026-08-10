@@ -1,46 +1,84 @@
 ---
+// src/components/restaurantes/CaracteristicasRestaurante.astro
+const caracteristicas = [
+  {
+    titulo: "Levantamiento de Comandas Digitales",
+    descripcion: "Toma de pedidos en mesa desde smartphones o tablets que envían las órdenes directamente a la impresora o pantalla de cocina.",
+    icono: "📝",
+    imagen: "/images/caracteristicas/comandas.webp"
+  },
+  {
+    titulo: "Administración y Mapa de Mesas",
+    descripcion: "Visualiza rápidamente qué mesas están disponibles, ocupadas, en espera de comida o listas para pedir la cuenta.",
+    icono: "🪑",
+    imagen: "/images/caracteristicas/mapa-mesas.webp"
+  },
+  {
+    titulo: "Control de Roles y Permisos",
+    descripcion: "Configura accesos específicos para meseros, cajeros, capitán de meseros y administradores del restaurante.",
+    icono: "👥",
+    imagen: "/images/caracteristicas/roles.webp"
+  },
+  {
+    titulo: "Cobro y División de Cuentas",
+    descripcion: "Soporta cobros parciales, cuentas separadas por comensal y múltiples formas de pago.",
+    icono: "💳",
+    imagen: "/images/caracteristicas/cobros.webp"
+  },
+  {
+    titulo: "Gestión de Menú y Productos",
+    descripcion: "Agrega, modifica o deshabilita platillos, bebidas y modificadores (sin cebolla, término medio, extras) en tiempo real.",
+    icono: "🍽️",
+    imagen: "/images/caracteristicas/menu.webp"
+  },
+  {
+    titulo: "Reportes Diarios y Mensuales",
+    descripcion: "Obtén el cierre de caja exacto, ventas por mesero, platos más vendidos y registro de consumo total del día.",
+    icono: "📊",
+    imagen: "/images/caracteristicas/reportes.webp"
+  }
+];
 ---
-<section class="py-24 bg-white">
+<section class="py-20 bg-slate-900 text-white relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-20">
-      <h2 class="text-3xl font-extrabold text-gray-900">
-        Diseñado para acelerar el servicio y mejorar la experiencia del cliente.
-      </h2>
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">Diseñado para la atención en salón</h2>
+      <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Funcionalidades Diseñadas para tu Restaurante
+      </p>
+      <p class="mt-4 text-slate-400 text-base sm:text-lg">
+        Todo lo que necesitas para gestionar comensales, meseros y la comunicación fluida con tu cocina.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-x-12 gap-y-16">
-      <!-- Feature 1 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Gestión de Mesas</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Visualiza el estado de las mesas en tiempo real (disponibles, ocupadas o por cobrar) y organízalas por secciones o terraza.
-        </p>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {caracteristicas.map((item) => (
+        <div class="rounded-2xl bg-slate-800/80 border border-slate-700/60 overflow-hidden hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 flex flex-col justify-between group">
+          
+          <div class="p-6">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+              {item.icono}
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">{item.titulo}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{item.descripcion}</p>
+          </div>
 
-      <!-- Feature 2 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Comandas a Cocina</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Envía los pedidos automáticamente a la cocina o barra de bebidas para evitar confusiones y reducir los tiempos de espera.
-        </p>
-      </div>
+          <!-- Previsualización de Imagen de la Función -->
+          <div class="px-6 pb-6 pt-2">
+            <div class="relative rounded-xl overflow-hidden bg-slate-950 border border-slate-700/50 aspect-video">
+              <img 
+                src={item.imagen} 
+                alt={item.titulo} 
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
 
-      <!-- Feature 3 -->
-      <div class="text-center">
-        <div class="mx-auto w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-          <svg class="w-10 h-10 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Cuentas Separadas</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Divide la cuenta por platillos, por consumo individual o en partes iguales de forma rápida y sin errores al momento de cobrar.
-        </p>
-      </div>
+      ))}
     </div>
+
   </div>
 </section>

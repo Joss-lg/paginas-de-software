@@ -2,39 +2,80 @@
 ---
 <section class="py-20 bg-gray-50 px-4 sm:px-6 lg:px-8 border-y border-gray-300">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-            <h2 class="text-3xl font-black text-gray-900">Descubre más funcionalidades de tu kit punto de venta.</h2>
-            <ul class="space-y-4">
-                <li class="flex items-start space-x-3">
-                    <span class="text-[#c48b47] font-bold">✔</span>
-                    <p class="text-gray-600"><strong>Inventario en tiempo real:</strong> Conoce el stock exacto en tus anaqueles.</p>
-                </li>
-                <li class="flex items-start space-x-3">
-                    <span class="text-[#c48b47] font-bold">✔</span>
-                    <p class="text-gray-600"><strong>Transferencias entre sucursales:</strong> Distribuya insumos o producto terminado entre almacenes y lleva control de cada transacción.</p>
-                </li>
-                <li class="flex items-start space-x-3">
-                    <span class="text-[#c48b47] font-bold">✔</span>
-                    <p class="text-gray-600"><strong>Seguimiento de cada producto:</strong> Conoce el historial de cada producto, desde su fabricación hasta su venta.</p>
-                </li>
-                <li class="flex items-start space-x-3">
-                    <span class="text-[#c48b47] font-bold">✔</span>
-                    <p class="text-gray-600"><strong>Reportes diarios y mensuales:</strong> Genera cierres de caja claros y reportes contables automatizados.</p>
-                </li>
-            </ul>
-        </div>
-        <!-- Tarjeta principal de información con borde resaltado y profesional -->
-        <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-300 space-y-4">
-            <h3 class="text-xl font-bold text-gray-900">Módulos del Sistema de Panadería</h3>
-            <div class="space-y-3 text-sm text-gray-700">
-                <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs">📦 Módulo de Agregar Categorías, Productos y Gastos</div>
-                <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs">👥 Control estricto por Roles y Permisos</div>
-                <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs">🖨️ Generación de Tickets y Reportes Financieros</div>
+        
+        <!-- Columna Izquierda: Toda la información de texto y módulos -->
+        <div class="space-y-10">
+            
+            <!-- Encabezado y lista de beneficios -->
+            <div class="space-y-6">
+                <h2 class="text-3xl font-black text-gray-900">Descubre más funcionalidades de tu kit punto de venta.</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <p class="text-gray-600"><strong>Inventario en tiempo real:</strong> Conoce el stock exacto en tus anaqueles.</p>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <p class="text-gray-600"><strong>Transferencias entre sucursales:</strong> Distribuya insumos o producto terminado entre almacenes y lleva control de cada transacción.</p>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <p class="text-gray-600"><strong>Reportes diarios y mensuales:</strong> Genera cierres de caja claros y reportes contables automatizados.</p>
+                    </li>
+                </ul>
             </div>
-            <!-- Sub-tarjeta con borde resaltado -->
-            <div class="my-6 p-6 border border-gray-300 rounded-xl bg-gray-50 text-center shadow-xs">
-                <span class="text-xs uppercase tracking-wider font-semibold text-[#c48b47]">Espacio para Imagen de Módulos Operativos</span>
+
+            <!-- Tarjeta de Módulos (Reubicada aquí para equilibrar el peso visual) -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-gray-300 space-y-4">
+                <h3 class="text-xl font-bold text-gray-900">Módulos del Sistema de Panadería</h3>
+                <div class="space-y-3 text-sm text-gray-700">
+                    
+                    <!-- Item 1: Caja/Cajas -->
+                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs flex items-center gap-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                        </svg>
+                        <span>Módulo de Agregar Categorías, Productos y Gastos</span>
+                    </div>
+
+                    <!-- Item 2: Usuarios / Roles -->
+                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs flex items-center gap-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6 0 3.375 3.375 0 016 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                        </svg>
+                        <span>Control estricto por Roles y Permisos</span>
+                    </div>
+
+                    <!-- Item 3: Impresora / Tickets -->
+                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-300 font-medium shadow-xs flex items-center gap-3">
+                        <svg class="w-5 h-5 text-[#c48b47] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231a1.125 1.125 0 01-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-19.126 0C1.068 7.441.3 8.375.3 9.456v6.294A2.25 2.25 0 002.55 18h1.091" />
+                        </svg>
+                        <span>Generación de Tickets y Reportes Financieros</span>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Columna Derecha: Tarjeta dedicada exclusivamente a la imagen -->
+        <div class="h-full flex items-center justify-center">
+            <div class="w-full bg-white p-4 rounded-2xl shadow-md border-2 border-gray-300 flex justify-center items-center">
+                <img 
+                    src="/public/modulos operativos pan.webp" 
+                    alt="Vista de los Módulos Operativos" 
+                    class="w-full max-h-[32rem] object-contain rounded-lg"
+                    loading="lazy"
+                />
             </div>
         </div>
+
     </div>
 </section>

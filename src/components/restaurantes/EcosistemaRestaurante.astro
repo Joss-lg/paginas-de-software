@@ -1,63 +1,93 @@
 ---
+// src/components/restaurantes/EcosistemaRestaurante.astro
+interface Props {
+  dashboardImage?: string;
+}
+
+const { dashboardImage = "/images/dashboard-restaurante-completo.webp" } = Astro.props;
 ---
-<section class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-16">
-      Cada herramienta en el dispositivo correcto:
-    </h2>
+<section class="py-20 bg-slate-900 text-white border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Detalle del Ecosistema de Trabajo para Restaurantes -->
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">
+          Flujo de Trabajo Operativo
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          Sincronización Total entre Sala, Cocina y Caja
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Diseñado específicamente para eliminar confusiones en platillos, reducir los tiempos de espera y mantener el control financiero exacto del turno.
+        </p>
 
-    <div class="grid md:grid-cols-3 gap-12">
-      <!-- Device 1: Tablet / Móvil (Meseros) -->
-      <div class="flex flex-col items-center text-center">
-        <div class="h-48 flex items-end justify-center mb-8">
-          <div class="w-32 h-44 bg-gray-900 rounded-xl border-4 border-gray-800 shadow-xl relative overflow-hidden">
-             <div class="absolute inset-0 bg-white m-1 rounded-lg border border-gray-200 flex flex-col">
-               <div class="h-6 bg-orange-500 w-full"></div>
-               <div class="flex-1 grid grid-cols-2 gap-1 p-2">
-                 <div class="bg-gray-100 rounded"></div><div class="bg-gray-100 rounded"></div>
-                 <div class="bg-gray-100 rounded"></div><div class="bg-gray-100 rounded"></div>
-               </div>
-             </div>
+        <div class="space-y-4 pt-2">
+          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">1</span>
+            <div>
+              <h3 class="font-bold text-white text-sm">Levantamiento en Mesa</h3>
+              <p class="text-xs text-slate-400 mt-0.5">El mesero toma el pedido en tablet o teléfono indicando mesa, comensales y notas del platillo.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">2</span>
+            <div>
+              <h3 class="font-bold text-white text-sm">Impresión o Monitor en Cocina</h3>
+              <p class="text-xs text-slate-400 mt-0.5">La orden llega instantáneamente a cocina o barra clasificada por áreas de preparación.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">3</span>
+            <div>
+              <h3 class="font-bold text-white text-sm">Cobro y Cierre de Mesa</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Caja recibe la solicitud de ticket, permite división de cuenta y procesa el pago sin descuadres.</p>
+            </div>
           </div>
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Comandas Móviles</h3>
-        <p class="text-gray-600 text-sm px-4">
-          Toma notas y pedidos directamente desde la mesa de los comensales con smartphones o tablets.
-        </p>
       </div>
 
-      <!-- Device 2: Laptop/Desktop (Caja) -->
-      <div class="flex flex-col items-center text-center">
-        <div class="h-48 flex items-end justify-center mb-8">
-          <div class="w-48 h-32 bg-gray-800 rounded-t-xl border-4 border-gray-800 shadow-xl relative overflow-hidden flex flex-col justify-end">
-             <div class="absolute inset-0 bg-white m-1 rounded-t-lg border border-gray-200">
-               <div class="h-4 bg-gray-100 w-full border-b border-gray-200"></div>
-               <div class="p-2 grid grid-cols-3 gap-1"><div class="h-8 bg-blue-100 rounded"></div><div class="h-8 bg-green-100 rounded"></div><div class="h-8 bg-orange-100 rounded"></div></div>
-             </div>
-             <div class="h-2 w-56 bg-gray-900 rounded-b-xl -ml-4 relative z-10"></div>
+      <!-- Imagen Real de la Consola / Dashboard -->
+      <div class="lg:col-span-7">
+        <div class="rounded-2xl bg-slate-950 p-2 sm:p-4 border border-slate-700 shadow-2xl space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 px-2">
+            <div>
+              <h3 class="text-base font-bold text-white">Consola Central de Control</h3>
+              <p class="text-xs text-slate-400">Atención a Comensales & Permisos de Personal</p>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Sincronizado
+            </span>
           </div>
+
+          <!-- Contenedor de la Imagen del Dashboard -->
+          <div class="relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 aspect-[16/10]">
+            <img 
+              src={dashboardImage} 
+              alt="Dashboard principal del sistema de restaurantes" 
+              loading="lazy"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p class="font-extrabold text-sm">¿Quieres ver el sistema en acción para tu restaurante?</p>
+              <p class="text-xs text-orange-100">Te mostramos una prueba en vivo con la toma de comandas.</p>
+            </div>
+            <a href="#contacto" class="whitespace-nowrap px-5 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-900 text-white font-bold text-xs transition-colors shadow-md">
+              Solicitar Demo
+            </a>
+          </div>
+
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Estación Principal (POS)</h3>
-        <p class="text-gray-600 text-sm px-4">
-          Control total de la caja, cobros rápidos, asignación de mesas y supervisión general.
-        </p>
       </div>
 
-      <!-- Device 3: Landscape (Cocina KDS) -->
-      <div class="flex flex-col items-center text-center">
-        <div class="h-48 flex items-end justify-center mb-8">
-          <div class="w-44 h-32 bg-gray-900 rounded-xl border-4 border-gray-800 shadow-xl relative overflow-hidden">
-             <div class="absolute inset-0 bg-white m-1 rounded-lg border border-gray-200 flex space-x-2 p-2">
-               <div class="flex-1 bg-yellow-50 rounded border border-yellow-200"></div>
-               <div class="flex-1 bg-green-50 rounded border border-green-200"></div>
-             </div>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Pantalla de Cocina (KDS)</h3>
-        <p class="text-gray-600 text-sm px-4">
-          Visualiza los platillos pendientes ordenados por tiempo de preparación y prioridad.
-        </p>
-      </div>
     </div>
+
   </div>
 </section>

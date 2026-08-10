@@ -4,24 +4,35 @@ import Navbar from '../components/Navbar.astro';
 import PizzeriaHero from '../components/pizzerias/PizzeriaHero.astro';
 import PizzeriaFeatures from '../components/pizzerias/PizzeriaFeatures.astro';
 import PizzeriaDetails from '../components/pizzerias/PizzeriaDetails.astro';
+import PizzeriaSystem from '../components/pizzerias/PizzeriaSystem.astro';
 import PizzeriaEcosystem from '../components/pizzerias/PizzeriaEcosystem.astro';
+import PizzeriaDispositivos from '../components/pizzerias/PizzeriaDispositivos.astro';
 import VideoPizzeria from '../components/pizzerias/VideoPizzeria.astro';
 import PlanesPizzerias from '../components/pizzerias/PlanesPizzerias.astro';
+
+const title = 'Sistema Punto de Venta para Pizzerías | Pizzetos by Ollintem';
+const description =
+  'Software POS para pizzerías: genera pedidos, registra clientes, imprime tickets y consulta tus reportes de ventas diarios y mensuales. Roles y permisos, 100% en la nube. Planes desde $499/mes.';
 ---
 
-<Layout title="Software Punto de Venta para Pizzerías | Ollintem">
+<Layout title={title}>
+  <meta slot="head" name="description" content={description} />
+  <meta slot="head" name="keywords" content="sistema punto de venta pizzería, software para pizzerías, POS pizzería México, sistema de tickets para pizzería, control de ventas pizzería" />
+
   <Navbar />
-  
+
   <main class="pt-16 bg-white">
     <PizzeriaHero />
     <PizzeriaFeatures />
     <PizzeriaDetails />
+    <PizzeriaSystem />
     <PizzeriaEcosystem />
+    <PizzeriaDispositivos />
     <VideoPizzeria />
     <PlanesPizzerias />
   </main>
 
-  <footer class="bg-gray-900 text-gray-400 py-12">
+  <footer class="bg-stone-900 text-gray-400 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center">
       <p class="mb-4 md:mb-0">© 2026 Ollintem. Todos los derechos reservados.</p>
       <div class="flex space-x-6">

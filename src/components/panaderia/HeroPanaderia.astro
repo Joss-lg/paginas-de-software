@@ -8,7 +8,7 @@
                 Software Punto de Venta
             </span>
             
-            <!-- Título principal pasado a texto blanco -->
+            <!-- Título principal -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none">
                 Software punto de venta para <span class="underline decoration-[#c48b47] decoration-4">panaderías</span>.
             </h1>
@@ -25,12 +25,20 @@
             </div>
         </div>
 
-        <!-- Tarjeta de información con borde resaltado y profesional -->
-        <!-- Mantiene fondo blanco para hacer un contraste limpio y elegante con el fondo oscuro -->
-        <div class="relative flex justify-center py-12 px-6 border-2 border-[#c48b47]/60 rounded-3xl bg-white shadow-xl">
-            <div class="text-center space-y-3">
-                <span class="text-xs uppercase tracking-widest font-bold text-[#c48b47]">Espacio para Imagen / Mockup</span>
-                <p class="text-sm text-gray-600 max-w-xs">Aquí se posicionará el recurso visual principal de la interfaz del sistema.</p>
+        <!-- Tarjeta contenedora con la imagen de la interfaz y efectos de animación -->
+        <div class="group relative flex justify-center p-3 sm:p-4 border-2 border-[#c48b47]/60 rounded-3xl bg-white shadow-xl transition-all duration-500 ease-out hover:-translate-y-3 hover:border-[#c48b47] hover:shadow-[0_20px_40px_-10px_rgba(196,139,71,0.45)] overflow-hidden">
+            
+            <!-- Capa de brillo decorativo al pasar el cursor -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#c48b47]/0 via-[#c48b47]/5 to-[#c48b47]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none z-20"></div>
+
+            <!-- Marco interno e imagen del Dashboard -->
+            <div class="relative z-10 w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-sm">
+                <img 
+                    src="/public/imagen-de-interfaz-panaderia.webp" 
+                    alt="Interfaz del punto de venta Panadería Kairos" 
+                    class="w-full h-auto object-cover transform transition-all duration-500 ease-out group-hover:scale-[1.02]"
+                    loading="eager"
+                />
             </div>
         </div>
     </div>

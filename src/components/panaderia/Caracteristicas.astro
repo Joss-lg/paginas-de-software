@@ -2,38 +2,153 @@
 ---
 <section class="py-20 bg-white px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
+        <!-- Encabezado -->
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-                El punto de venta diseñado para cobrar rápido en horas pico, controlar la producción de tus recetas al milímetro y reducir la merma de ingredientes todos los días.
+                El punto de venta diseñado para agilizar cobros en horas pico, estandarizar la preparación de tus recetas y mantener un control total de tus ventas día a día.
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Tarjeta de información con borde resaltado y profesional -->
-            <div class="bg-gray-50 p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-4 hover:border-[#c48b47]/50 transition-colors duration-200">
-                <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47] font-bold text-xl">✓</div>
-                <h3 class="text-2xl font-bold text-gray-900">Operación rápida y sencilla</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Opera tu negocio con un software punto de venta en la nube rápido y fácil de usar, con <strong>barra inteligente</strong> ideal para encontrar los productos más vendidos al instante y una interfaz personalizable con tu logo y colores de marca.
-                </p>
-                <!-- Sub-tarjeta interna con borde resaltado -->
-                <div class="my-6 p-8 border border-gray-300 rounded-xl bg-white text-center shadow-xs">
-                    <span class="text-xs uppercase tracking-wider font-semibold text-[#c48b47]">Espacio para Imagen de Operación</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            
+            <!-- 1. Operación Rápida -->
+            <div class="lg:col-span-6 bg-gray-50 p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-6 hover:border-[#c48b47]/60 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47]">
+                        <!-- Icono de Líneas: Check / Rayo Rápido -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Operación rápida y sencilla</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Opera tu negocio con un sistema de punto de venta enfocado en maximizar la <strong>velocidad de atención</strong> al cliente. Agiliza el proceso de cobro en mostrador y la emisión de tickets, garantizando un servicio constante y eficiente para tu personal durante las horas de mayor flujo.
+                    </p>
+                </div>
+                
+                <!-- Mockup Interfaz Ventana -->
+                <div class="mt-4 border-2 border-gray-300 rounded-xl bg-white shadow-xs overflow-hidden">
+                    <div class="bg-gray-100 px-3 py-2 border-b border-gray-200 flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                    </div>
+                    <div class="p-2">
+                        <img 
+                            src="/public/punto de venta.webp" 
+                            alt="Visualización del sistema en Ordenador" 
+                            class="w-full h-auto max-h-56 object-cover rounded-lg"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </div>
 
-            <!-- Tarjeta de información con borde resaltado y profesional -->
-            <div class="bg-gray-50 p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-4 hover:border-[#c48b47]/50 transition-colors duration-200">
-                <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47] font-bold text-xl">⚙</div>
-                <h3 class="text-2xl font-bold text-gray-900">Asistencia y control de empleados</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Controla al personal de tu panadería con el módulo de asistencia: asigna niveles de acceso mediante roles y permisos, registra descuentos, devoluciones, cancelaciones, <strong>entradas, salidas, retardos y faltas</strong> de cada colaborador.
-                </p>
-                <!-- Sub-tarjeta interna con borde resaltado -->
-                <div class="my-6 p-8 border border-gray-300 rounded-xl bg-white text-center shadow-xs">
-                    <span class="text-xs uppercase tracking-wider font-semibold text-[#c48b47]">Espacio para Imagen de Control de Empleados</span>
+            <!-- 2. Control de personal y accesos -->
+            <div class="lg:col-span-6 bg-gray-50 p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-6 hover:border-[#c48b47]/60 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47]">
+                        <!-- Icono de Líneas: Engranaje / Configuración -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Control de personal y accesos</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Organiza y administra la participación de tu equipo de trabajo mediante la asignación de <strong>roles y niveles de acceso</strong>. Define permisos específicos para cada operador, garantizando que cada persona interactúe de forma segura y exclusiva con las áreas de operación que corresponden a sus responsabilidades.
+                    </p>
+                </div>
+                
+                <!-- Mockup Interfaz Ventana -->
+                <div class="mt-4 border-2 border-gray-300 rounded-xl bg-white shadow-xs overflow-hidden">
+                    <div class="bg-gray-100 px-3 py-2 border-b border-gray-200 flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                    </div>
+                    <div class="p-2">
+                        <img 
+                            src="/public/empleados-control.webp" 
+                            alt="Módulo de control de empleados" 
+                            class="w-full h-auto max-h-56 object-cover rounded-lg"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </div>
+
+            <!-- 3. Interfaz de Escritorio Completa -->
+            <div class="lg:col-span-7 bg-gray-50 p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-6 hover:border-[#c48b47]/60 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47]">
+                        <!-- Icono de Líneas: Computadora / Laptop -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0v6.75H3V5.25" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Interfaz de Escritorio Completa</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Accede a paneles detallados de reportes, control administrativo centralizado y monitoreo de inventarios en tiempo real desde cualquier <strong>laptop o dispositivos de escritorio</strong>.
+                    </p>
+                </div>
+
+                <!-- Simulación de Monitor / Laptop -->
+                <div class="mt-4 relative mx-auto w-full max-w-lg">
+                    <div class="bg-gray-900 p-2.5 rounded-t-2xl shadow-xl border-t-2 border-x-2 border-gray-700">
+                        <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+                            <div class="bg-gray-800 px-3 py-1.5 flex items-center gap-1.5 border-b border-gray-700">
+                                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                <div class="ml-2 bg-gray-900/80 rounded px-3 py-0.5 text-[10px] text-gray-400 font-mono w-full max-w-[180px] truncate">
+                                    app.panaderiakairos.com
+                                </div>
+                            </div>
+                            <img 
+                                src="/public/interfaz de escritorio.webp" 
+                                alt="Vista del punto de venta en Ordenador" 
+                                class="w-full h-auto object-cover aspect-[16/9]"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 h-2.5 w-full rounded-b-lg border-b-2 border-gray-900"></div>
+                    <div class="bg-gray-400 h-2 w-24 mx-auto rounded-b-md shadow-inner"></div>
+                </div>
+            </div>
+
+            <!-- 4. Control y Ventas en Móvil -->
+            <div class="lg:col-span-5 bg-gray-50 p-6 sm:p-8 rounded-2xl border-2 border-gray-300 shadow-sm space-y-6 hover:border-[#c48b47]/60 hover:shadow-md transition-all duration-300 flex flex-col justify-between max-w-md mx-auto w-full">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-[#c48b47]/15 flex items-center justify-center text-[#c48b47]">
+                        <!-- Icono de Líneas: Celular -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Control y Ventas en Móvil</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Lleva el control de tu panadería a donde vayas. Revisa ventas en vivo y métricas clave desde tu <strong>smartphone o tablet</strong>.
+                    </p>
+                </div>
+
+                <!-- Simulación de Celular Vertical (Sin isla dinámica) -->
+                <div class="mt-2 relative mx-auto w-full max-w-[180px] sm:max-w-[200px]">
+                    <div class="bg-gray-900 p-2 rounded-[2.2rem] shadow-2xl border-4 border-gray-800 relative">
+                        <!-- Pantalla del celular -->
+                        <div class="rounded-[1.8rem] overflow-hidden bg-white border border-gray-800 relative z-10">
+                            <img 
+                                src="/public/vista-movil.webp" 
+                                alt="Vista responsive en dispositivo móvil" 
+                                class="w-full h-auto object-cover aspect-[9/18] mx-auto"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

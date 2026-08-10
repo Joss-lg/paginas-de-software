@@ -9,18 +9,24 @@
                 Durante un día completo ves el sistema en acción y resolvemos tus dudas sobre pedidos, anticipos, recetas, inventario y producción. Te llevas claridad total para decidir.
             </p>
             <div>
-                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#c48b47] hover:bg-[#a87132] text-white font-bold px-8 py-4 rounded-xl shadow-md transition">
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#c48b47] hover:bg-[#a87132] text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#c48b47]/40 transform transition-all duration-300 hover:scale-105">
                     Agendar demo de un día
                 </a>
             </div>
         </div>
-        <!-- Tarjeta de información con borde resaltado y profesional -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-300 text-center space-y-4">
-            <div class="py-12 px-6 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center space-y-2">
+        
+        <!-- Tarjeta principal con animación global: se eleva, se "desacomoda" (rota 2 grados) y proyecta sombra ámbar -->
+        <div class="group bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-300 text-center space-y-4 cursor-default transform transition-all duration-500 ease-out hover:-translate-y-3 hover:rotate-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#c48b47]/20 hover:border-[#c48b47]/60">
+            
+            <!-- Contenedor del video: Acompaña el movimiento de la tarjeta principal, pero cambia su fondo y bordes al hacer hover -->
+            <div class="py-12 px-6 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 text-center space-y-2 transition-all duration-500 ease-out group-hover:border-[#c48b47] group-hover:bg-[#c48b47]/5">
                 <span class="text-xs uppercase tracking-widest font-bold text-[#c48b47]">Espacio para Video / Imagen Demostrativa</span>
-                <p class="text-sm text-gray-500">Visualiza el Sistema en Acción</p>
+                <p class="text-sm text-gray-500 transition-colors duration-500 group-hover:text-[#a87132]">Visualiza el Sistema en Acción</p>
             </div>
-            <p class="text-sm text-gray-600 font-medium">Aumenta tus ventas y optimiza tus procesos diarios de horneado y venta al público.</p>
+            
+            <p class="text-sm text-gray-600 font-medium transition-colors duration-500 group-hover:text-gray-900">
+                Aumenta tus ventas y optimiza tus procesos diarios de horneado y venta al público.
+            </p>
         </div>
     </div>
 </section>

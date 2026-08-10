@@ -1,67 +1,148 @@
 ---
+// src/components/restaurantes/ModulosRestaurante.astro
+const planesRestaurante = [
+  {
+    nombre: "Plan Básico (Mostrador)",
+    subtitulo: "Ideal para restaurantes pequeños con cobro en caja",
+    precioMensual: "599.00",
+    precioAnual: "5,990.00",
+    msi3: "1,996.67",
+    msi6: "998.33",
+    destacado: false,
+    imagen: "/images/planes/basico.webp",
+    caracteristicas: [
+      "1 estación de cobro (Caja)",
+      "Módulo POS y alta de productos/bebidas",
+      "Impresión de tickets de consumo",
+      "Apertura y corte de caja diario",
+      "Reporte mensual de ventas"
+    ]
+  },
+  {
+    nombre: "Plan Profesional",
+    subtitulo: "Ideal para Restaurantes con mesas y meseros",
+    precioMensual: "999.00",
+    precioAnual: "9,990.00",
+    msi3: "3,330.00",
+    msi6: "1,665.00",
+    destacado: true,
+    etiqueta: "MÁS POPULAR",
+    imagen: "/images/planes/profesional.webp",
+    caracteristicas: [
+      "Hasta 3 estaciones (Caja + 2 Comanderas para Meseros)",
+      "Gestión y asignación de mesas en mapa",
+      "Levantamiento de comandas digitales a cocina",
+      "Roles y permisos (Admin / Cajero / Mesero)",
+      "Captura de gastos directos y reporte analítico"
+    ]
+  },
+  {
+    nombre: "Plan Premium",
+    subtitulo: "Para restaurantes de alto volumen o multiservicio",
+    precioMensual: "1,299.00",
+    precioAnual: "12,990.00",
+    msi3: "4,330.00",
+    msi6: "2,165.00",
+    destacado: false,
+    imagen: "/images/planes/premium.webp",
+    caracteristicas: [
+      "Estaciones y comanderas ilimitadas",
+      "Módulo de comandas de cocina + módulo para mesas",
+      "Cuentas separadas por comensal",
+      "Control de propinas e inventarios",
+      "Soporte técnico prioritario 24/7"
+    ]
+  }
+];
 ---
-<section class="py-24 bg-gray-50 overflow-hidden">
+<section id="planes" class="py-20 bg-slate-950 text-white relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row gap-16 items-start">
-      
-      <!-- Lado Izquierdo -->
-      <div class="lg:w-5/12">
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
-          Control absoluto del salón a la caja registradora.
-        </h2>
-        <p class="text-lg text-gray-600 mb-8">
-          Una plataforma robusta pero sumamente intuitiva para que tus meseros se concentren en atender y la administración fluya sin contratiempos.
-        </p>
-        
-        <div class="space-y-8">
-          <div>
-            <h4 class="text-xl font-bold text-gray-900 mb-2">Control de Inventarios</h4>
-            <p class="text-gray-600">Descuenta automáticamente los insumos y materias primas cada vez que se vende un platillo o bebida.</p>
-          </div>
-          <div>
-            <h4 class="text-xl font-bold text-gray-900 mb-2">Reportes y Estadísticas</h4>
-            <p class="text-gray-600">Identifica los platillos más vendidos, horas pico y el rendimiento del personal con reportes diarios y mensuales.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Lado Derecho: Lista de características -->
-      <div class="lg:w-7/12 w-full">
-        <div class="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 relative">
-          <div class="absolute -top-4 -right-4 w-24 h-24 bg-orange-100 rounded-full mix-blend-multiply opacity-50 z-0"></div>
-          
-          <h3 class="text-2xl font-bold text-gray-900 mb-6 relative z-10">El sistema para Restaurantes incluye:</h3>
-          <ul class="space-y-4 relative z-10">
-            <li class="flex items-start">
-              <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">✓</span>
-              <span class="text-gray-700 text-lg">Mapa de mesas interactivo y personalizable</span>
-            </li>
-            <li class="flex items-start">
-              <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">✓</span>
-              <span class="text-gray-700 text-lg">Módulo POS rápido para cobros en barra o caja</span>
-            </li>
-            <li class="flex items-start">
-              <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">✓</span>
-              <span class="text-gray-700 text-lg">División de cuentas y múltiples formas de pago</span>
-            </li>
-            <li class="flex items-start">
-              <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">✓</span>
-              <span class="text-gray-700 text-lg">Impresión de comandas en cocina y barra</span>
-            </li>
-            <li class="flex items-start">
-              <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">✓</span>
-              <span class="text-gray-700 text-lg">Gestión de roles (Mesero, Caja, Administrador)</span>
-            </li>
-          </ul>
-          
-          <div class="mt-8 pt-8 border-t border-gray-100 relative z-10">
-            <p class="text-gray-500 text-sm">
-              * Compatible con pantallas táctiles, impresoras térmicas de tickets y cajones de dinero.
-            </p>
-          </div>
-        </div>
-      </div>
-
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="px-3.5 py-1 text-xs font-bold rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 uppercase tracking-widest">
+        Suscripción SaaS Restaurantes
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+        Planes para el Sistema de Restaurante
+      </h2>
+      <p class="mt-3 text-slate-400 text-base">
+        Elige la capacidad requerida para tu establecimiento. Descuento de <strong class="text-orange-400">2 meses gratis en pago anual</strong>.
+      </p>
     </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      {planesRestaurante.map((plan) => (
+        <div class={`relative rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
+          plan.destacado 
+            ? 'bg-slate-900 border-2 border-orange-500 shadow-2xl shadow-orange-500/20 lg:-translate-y-2 z-10' 
+            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700'
+        }`}>
+          
+          {plan.destacado && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md">
+              {plan.etiqueta}
+            </div>
+          )}
+
+          <div>
+            <!-- Banner / Imagen Miniatura del Plan -->
+            <div class="mb-5 rounded-xl overflow-hidden border border-slate-800 aspect-[16/9] bg-slate-950">
+              <img src={plan.imagen} alt={`Vista del ${plan.nombre}`} loading="lazy" class="w-full h-full object-cover" />
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">{plan.nombre}</h3>
+            <p class="text-xs text-slate-400 mt-1 min-h-[32px]">{plan.subtitulo}</p>
+
+            <div class="mt-6 p-4 rounded-xl bg-slate-950/80 border border-slate-800/80">
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-black text-white">${plan.precioMensual}</span>
+                <span class="text-xs text-slate-400 font-medium">MXN / mes</span>
+              </div>
+
+              <div class="mt-3 text-xs space-y-1.5 text-slate-300 border-t border-slate-800/80 pt-3">
+                <p class="flex justify-between">
+                  <span class="text-slate-400">Pago Anual (-2 meses):</span>
+                  <strong class="text-orange-400">${plan.precioAnual} MXN</strong>
+                </p>
+                <p class="flex justify-between">
+                  <span class="text-slate-400">3 MSI:</span>
+                  <span>${plan.msi3} MXN / mes</span>
+                </p>
+                <p class="flex justify-between">
+                  <span class="text-slate-400">6 MSI:</span>
+                  <span>${plan.msi6} MXN / mes</span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="mt-6 space-y-3">
+              {plan.caracteristicas.map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <svg class="w-4 h-4 text-orange-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a 
+              href="#contacto" 
+              class={`block w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all ${
+                plan.destacado 
+                  ? 'bg-orange-500 hover:bg-orange-400 text-slate-950 shadow-lg shadow-orange-500/25' 
+                  : 'bg-slate-800 hover:bg-slate-700 text-white'
+              }`}
+            >
+              Seleccionar Plan
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
   </div>
 </section>
