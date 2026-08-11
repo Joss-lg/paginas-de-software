@@ -1,0 +1,43 @@
+---
+const modulos = [
+  { nombre: "Gestión de Inventarios", descripcion: "Control estricto de existencias, en neumáticos y accesorios." },
+  { nombre: "Órdenes de Compra", descripcion: "Generación y seguimiento de pedidos a proveedores para mantener el stock óptimo." },
+  { nombre: "Cotizaciones Rápidas", descripcion: "Creación ágil de cotizaciones para clientes, listas para convertirse en órdenes de venta." },
+  { nombre: "Punto de Venta (POS)", descripcion: "Módulo de cobro rápido y eficiente para operaciones de mostrador en cada sucursal." }
+];
+---
+<section class="py-20 bg-white border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      
+      <div class="w-full lg:w-1/2">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Módulos Especializados</h2>
+        <p class="text-slate-600 mb-8 leading-relaxed">
+          Diseñado específicamente para las necesidades de la industria llantera, integrando todas las herramientas necesarias para la operación diaria desde una única plataforma.
+        </p>
+        <ul class="space-y-6">
+          {modulos.map(modulo => (
+            <li class="flex items-start">
+              <span class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-1 mr-4 text-sm font-bold">✓</span>
+              <div>
+                <h4 class="text-lg font-bold text-slate-900">{modulo.nombre}</h4>
+                <p class="text-slate-600 mt-1">{modulo.descripcion}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Placeholder Imagen Interfaz con animación de zoom -->
+      <div class="w-full lg:w-1/2 aspect-square md:aspect-[4/3] bg-slate-100 rounded-3xl border-2 border-slate-200 border-dashed flex flex-col items-center justify-center p-8 relative overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer">
+        <svg class="w-16 h-16 text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span class="text-slate-400 font-medium tracking-wide uppercase text-sm text-center">
+          Espacio para Imagen: <br/><span class="text-xs font-normal">Captura de pantalla de los módulos</span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>

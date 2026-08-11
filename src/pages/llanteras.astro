@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HeaderLlantera from '../components/llantera/HeaderLlantera.astro';
+import CaracteristicasLlantera from '../components/llantera/CaracteristicasLlantera.astro';
+import ModulosOperativosLlantera from '../components/llantera/ModulosOperativosLlantera.astro';
+import AccesoDispositivosLlantera from '../components/llantera/AccesoDispositivosLlantera.astro';
+import PlanesPrecioLlantera from '../components/llantera/PlanesPrecioLlantera.astro';
+import DemoLlantera from '../components/llantera/DemoLlantera.astro';
+---
+
+<Layout title="Sistema Llantero Enterprise | Operaciones y Multisucursal">
+    <Navbar />
+      <!-- Enlace estructural preparado para la vista común (sin interactuar con el navbar/sidebar) -->
+  <div id="vista-comun-enlace" data-common-view-route="/comun/catalogo-sistemas" class="hidden"></div>
+
+  <main class="w-full flex flex-col">
+    <HeaderLlantera />
+    <CaracteristicasLlantera />
+    <ModulosOperativosLlantera />
+
+<!-- Nuevo componente insertado aquí -->
+    <AccesoDispositivosLlantera />
+
+    <PlanesPrecioLlantera />
+    <DemoLlantera />
+  </main>
+</Layout>

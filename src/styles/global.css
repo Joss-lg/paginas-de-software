@@ -1,1 +1,100 @@
 @import "tailwindcss";
+
+/*
+  Animaciones personalizadas para Tailwind CSS v4.
+  Agrega este bloque a tu hoja de estilos global, la misma donde tienes:
+    @import "tailwindcss";
+
+  Una vez agregado, las clases `animate-card-float`, `animate-scan-laser`,
+  `animate-row-in`, `animate-total-glow`, `animate-ticket-slide` y
+  `animate-badge-float` quedan disponibles como utilidades normales de
+  Tailwind en cualquier componente, junto con `motion-reduce:animate-none`
+  (utilidad nativa de Tailwind) para respetar accesibilidad.
+*/
+
+@theme {
+  --animate-card-float: card-float 5s ease-in-out infinite;
+  --animate-scan-laser: scan-laser 2.2s ease-in-out infinite;
+  --animate-row-in: row-in 4.4s ease-in-out infinite;
+  --animate-total-glow: total-glow 4.4s ease-in-out infinite;
+  --animate-ticket-slide: ticket-slide 4.4s ease-in-out infinite;
+  --animate-badge-float: badge-float 3.6s ease-in-out infinite;
+}
+
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0.3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.3deg);
+  }
+}
+
+@keyframes scan-laser {
+  0%,
+  100% {
+    top: 4px;
+    opacity: 0.9;
+  }
+  50% {
+    top: calc(100% - 6px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes row-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  8%,
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes total-glow {
+  0%,
+  70% {
+    background-color: transparent;
+  }
+  82% {
+    background-color: rgb(220 38 38 / 0.06);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes ticket-slide {
+  0%,
+  60% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  75%,
+  92% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes badge-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

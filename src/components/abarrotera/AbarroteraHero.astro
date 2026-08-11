@@ -1,0 +1,141 @@
+<section class="relative pt-28 pb-36 overflow-hidden bg-red-600">
+
+  <!-- Textura de fondo -->
+  <div
+    class="absolute inset-0 opacity-[0.08] pointer-events-none"
+    style="background-image: radial-gradient(circle, #ffffff 1.5px, transparent 1.5px); background-size: 26px 26px;"
+  ></div>
+
+  <div class="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-amber-400/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-[26rem] h-[26rem] bg-red-900/40 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+
+      <!-- Texto -->
+      <div class="lg:w-1/2 text-white">
+        <p class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-semibold tracking-wide uppercase text-xs px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-300 animate-pulse"></span>
+          Sistema especial para abarroteras y minimercados
+        </p>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-[1.05] tracking-tight text-white">
+          Control total de tu negocio y <span class="text-rose-200">ventas sin filas.</span>
+        </h1>
+        <p class="text-xl text-white/90 mb-8 max-w-lg leading-relaxed">
+          Agiliza el cobro con código de barras, lleva el registro exacto de tu dinero en caja, controla tus productos y revisa ganancias diarias de forma muy sencilla.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="https://wa.me/521XXXXXXXXXX?text=Hola,%20me%20interesa%20agendar%20una%20demostración%20del%20sistema%20para%20abarroteras"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-white text-red-600 font-bold px-8 py-3.5 rounded-xl hover:bg-rose-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-red-900/30 text-center flex items-center justify-center gap-2"
+          >
+            <span>Agendar demostración</span>
+            <svg class="w-5 h-5 text-red-600 transform transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+          <a
+            href="#precios"
+            class="bg-red-700/50 hover:bg-red-700 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 transition-all duration-300 text-center flex items-center justify-center gap-2 hover:border-white/40"
+          >
+            <span>Ver planes y precios</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mt-10 text-white/80 text-sm">
+          <div class="flex items-center gap-2">
+            <span class="text-rose-200">✓</span> Lector de código de barras
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-rose-200">✓</span> Cortes de caja seguros
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-rose-200">✓</span> Reportes diarios y mensuales
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: Widget de escaneo y cobro animado -->
+      <div class="lg:w-1/2 relative mt-10 lg:mt-0">
+
+        <!-- Glow detrás de la tarjeta -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-lg mx-auto bg-white rounded-3xl shadow-2xl shadow-red-950/30 border border-white/40 p-8 z-20 animate-card-float motion-reduce:animate-none">
+
+          <!-- Encabezado: caja en vivo -->
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-sm font-black text-stone-400 uppercase tracking-widest">Caja 1</span>
+            <span class="flex items-center gap-2 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-full">
+              <span class="relative flex w-2 h-2">
+                <span class="absolute inline-flex w-full h-full rounded-full bg-emerald-400 opacity-75 animate-ping motion-reduce:hidden"></span>
+                <span class="relative inline-flex w-2 h-2 rounded-full bg-emerald-500"></span>
+              </span>
+              En vivo
+            </span>
+          </div>
+
+          <!-- Barra de escaneo con láser -->
+          <div class="relative bg-stone-50 border border-stone-100 rounded-2xl p-5 mb-6 overflow-hidden">
+            <p class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3">Escaneando producto</p>
+            <div class="relative h-14 flex items-end gap-1 px-2">
+              <span class="bg-stone-800 w-1 h-full"></span>
+              <span class="bg-stone-800 w-0.5 h-9"></span>
+              <span class="bg-stone-800 w-1.5 h-full"></span>
+              <span class="bg-stone-800 w-0.5 h-7"></span>
+              <span class="bg-stone-800 w-1 h-full"></span>
+              <span class="bg-stone-800 w-0.5 h-11"></span>
+              <span class="bg-stone-800 w-1.5 h-full"></span>
+              <span class="bg-stone-800 w-0.5 h-8"></span>
+              <span class="bg-stone-800 w-1 h-full"></span>
+              <span class="bg-stone-800 w-0.5 h-9"></span>
+              <span class="bg-stone-800 w-1.5 h-full"></span>
+              <span class="bg-stone-800 w-1 h-7"></span>
+              <span class="bg-stone-800 w-0.5 h-full"></span>
+              <span class="bg-stone-800 w-1 h-11"></span>
+              <span class="bg-stone-800 w-0.5 h-full"></span>
+              <!-- Láser -->
+              <div class="absolute left-0 right-0 top-1 h-0.5 bg-red-500 shadow-[0_0_10px_3px_rgba(239,68,68,0.6)] animate-scan-laser motion-reduce:animate-none"></div>
+            </div>
+          </div>
+
+          <!-- Lista de productos apareciendo -->
+          <div class="space-y-3 mb-5">
+            <div class="flex items-center justify-between text-base opacity-0 animate-row-in motion-reduce:opacity-100 motion-reduce:animate-none">
+              <span class="text-stone-600">Refresco 600ml</span>
+              <span class="font-semibold text-stone-900">$18.00</span>
+            </div>
+            <div class="flex items-center justify-between text-base opacity-0 animate-row-in [animation-delay:1.1s] motion-reduce:opacity-100 motion-reduce:animate-none">
+              <span class="text-stone-600">Pan de caja</span>
+              <span class="font-semibold text-stone-900">$34.50</span>
+            </div>
+            <div class="flex items-center justify-between text-base opacity-0 animate-row-in [animation-delay:2.2s] motion-reduce:opacity-100 motion-reduce:animate-none">
+              <span class="text-stone-600">Detergente 1kg</span>
+              <span class="font-semibold text-stone-900">$62.00</span>
+            </div>
+          </div>
+
+          <!-- Total -->
+          <div class="flex items-center justify-between border-t border-stone-100 pt-5 rounded-xl px-3 -mx-3 animate-total-glow motion-reduce:animate-none">
+            <span class="text-sm font-bold text-stone-400 uppercase tracking-wider">Total a pagar</span>
+            <span class="text-3xl font-extrabold text-red-600">$114.50</span>
+          </div>
+        </div>
+
+        <!-- Ticket imprimiéndose -->
+        <div class="absolute -bottom-7 right-4 md:right-10 bg-white shadow-xl px-5 py-4 flex items-center gap-3 z-30 opacity-0 animate-ticket-slide [animation-delay:2.6s] motion-reduce:opacity-100 motion-reduce:animate-none [clip-path:polygon(0%_8%,6%_0%,12%_8%,18%_0%,24%_8%,30%_0%,36%_8%,42%_0%,48%_8%,54%_0%,60%_8%,66%_0%,72%_8%,78%_0%,84%_8%,90%_0%,96%_8%,100%_0%,100%_100%,0%_100%)]">
+          <span class="text-xl">🧾</span>
+          <div class="text-sm leading-tight text-left">
+            <p class="font-bold text-stone-900">Ticket impreso</p>
+            <p class="text-stone-500">al instante</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
