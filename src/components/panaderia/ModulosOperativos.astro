@@ -45,36 +45,36 @@
                 </ul>
             </div>
 
-            <!-- Tarjeta de Módulos (Animación de elevación) -->
-            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl">
-                <h3 class="text-xl font-bold text-gray-900">Módulos del Sistema</h3>
+            <!-- Tarjeta de Módulos (Movimiento dinámico hacia arriba y ligeramente a la derecha con rotación positiva) -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 space-y-4 transition-all duration-700 ease-out hover:-translate-y-2 hover:translate-x-1 hover:rotate-1 hover:shadow-2xl hover:border-[#c48b47]/60 group">
+                <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#c48b47]">Módulos del Sistema</h3>
                 <div class="space-y-3 text-sm text-gray-800">
                     
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3">
-                        <span class="text-[#c48b47]">🔹</span>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3 transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:border-[#c48b47]/40 group-hover:bg-[#c48b47]/5">
+                        <span class="text-[#c48b47] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">🔹</span>
                         <span>Gestión de Categorías, Productos y Gastos</span>
                     </div>
 
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3">
-                        <span class="text-[#c48b47]">🔹</span>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3 transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:border-[#c48b47]/40 group-hover:bg-[#c48b47]/5">
+                        <span class="text-[#c48b47] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">🔹</span>
                         <span>Control estricto por Roles y Permisos</span>
                     </div>
 
-                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3">
-                        <span class="text-[#c48b47]">🔹</span>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 font-medium flex items-center gap-3 transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:border-[#c48b47]/40 group-hover:bg-[#c48b47]/5">
+                        <span class="text-[#c48b47] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">🔹</span>
                         <span>Impresión de Tickets y Reportes Financieros</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Columna Derecha (Animación de elevación) -->
+        <!-- Columna Derecha (Movimiento dinámico cruzado hacia arriba y ligeramente a la izquierda con rotación negativa) -->
         <div class="h-full flex items-center justify-center">
-            <div class="w-full bg-white p-2 rounded-2xl shadow-2xl border border-gray-200 flex justify-center items-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl">
+            <div class="w-full bg-white p-2 rounded-2xl shadow-2xl border border-gray-200 flex justify-center items-center transition-all duration-700 ease-out hover:-translate-y-2.5 hover:-translate-x-1 hover:-rotate-1 hover:shadow-[0_25px_50px_-12px_rgba(196,139,71,0.5)] hover:border-[#c48b47] group">
                 <img 
                     src="/public/modulos operativos pan.webp" 
                     alt="Vista de los Módulos Operativos" 
-                    class="w-full max-h-[32rem] object-contain rounded-xl"
+                    class="w-full max-h-[32rem] object-contain rounded-xl transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     loading="lazy"
                 />
             </div>

@@ -1,0 +1,166 @@
+---
+// src/components/restaurantes/VideoDemoRestaurante.astro
+interface Props {
+  videoSrc?: string;
+  posterImage?: string;
+  youtubeEmbedUrl?: string;
+}
+
+const { 
+  videoSrc = "/videos/demo-comandas-restaurante.mp4",
+  posterImage = "/images/video-poster-preview.webp",
+  youtubeEmbedUrl
+} = Astro.props;
+
+const momentosClave = [
+  { 
+    tiempo: "00:15", 
+    titulo: "Toma de comanda en tablet", 
+    desc: "Apertura de mesa, asignación de comensales y selección rápida con modificadores.",
+    
+  },
+  { 
+    tiempo: "00:45", 
+    titulo: "Envío instantáneo a Cocina", 
+    desc: "Clasificación automática e impresión/pantalla para cocina y barra de bebidas.",
+    
+  },
+  { 
+    tiempo: "01:20", 
+    titulo: "Cierre, cuentas separadas y caja", 
+    desc: "División de cuenta por comensal, múltiples métodos de pago y corte de turno.",
+    
+  },
+];
+---
+
+<section id="demo-video" class="py-24 bg-slate-950 text-white relative overflow-hidden">
+  
+  <!-- Iluminación ambiental de fondo -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
+  <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-tr from-orange-600/15 via-amber-500/10 to-transparent blur-3xl rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Encabezado de la Sección -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-4 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+        Demostración en Vivo
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+        Mira la velocidad del sistema en <span class="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent font-extrabold">tiempo real</span>
+      </h2>
+      <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed font-normal">
+        Descubre en menos de 2 minutos cómo se conectan las comandas en mesa con la cocina y la caja.
+      </p>
+    </div>
+
+    <!-- Layout Principal: Tablet Horizontal + Panel de Capítulos -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- CONTENEDOR MOCKUP DE TABLET HORIZONTAL -->
+      <div class="lg:col-span-8 flex justify-center">
+        <div class="relative w-full max-w-3xl bg-slate-900 border-[6px] border-slate-800 rounded-[38px] p-3 sm:p-4 shadow-2xl shadow-orange-950/30">
+          
+          <!-- Lente / Cámara frontal superior de la tablet -->
+          <div class="absolute top-1/2 -left-3 -translate-y-1/2 hidden sm:flex flex-col items-center">
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-950 border border-slate-700"></span>
+          </div>
+
+          <!-- Barra Superior de Estado / Header de la Tablet -->
+          <div class="flex items-center justify-between px-3 pb-2 text-[11px] font-mono text-slate-400 border-b border-slate-800/60 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-slate-300 font-sans font-semibold">POS Tablet — Modo Demo</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-bold text-[10px]">1080p HD</span>
+              <span class="hidden sm:inline text-slate-500">Wi-Fi 5G</span>
+            </div>
+          </div>
+
+          <!-- Pantalla de la Tablet (Video) -->
+          <div class="relative rounded-[22px] overflow-hidden bg-slate-950 aspect-video border border-slate-800/90 shadow-inner">
+            {youtubeEmbedUrl ? (
+              <iframe 
+                src={youtubeEmbedUrl} 
+                title="Demostración del sistema para restaurantes en tablet"
+                class="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            ) : (
+              <video 
+                controls 
+                preload="metadata"
+                poster={posterImage}
+                class="w-full h-full object-cover"
+              >
+                <source src={videoSrc} type="video/mp4" />
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
+            )}
+          </div>
+
+          <!-- Home Indicator (Barra táctil inferior de la tablet) -->
+          <div class="flex justify-center mt-3">
+            <span class="w-28 h-1 rounded-full bg-slate-700/80"></span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Panel de Capítulos y Puntos Destacados -->
+      <div class="lg:col-span-4 space-y-4">
+        
+        <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+          <h3 class="text-base font-bold text-white flex items-center gap-2 tracking-wide">
+            <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Capítulos en Video
+          </h3>
+          <span class="text-xs text-slate-500 font-mono">3 momentos</span>
+        </div>
+
+        <div class="space-y-3">
+          {momentosClave.map((item) => (
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-orange-500/50 hover:bg-slate-900 transition-all duration-300 group cursor-pointer shadow-sm">
+              <div class="flex items-start justify-between gap-3 mb-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">item.iconos</span>
+                  <h4 class="text-sm font-bold text-slate-200 group-hover:text-orange-400 transition-colors">{item.titulo}</h4>
+                </div>
+                <span class="text-xs font-mono px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-400 border border-orange-500/20 font-bold shrink-0">
+                  {item.tiempo}
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed font-normal pl-7">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Botón de Acción Directo -->
+        <div class="pt-2">
+          <a 
+            href="#contacto" 
+            class="group w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-extrabold text-sm text-center transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-600/25 hover:shadow-orange-600/40 hover:scale-[1.01]"
+          >
+            <span>Probemos este flujo en tu local</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

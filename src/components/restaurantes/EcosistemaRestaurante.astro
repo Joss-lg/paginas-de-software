@@ -17,37 +17,11 @@ const { dashboardImage = "/public/restaurante/dashboard.webp" } = Astro.props;
           Flujo de Trabajo Operativo
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-          Sincronización Total entre Sala, Cocina y Caja
+          Sincronización Total entre Cocina y Caja
         </h2>
         <p class="text-slate-300 text-base leading-relaxed">
           Diseñado específicamente para eliminar confusiones en platillos, reducir los tiempos de espera y mantener el control financiero exacto del turno.
         </p>
-
-        <div class="space-y-4 pt-2">
-          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">1</span>
-            <div>
-              <h3 class="font-bold text-white text-sm">Levantamiento en Mesa</h3>
-              <p class="text-xs text-slate-400 mt-0.5">El mesero toma el pedido en tablet o teléfono indicando mesa, comensales y notas del platillo.</p>
-            </div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">2</span>
-            <div>
-              <h3 class="font-bold text-white text-sm">Impresión o Monitor en Cocina</h3>
-              <p class="text-xs text-slate-400 mt-0.5">La orden llega instantáneamente a cocina o barra clasificada por áreas de preparación.</p>
-            </div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-            <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm shrink-0">3</span>
-            <div>
-              <h3 class="font-bold text-white text-sm">Cobro y Cierre de Mesa</h3>
-              <p class="text-xs text-slate-400 mt-0.5">Caja recibe la solicitud de ticket, permite división de cuenta y procesa el pago sin descuadres.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Imagen Real de la Consola / Dashboard -->
@@ -65,7 +39,7 @@ const { dashboardImage = "/public/restaurante/dashboard.webp" } = Astro.props;
           </div>
 
           <!-- Contenedor de la Imagen del Dashboard -->
-          <div class="relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 aspect-[16/10]">
+          <div class="relative rounded-xl overflow-hidden bg-slate-900 border border-slate-800 aspect-[14/8]">
             <img 
               src={dashboardImage} 
               alt="Dashboard principal del sistema de restaurantes" 
