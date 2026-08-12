@@ -1,5 +1,39 @@
 <section class="relative bg-orange-600 pt-28 pb-36 overflow-hidden">
 
+  <!-- Estilos personalizados: vapor y flotado de insignias -->
+  <style>
+    @keyframes steamRise {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      20% { opacity: 0.5; }
+      100% { transform: translateY(-70px) scale(1.6); opacity: 0; }
+    }
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.06); }
+    }
+    /* Lluvia de pepperoni */
+    @keyframes pepperoniFall {
+      0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+    .animate-steam { animation: steamRise 3.2s ease-out infinite; }
+    .animate-badge-float { animation: badgeFloat 3.6s ease-in-out infinite; }
+    .animate-glow-pulse { animation: glowPulse 3.5s ease-in-out infinite; }
+    .animate-pepperoni-fall { animation: pepperoniFall linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-steam, .animate-badge-float, .animate-glow-pulse, .animate-spin, .animate-pepperoni-fall {
+        animation: none !important;
+      }
+    }
+  </style>
+
   <!-- Textura de fondo -->
   <div
     class="absolute inset-0 opacity-[0.08] pointer-events-none"
@@ -8,6 +42,22 @@
 
   <div class="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-amber-400/30 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 right-0 w-[26rem] h-[26rem] bg-orange-800/40 rounded-full blur-3xl"></div>
+
+  <!-- Lluvia de pepperoni -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <span class="absolute w-4 h-4 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 5%;  animation-duration: 6s;   animation-delay: 0s;"></span>
+    <span class="absolute w-3 h-3 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 12%; animation-duration: 7.5s; animation-delay: 1.2s;"></span>
+    <span class="absolute w-5 h-5 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 20%; animation-duration: 5.5s; animation-delay: 2.5s;"></span>
+    <span class="absolute w-3 h-3 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 30%; animation-duration: 8s;   animation-delay: 0.6s;"></span>
+    <span class="absolute w-4 h-4 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 40%; animation-duration: 6.8s; animation-delay: 3s;"></span>
+    <span class="absolute w-5 h-5 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 50%; animation-duration: 7s;   animation-delay: 1.8s;"></span>
+    <span class="absolute w-3 h-3 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 60%; animation-duration: 5.8s; animation-delay: 0.3s;"></span>
+    <span class="absolute w-4 h-4 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 68%; animation-duration: 7.2s; animation-delay: 2.1s;"></span>
+    <span class="absolute w-5 h-5 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 76%; animation-duration: 6.3s; animation-delay: 3.4s;"></span>
+    <span class="absolute w-3 h-3 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 84%; animation-duration: 8.4s; animation-delay: 0.9s;"></span>
+    <span class="absolute w-4 h-4 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 92%; animation-duration: 6.6s; animation-delay: 2.7s;"></span>
+    <span class="absolute w-3 h-3 bg-red-600 rounded-full shadow-md animate-pepperoni-fall" style="left: 98%; animation-duration: 5.2s; animation-delay: 1.5s;"></span>
+  </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex flex-col lg:flex-row items-center gap-16">
@@ -25,7 +75,6 @@
           Toma pedidos, gestiona clientes, emite tickets y visualiza tus ventas diarias desde una sola terminal. Información segura con perfiles de acceso.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <!-- Botón actualizado con enlace a WhatsApp, target="_blank" y las animaciones fluidas -->
           <a href="https://wa.me/521XXXXXXXXXX?text=Hola,%20me%20interesa%20agendar%20una%20demostración%20de%20la%20plataforma%20para%20mi%20pizzería" target="_blank" rel="noopener noreferrer" class="group relative bg-white text-orange-600 font-bold px-8 py-3.5 rounded-xl hover:bg-orange-50 transition-all duration-300 transform hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-orange-900/30 hover:shadow-xl hover:shadow-orange-900/40 text-center flex items-center justify-center gap-2">
             <span>Agendar demostración</span>
             <svg class="w-5 h-5 text-orange-600 transform transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,19 +108,62 @@
         </div>
       </div>
 
-      <!-- Mockup -->
-      <div class="lg:w-1/2 relative mt-10 lg:mt-0">
-        <div class="relative bg-gray-900 rounded-xl p-2 shadow-2xl border-b-8 border-gray-800 transform lg:-rotate-1 hover:rotate-0 transition-transform duration-500 z-20">
-          <div class="bg-white rounded-lg aspect-[16/9] overflow-hidden shadow-inner flex items-center justify-center">
-            <img
-              src="/public/hero-pos-mockup.webp"
-              alt="Visualización general del software PizzaFlow"
-              class="w-full h-full object-contain"
-            />
+      <!-- Pizza giratoria recién horneada -->
+      <div class="lg:w-1/2 relative mt-10 lg:mt-0 flex items-center justify-center">
+
+        <!-- Resplandor cálido detrás -->
+        <div class="absolute w-80 h-80 md:w-96 md:h-96 bg-amber-300/40 rounded-full blur-3xl animate-glow-pulse"></div>
+
+        <!-- Vapor subiendo -->
+        <div class="absolute top-6 left-[42%] w-6 h-6 bg-white/30 rounded-full blur-sm animate-steam"></div>
+        <div class="absolute top-10 left-[52%] w-8 h-8 bg-white/20 rounded-full blur-md animate-steam" style="animation-delay: 1s;"></div>
+        <div class="absolute top-8 left-[47%] w-5 h-5 bg-white/25 rounded-full blur-sm animate-steam" style="animation-delay: 2s;"></div>
+
+        <!-- Plato / sombra -->
+        <div class="relative">
+          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-8 bg-black/25 rounded-full blur-xl"></div>
+
+          <!-- Pizza girando -->
+          <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full shadow-2xl border-[10px] border-amber-800 bg-gradient-to-br from-amber-500 to-amber-600 animate-spin [animation-duration:16s]">
+            <div class="absolute inset-3 rounded-full bg-gradient-to-br from-yellow-300 to-amber-400 overflow-hidden">
+
+              <!-- Pepperoni -->
+              <span class="absolute top-[18%] left-[22%] w-7 h-7 bg-red-600 rounded-full shadow-inner"></span>
+              <span class="absolute top-[30%] right-[16%] w-6 h-6 bg-red-600 rounded-full shadow-inner"></span>
+              <span class="absolute bottom-[22%] left-[16%] w-6 h-6 bg-red-600 rounded-full shadow-inner"></span>
+              <span class="absolute bottom-[16%] right-[26%] w-7 h-7 bg-red-600 rounded-full shadow-inner"></span>
+              <span class="absolute top-[46%] left-[46%] w-6 h-6 bg-red-600 rounded-full shadow-inner"></span>
+
+              <!-- Albahaca -->
+              <span class="absolute top-[12%] right-[34%] w-4 h-3 bg-emerald-600 rounded-full rotate-45"></span>
+              <span class="absolute bottom-[30%] left-[36%] w-4 h-3 bg-emerald-600 rounded-full -rotate-12"></span>
+              <span class="absolute top-[58%] right-[14%] w-4 h-3 bg-emerald-600 rounded-full rotate-12"></span>
+
+              <!-- Queso derretido -->
+              <span class="absolute top-[8%] left-[48%] w-3 h-3 bg-yellow-100 rounded-full"></span>
+              <span class="absolute bottom-[10%] right-[42%] w-3.5 h-3.5 bg-yellow-100 rounded-full"></span>
+            </div>
           </div>
-          <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-32 h-4 bg-gray-800"></div>
-          <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-48 h-2 bg-gray-900 rounded-t-sm"></div>
         </div>
+
+        <!-- Insignia flotante: pedido listo -->
+        <div class="absolute -left-2 md:-left-8 top-6 bg-white text-stone-900 rounded-2xl shadow-xl px-4 py-3 hidden md:flex items-center gap-3 z-30 animate-badge-float">
+          <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">✓</div>
+          <div class="text-xs leading-tight">
+            <p class="font-bold text-stone-900">Pedido listo</p>
+            <p class="text-stone-500">en 8 minutos</p>
+          </div>
+        </div>
+
+        <!-- Insignia flotante: nuevo pedido -->
+        <div class="absolute -right-2 md:-right-6 bottom-6 bg-stone-900 text-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 z-30 animate-badge-float" style="animation-delay: 1.2s;">
+          <div class="w-9 h-9 rounded-full bg-amber-400/20 text-amber-300 flex items-center justify-center font-bold">＋</div>
+          <div class="text-xs leading-tight">
+            <p class="font-bold text-white">Nuevo pedido</p>
+            <p class="text-stone-400">mesa 4</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
