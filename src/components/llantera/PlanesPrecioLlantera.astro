@@ -5,70 +5,73 @@
     
     <!-- Encabezado -->
     <div class="text-center mb-16">
-      <h2 id=planesllantera class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Inversión Tecnológica</h2>
+      <h2 id="planesllantera" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Inversión Tecnológica</h2>
       <p class="text-slate-600 max-w-xl mx-auto text-lg">
         Planes diseñados para escalar la operación de su llantera. Aproveche nuestro esquema de pago anual y obtenga dos meses de servicio sin costo adicional.
       </p>
     </div>
 
     <!-- Grid de 2 planes -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
       
       <!-- Plan Matriz -->
-      <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 flex flex-col">
-        <h3 class="text-2xl font-bold text-slate-900">Plan Matriz</h3>
-        <p class="text-slate-500 text-sm mt-2">Operación centralizada para 1 sucursal.</p>
-        <div class="my-6">
-          <span class="text-4xl font-extrabold text-slate-900">$1,500</span>
-          <span class="text-slate-500 text-sm">/ mes (MXN)</span>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 flex flex-col justify-between transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-4 border border-slate-200">Inicial</span>
+          <h3 class="text-2xl font-bold text-slate-900">Plan Matriz</h3>
+          <p class="text-slate-500 text-sm mt-2">Operación centralizada para 1 sucursal.</p>
+          
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-slate-900">$1,500</span>
+            <span class="text-slate-500 text-sm">MXN / mes</span>
+          </div>
+
+          <div class="mb-6 p-4 bg-blue-50 rounded-xl border border-blue-100">
+            <p class="text-blue-900 text-sm font-semibold">Pago Anual: $15,000 MXN (Ahorras 2 meses)</p>
+          </div>
+
+          <ul class="space-y-4 mb-8 text-slate-700">
+            <li class="flex items-start"><span class="text-blue-600 mr-3 font-bold">✓</span> Inventarios detallados en neumáticos y accesorios</li>
+            <li class="flex items-start"><span class="text-blue-600 mr-3 font-bold">✓</span> Generación ágil de cotizaciones</li>
+            <li class="flex items-start"><span class="text-blue-600 mr-3 font-bold">✓</span> Órdenes de compra a proveedores</li>
+            <li class="flex items-start"><span class="text-blue-600 mr-3 font-bold">✓</span> Punto de venta (POS) integrado</li>
+          </ul>
         </div>
-        <div class="mb-6 p-4 bg-green-50 rounded-xl border border-green-100">
-          <p class="text-green-800 text-sm font-semibold">Pago Anual: $15,000 MXN (Ahorras 2 meses)</p>
-        </div>
-        <ul class="space-y-4 mb-8 flex-grow">
-          <li class="flex items-center text-slate-700">
-            <span class="text-blue-500 mr-3">✓</span> Inventarios detallados
-          </li>
-          <li class="flex items-center text-slate-700">
-            <span class="text-blue-500 mr-3">✓</span> Generación de cotizaciones
-          </li>
-          <li class="flex items-center text-slate-700">
-            <span class="text-blue-500 mr-3">✓</span> Órdenes de compra
-          </li>
-          <li class="flex items-center text-slate-700">
-            <span class="text-blue-500 mr-3">✓</span> Punto de venta integrado
-          </li>
-        </ul>
+        <a href="#demollantera" class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl text-center transition-all shadow-md">Elegir Plan</a>
       </div>
 
-      <!-- Plan Red Multisucursal -->
-      <div class="bg-slate-900 rounded-3xl p-8 shadow-xl border border-slate-800 flex flex-col relative transform md:-translate-y-4">
+      <!-- Plan Red Multisucursal con efecto de brillo (glow) -->
+      <div class="bg-slate-900 rounded-3xl p-8 shadow-xl border border-slate-800 flex flex-col justify-between relative transform md:-translate-y-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-blue-500 cursor-pointer">
+        
         <div class="absolute top-0 right-8 transform -translate-y-1/2">
-          <span class="bg-blue-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">Alto Rendimiento</span>
+          <span class="bg-blue-600 text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full shadow-md">
+            Popular / Alto Rendimiento
+          </span>
         </div>
-        <h3 class="text-2xl font-bold text-white">Plan Red Multisucursal</h3>
-        <p class="text-slate-400 text-sm mt-2">Incluye 3 sucursales (+ $500 por sucursal extra).</p>
-        <div class="my-6">
-          <span class="text-4xl font-extrabold text-white">$2,999</span>
-          <span class="text-slate-400 text-sm">/ mes (MXN)</span>
+
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-slate-800 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 border border-slate-700">Avanzado</span>
+          <h3 class="text-2xl font-bold text-white">Plan Red Multisucursal</h3>
+          <p class="text-slate-400 text-sm mt-2">Incluye 3 sucursales (+ $500 por sucursal extra).</p>
+          
+          <div class="my-6">
+            <span class="text-4xl font-extrabold text-white">$2,999</span>
+            <span class="text-slate-400 text-sm">MXN / mes</span>
+          </div>
+
+          <div class="mb-6 p-4 bg-blue-950/60 rounded-xl border border-blue-900">
+            <p class="text-blue-200 text-sm font-semibold">Pago Anual: $29,990 MXN (Ahorras 2 meses)</p>
+          </div>
+
+          <ul class="space-y-4 mb-8 text-slate-300">
+            <li class="flex items-start"><span class="text-blue-400 mr-3 font-bold">✓</span> Conexión de stock en tiempo real entre sucursales</li>
+            <li class="flex items-start"><span class="text-blue-400 mr-3 font-bold">✓</span> Pedidos y ventas a crédito corporativo</li>
+            <li class="flex items-start"><span class="text-blue-400 mr-3 font-bold">✓</span> Roles gerenciales avanzados en la nube</li>
+            <li class="flex items-start"><span class="text-blue-400 mr-3 font-bold">✓</span> Escalabilidad ilimitada de red</li>
+          </ul>
         </div>
-        <div class="mb-6 p-4 bg-blue-900/50 rounded-xl border border-blue-800">
-          <p class="text-blue-200 text-sm font-semibold">Pago Anual: $29,990 MXN (Ahorras 2 meses)</p>
-        </div>
-        <ul class="space-y-4 mb-8 flex-grow">
-          <li class="flex items-center text-slate-300">
-            <span class="text-blue-400 mr-3">✓</span> Conexión de stock en tiempo real
-          </li>
-          <li class="flex items-center text-slate-300">
-            <span class="text-blue-400 mr-3">✓</span> Pedidos a crédito
-          </li>
-          <li class="flex items-center text-slate-300">
-            <span class="text-blue-400 mr-3">✓</span> Roles gerenciales en la nube
-          </li>
-          <li class="flex items-center text-slate-300">
-            <span class="text-blue-400 mr-3">✓</span> Escalabilidad ilimitada
-          </li>
-        </ul>
+
+        <a href="#demollantera" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl text-center transition-all shadow-lg">Elegir Plan</a>
       </div>
 
     </div>

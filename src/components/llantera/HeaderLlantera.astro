@@ -1,27 +1,108 @@
 ---
 ---
-<!-- Definición de la animación para el efecto de letrero colgante -->
 <style>
-  @keyframes hanging-sway {
-    0%, 100% { transform: rotate(3deg); }
-    50% { transform: rotate(-3deg); }
+  /* Animación de la llanta (Caída, rebotes, deformación y salida) */
+  @keyframes tire-movement {
+    0% { transform: translateY(-400px) scaleY(1.2) scaleX(0.8); }
+    10% { transform: translateY(0) scaleX(1.15) scaleY(0.85); }
+    15% { transform: translateY(-80px) scale(1); }
+    20% { transform: translateY(0) scaleX(1.08) scaleY(0.92); }
+    25% { transform: translateY(-30px) scale(1); }
+    28% { transform: translateY(0) scaleX(1.02) scaleY(0.98); }
+    30% { transform: translateY(0) scale(1); }
+    40% { transform: translateX(0); }
+    50% { transform: translateX(-40px); }
+    100% { transform: translateX(800px); }
   }
-  .animate-hanging-sway {
-    animation: hanging-sway 6s ease-in-out infinite;
+
+  /* Animación de giro de los trapecios (solo después de los rebotes) */
+  @keyframes holes-spin {
+    0%, 30% { transform: rotate(0deg); }
+    100% { transform: rotate(1440deg); }
+  }
+
+  .animate-tire {
+    animation: tire-movement 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+
+  .animate-holes {
+    animation: holes-spin 7s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+</style>
+
+<!--
+  is:global es OBLIGATORIO aquí: los <span> de las partículas los crea el
+  JavaScript en runtime (document.createElement), y el CSS "scoped" normal de
+  Astro solo se aplica a elementos que existen en el HTML compilado del
+  componente. Si esto fuera un <style> normal, estas reglas nunca
+  coincidirían con las partículas y no se verían.
+-->
+<style is:global>
+  #tireStage {
+    position: relative;
+    overflow: visible;
+  }
+
+  #impactParticles,
+  #smokeParticles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 20;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform, opacity;
+  }
+
+  @keyframes impact-particle {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--dx), var(--dy)) scale(0.2);
+    }
+  }
+
+  @keyframes smoke-particle {
+    0% {
+      opacity: 0.55;
+      transform: translate(0, 0) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--dx), var(--dy)) scale(2.2);
+    }
+  }
+
+  .impact-p {
+    animation: impact-particle 480ms ease-out forwards;
+  }
+
+  .smoke-p {
+    animation: smoke-particle 900ms ease-out forwards;
+    filter: blur(1px);
   }
 </style>
 
 <section class="relative bg-slate-900 text-white pt-24 pb-32 overflow-hidden border-b border-slate-800">
   <div class="absolute inset-0 bg-[url('/patron-grid.svg')] opacity-10"></div>
   <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-90"></div>
-  
+
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
+
       <!-- Texto Principal -->
       <div>
         <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 text-blue-300 text-sm font-semibold mb-6 border border-blue-700">
-          Software Enterprise para la Industria Llantera
+          Software para la Industria Llantera
         </span>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
           Sistema Llantero <br/><span class="text-blue-500">Multisucursal</span>
@@ -43,7 +124,7 @@
           </a>
         </div>
 
-        <!-- Certificaciones / Features -->
+        <!-- Certificaciones / Features (Restauradas) -->
         <div class="flex flex-wrap gap-6">
           <div class="flex items-center gap-2 text-slate-300 font-medium">
             <span class="flex items-center justify-center w-5 h-5 rounded-full bg-blue-900/30 border border-blue-500/50 text-blue-400">✓</span>
@@ -60,14 +141,174 @@
         </div>
       </div>
 
-      <!-- Placeholder Imagen Hero (Con animación de péndulo/letrero) -->
-      <div class="origin-top animate-hanging-sway w-full aspect-[4/3] lg:aspect-square xl:aspect-[4/3] bg-slate-800/60 rounded-3xl border border-slate-700 border-dashed flex flex-col items-center justify-center shadow-2xl backdrop-blur-sm relative overflow-hidden group">
-        <svg class="w-16 h-16 text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
-        <span class="text-slate-400 font-medium text-sm px-6 text-center">Espacio para Imagen: <br/> Mockup del Sistema en Computadora</span>
+      <!-- Columna derecha: Llanta animada -->
+      <div class="flex justify-center items-center h-[400px]" id="tireStage">
+        <div class="animate-tire" id="tireWrapper">
+          <svg viewBox="0 0 200 200" class="w-[275px] h-[275px] drop-shadow-2xl">
+            <!-- Caucho Negro -->
+            <circle cx="100" cy="100" r="90" fill="#09090b" stroke="#000" stroke-width="15"/>
+            <!-- Rin Gris -->
+            <circle cx="100" cy="100" r="65" fill="#71717a"/>
+
+            <!-- Grupo de trapecios (giratorios) -->
+            <g class="animate-holes">
+              <path fill="#3f3f46" transform="rotate(0, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+              <path fill="#3f3f46" transform="rotate(60, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+              <path fill="#3f3f46" transform="rotate(120, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+              <path fill="#3f3f46" transform="rotate(180, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+              <path fill="#3f3f46" transform="rotate(240, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+              <path fill="#3f3f46" transform="rotate(300, 100, 100)" d="M92 75 L108 75 L116 44 A 2 2 0 0 0 114 42 L86 42 A 2 2 0 0 0 84 44 Z" />
+            </g>
+
+            <!-- Centro del rin -->
+            <circle cx="100" cy="100" r="20" fill="#3f3f46"/>
+            <circle cx="100" cy="100" r="8" fill="#18181b"/>
+          </svg>
+        </div>
+
+        <!-- Capas de partículas (van encima de la llanta pero no capturan clics) -->
+        <div id="impactParticles"></div>
+        <div id="smokeParticles"></div>
       </div>
 
     </div>
   </div>
 </section>
+
+<script>
+  // --- Sistema de partículas sincronizado con la animación CSS de la llanta ---
+  // IMPORTANTE: DURATION debe coincidir siempre con el "7s" del keyframe tire-movement.
+  const DURATION = 7000;
+
+  // Instantes de rebote leídos directamente de tire-movement (en % del ciclo -> ms)
+  const BOUNCE_TIMES = [0.10, 0.20, 0.25, 0.28].map((p) => p * DURATION);
+
+  function setupTireParticles() {
+    const stage = document.getElementById('tireStage');
+    const wrapper = document.getElementById('tireWrapper');
+    const impactLayer = document.getElementById('impactParticles');
+    const smokeLayer = document.getElementById('smokeParticles');
+
+    if (!stage || !wrapper || !impactLayer || !smokeLayer) return;
+
+    let timers = [];
+    let smokeIntervalId = null;
+
+    function clearTimers() {
+      timers.forEach((id) => clearTimeout(id));
+      timers = [];
+      if (smokeIntervalId) {
+        clearInterval(smokeIntervalId);
+        smokeIntervalId = null;
+      }
+    }
+
+    function spawnImpactBurst() {
+      const stageRect = stage.getBoundingClientRect();
+      const wrapperRect = wrapper.getBoundingClientRect();
+
+      // Centro de la llanta y su radio real (el caucho ocupa r=90 de un viewBox de 200,
+      // es decir, el 45% del ancho renderizado del SVG)
+      const centerX = wrapperRect.left - stageRect.left + wrapperRect.width / 2;
+      const centerY = wrapperRect.top - stageRect.top + wrapperRect.height / 2;
+      const radius = wrapperRect.width * 0.45;
+      const count = 8;
+
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('span');
+        p.className = 'particle impact-p';
+
+        // Arco inferior de la llanta (zona de contacto con el piso, donde va "rodando")
+        // 90° = abajo. Se reparte entre 55° y 125° para cubrir el borde inferior completo.
+        const angle = ((55 + Math.random() * 70) * Math.PI) / 180;
+        const originX = centerX + Math.cos(angle) * radius;
+        const originY = centerY + Math.sin(angle) * radius;
+
+        const dist = 26 + Math.random() * 28;
+        const dx = Math.cos(angle) * dist;
+        const dy = Math.abs(Math.sin(angle) * dist) * 0.7 + 8;
+        const size = 6 + Math.random() * 6;
+
+        p.style.left = `${originX}px`;
+        p.style.top = `${originY}px`;
+        p.style.width = `${size}px`;
+        p.style.height = `${size}px`;
+        p.style.background = Math.random() > 0.5 ? '#cbd5e1' : '#94a3b8';
+        p.style.setProperty('--dx', `${dx}px`);
+        p.style.setProperty('--dy', `${dy}px`);
+
+        p.addEventListener('animationend', () => p.remove());
+        impactLayer.appendChild(p);
+      }
+    }
+
+    function spawnSmokePuff() {
+      const stageRect = stage.getBoundingClientRect();
+      const wrapperRect = wrapper.getBoundingClientRect();
+
+      // Centro y radio real de la llanta
+      const centerX = wrapperRect.left - stageRect.left + wrapperRect.width / 2;
+      const centerY = wrapperRect.top - stageRect.top + wrapperRect.height / 2;
+      const radius = wrapperRect.width * 0.45;
+
+      // Borde exterior trasero (la llanta avanza hacia la derecha, así que el humo
+      // sale de la mitad izquierda del aro: entre 130° y 230°, con 180° = punto más a la izquierda)
+      const angle = ((130 + Math.random() * 100) * Math.PI) / 180;
+      const originX = centerX + Math.cos(angle) * radius;
+      const originY = centerY + Math.sin(angle) * radius;
+
+      const p = document.createElement('span');
+      p.className = 'particle smoke-p';
+
+      const dx = -30 - Math.random() * 40;
+      const dy = -16 - Math.random() * 26;
+      const size = 18 + Math.random() * 20;
+
+      p.style.left = `${originX}px`;
+      p.style.top = `${originY}px`;
+      p.style.width = `${size}px`;
+      p.style.height = `${size}px`;
+      p.style.background = 'radial-gradient(circle, rgba(226,232,240,0.55), rgba(226,232,240,0))';
+      p.style.setProperty('--dx', `${dx}px`);
+      p.style.setProperty('--dy', `${dy}px`);
+
+      p.addEventListener('animationend', () => p.remove());
+      smokeLayer.appendChild(p);
+    }
+
+    function scheduleCycle() {
+      clearTimers();
+
+      // Ráfagas de impacto en cada rebote
+      BOUNCE_TIMES.forEach((t) => {
+        timers.push(setTimeout(spawnImpactBurst, t));
+      });
+
+      // Humo: arranca cuando termina el rebote (30%) y cubre la desaceleración/aceleración en X
+      timers.push(
+        setTimeout(() => {
+          smokeIntervalId = setInterval(spawnSmokePuff, 55);
+        }, 0.30 * DURATION)
+      );
+
+      // Detiene el spawn de humo un poco antes de que termine el ciclo para que no queden restos
+      timers.push(
+        setTimeout(() => {
+          if (smokeIntervalId) {
+            clearInterval(smokeIntervalId);
+            smokeIntervalId = null;
+          }
+        }, DURATION - 100)
+      );
+    }
+
+    scheduleCycle();
+    wrapper.addEventListener('animationiteration', scheduleCycle);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTireParticles);
+  } else {
+    setupTireParticles();
+  }
+</script>
