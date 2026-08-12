@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import AbarroteraHero from '../components/abarrotera/AbarroteraHero.astro';
 import AbarroteraFeatures from '../components/abarrotera/AbarroteraFeatures.astro';
 import AbarroteraPricing from '../components/abarrotera/AbarroteraPricing.astro';
@@ -26,16 +27,7 @@ import AbarroteraServices from '../components/abarrotera/AbarroteraServices.astr
     <!-- Pricing Section -->
     <AbarroteraPricing />
 
-    <footer class="bg-stone-900 text-gray-400 py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center">
-        <p class="mb-4 md:mb-0">© 2026 Ollintem. Todos los derechos reservados.</p>
-        <div class="flex space-x-6">
-          <a href="#" class="hover:text-white transition-colors">Soporte</a>
-          <a href="#" class="hover:text-white transition-colors">Términos</a>
-          <a href="#" class="hover:text-white transition-colors">Privacidad</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
 
   </main>
 </Layout>

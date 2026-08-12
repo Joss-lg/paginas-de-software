@@ -11,15 +11,14 @@ const {
   posterImage = "/images/video-poster-preview.webp",
   youtubeEmbedUrl
 } = Astro.props;
-
 ---
 
 <section id="demo-video" class="py-20 bg-slate-950 text-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
     <!-- Encabezado de la Sección -->
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-3">
+    <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-orange-400 text-xs font-semibold uppercase tracking-wider">
         <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
         Demostración Interactiva
       </div>
@@ -30,10 +29,11 @@ const {
 
     <div class="max-w-5xl mx-auto space-y-10">
       
-      <!-- 1. VIDEO / REPRODUCTOR EN GRANDE (Arriba) -->
-      <div class="relative rounded-3xl bg-slate-900/90 p-3 sm:p-4 border border-slate-800 shadow-2xl">
-      
+      <!-- 1. VIDEO / REPRODUCTOR EN GRANDE -->
+      <div class="relative rounded-3xl bg-slate-900/90 p-3 sm:p-4 border border-slate-800 shadow-2xl group hover:border-orange-500/40 transition-all duration-500">
         
+        <!-- Resplandor de fondo -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-orange-600/20 to-amber-600/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
         <div class="flex items-center justify-between px-3 pb-3 border-b border-slate-800/80 mb-3 text-xs text-slate-400">
           <div class="flex items-center gap-2">
@@ -46,7 +46,8 @@ const {
             <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">1080p HD</span>
           </div>
         </div>
-        <!-- Pantalla del Video (Ratio 16:9) -->
+
+        <!-- Pantalla del Video -->
         <div class="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video border border-slate-800 shadow-inner">
           {youtubeEmbedUrl ? (
             <iframe 
@@ -69,15 +70,17 @@ const {
           )}
         </div>
       </div>
+
       <!-- Botón de acción centrado -->
       <div class="text-center pt-2">
         <a 
           href="#contacto" 
-          class="inline-flex items-center justify-center py-4 px-8 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-extrabold text-sm transition-all shadow-lg shadow-orange-600/25 hover:scale-[1.02]"
+          class="inline-flex items-center justify-center py-4 px-8 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-extrabold text-sm transition-all duration-300 shadow-lg shadow-orange-600/30 hover:shadow-orange-500/50 hover:scale-[1.03]"
         >
           Solicitar Prueba en Vivo para tu Restaurante
         </a>
       </div>
+
     </div>
   </div>
 </section>

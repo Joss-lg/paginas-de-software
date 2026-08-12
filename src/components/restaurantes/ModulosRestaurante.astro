@@ -69,24 +69,24 @@ const planesRestaurante = [
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
       {planesRestaurante.map((plan) => (
-        <div class={`relative rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 ${
+        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 group ${
           plan.destacado 
-            ? 'bg-slate-900 border-2 border-orange-500 shadow-2xl shadow-orange-500/20 lg:-translate-y-2 z-10' 
-            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700'
+            ? 'bg-slate-900 border-2 border-orange-500 shadow-2xl shadow-orange-500/25 lg:-translate-y-2 z-10 hover:shadow-orange-500/40' 
+            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700 hover:shadow-xl'
         }`}>
           
           {plan.destacado && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 text-xs font-black uppercase tracking-wider shadow-lg animate-pulse">
               {plan.etiqueta}
             </div>
           )}
 
           <div>
-            <h3 class="text-2xl font-bold text-white">{plan.nombre}</h3>
+            <h3 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors">{plan.nombre}</h3>
             <p class="text-xs text-slate-400 mt-1.5 min-h-[32px]">{plan.subtitulo}</p>
 
-            <!-- Bloque de Precio y Facilidades -->
-            <div class="mt-6 p-4 rounded-xl bg-slate-950/80 border border-slate-800/80">
+            <!-- Bloque de Precio -->
+            <div class="mt-6 p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80 group-hover:border-orange-500/30 transition-colors">
               <div class="flex items-baseline gap-1">
                 <span class="text-3xl font-black text-white">${plan.precioMensual}</span>
                 <span class="text-xs text-slate-400 font-medium">MXN / mes</span>
@@ -112,7 +112,7 @@ const planesRestaurante = [
             <ul class="mt-6 space-y-3">
               {plan.caracteristicas.map((item) => (
                 <li class="flex items-start gap-2.5 text-sm text-slate-300">
-                  <svg class="w-4 h-4 text-orange-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-orange-400 shrink-0 mt-0.5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                   </svg>
                   <span>{item}</span>
@@ -124,9 +124,9 @@ const planesRestaurante = [
           <div class="mt-8">
             <a 
               href="#contacto" 
-              class={`block w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all ${
+              class={`block w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all duration-300 hover:scale-[1.02] ${
                 plan.destacado 
-                  ? 'bg-orange-500 hover:bg-orange-400 text-slate-950 shadow-lg shadow-orange-500/25' 
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 shadow-lg shadow-orange-500/25' 
                   : 'bg-slate-800 hover:bg-slate-700 text-white'
               }`}
             >

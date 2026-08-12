@@ -1,7 +1,20 @@
----
----
-<section class="bg-gradient-to-br from-[#3a2618] to-[#a88063] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-[#2d1d12]">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section class="bg-gradient-to-br from-[#3a2618] to-[#a88063] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-[#2d1d12] relative overflow-hidden select-none">
+   
+    <!-- CAPA DE PARTÍCULAS DE FONDO (PANES FLOTANTES) -->
+    <div class="absolute inset-0 pointer-events-none z-0 opacity-30" aria-hidden="true">
+        <svg class="absolute animate-float-slow" style="top: 10%; left: 5%; width: 60px; height: 30px; animation-delay: 0s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 60%; left: 15%; width: 80px; height: 40px; animation-delay: -5s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 80%; left: 80%; width: 70px; height: 35px; animation-delay: -2s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 20%; left: 85%; width: 50px; height: 25px; animation-delay: -8s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 5%; left: 45%; width: 55px; height: 27px; animation-delay: -1s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 45%; left: 70%; width: 75px; height: 37px; animation-delay: -3s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 85%; left: 10%; width: 65px; height: 32px; animation-delay: -6s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 15%; left: 60%; width: 50px; height: 25px; animation-delay: -9s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 35%; left: 25%; width: 70px; height: 35px; animation-delay: -11s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+        <svg class="absolute animate-float-slow" style="top: 70%; left: 50%; width: 90px; height: 45px; animation-delay: -13s;" viewBox="0 0 120 60" fill="#f4d4a4"><path d="M110,30 C110,10 90,0 60,0 C30,0 10,10 10,30 C10,50 30,60 60,60 C90,60 110,50 110,30 Z M30,25 C40,15 80,15 90,25" fill="none" stroke="#f4d4a4" stroke-width="2"/></svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         <div class="space-y-6">
             <!-- Etiqueta -->
             <span class="inline-block bg-[#c48b47]/20 text-[#f4d4a4] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -20,7 +33,6 @@
             
             <!-- Contenedor de botones -->
             <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                <!-- Botón Principal con flecha y animación de crecimiento -->
                 <a href="#demo" class="inline-flex items-center justify-center gap-2 bg-[#c48b47] hover:bg-[#a87132] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all duration-300 hover:scale-105 group">
                     Agendar demostración
                     <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
@@ -28,7 +40,6 @@
                     </svg>
                 </a>
                 
-                <!-- Botón de Precios con animación de crecimiento -->
                 <a href="#planes" class="inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 font-bold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
                     Ver tarifas
                 </a>
@@ -51,19 +62,271 @@
             </div>
         </div>
 
-        <!-- Tarjeta contenedora con la imagen -->
-        <div class="group relative flex justify-center p-3 sm:p-4 border-2 border-[#c48b47]/60 rounded-3xl bg-white shadow-xl transition-all duration-500 ease-out hover:-translate-y-3 hover:-rotate-2 hover:border-[#c48b47] hover:shadow-[0_20px_40px_-10px_rgba(196,139,71,0.45)] overflow-hidden">
+        <!-- Columna Derecha: BOLILLO ANIMADO QUE ES COMIDO -->
+        <div class="relative flex justify-center items-center py-12 lg:py-0 min-h-[320px] lg:min-h-[420px]">
             
-            <div class="absolute inset-0 bg-gradient-to-br from-[#c48b47]/0 via-[#c48b47]/5 to-[#c48b47]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none z-20"></div>
+            <!-- Contenedor general del pan e interacción -->
+            <div id="bolillo-wrapper" class="relative w-64 sm:w-80 lg:w-[400px]">
+                
+                <!-- SVG DEL BOLILLO CON CLIP-PATH DINÁMICO -->
+                <svg id="bolillo-svg" class="w-full h-auto drop-shadow-[0_20px_30px_rgba(45,29,18,0.7)]" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Máscara de corte dinámico de la mordida -->
+                        <clipPath id="bite-clip">
+                            <path id="bite-clip-path" d="M 0 0 H 350 V 150 H 0 Z" />
+                        </clipPath>
 
-            <div class="relative z-10 w-full overflow-hidden rounded-2xl border border-gray-200/80 shadow-sm">
-                <img 
-                    src="/public/panaderia/imagen-de-interfaz-panaderia.webp" 
-                    alt="Interfaz del punto de venta Panadería Kairos" 
-                    class="w-full h-auto object-cover transform transition-all duration-500 ease-out group-hover:scale-[1.02]"
-                    loading="eager"
-                />
+                        <linearGradient id="gradPan" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4a373;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#c48b47;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a87132;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradCorte" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f4d4a4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e7c08a;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- GRUPO RECORTADO POR EL CLIP-PATH -->
+                    <g clip-path="url(#bite-clip)">
+                        <!-- Cuerpo del Bolillo -->
+                        <path d="M280,75 C280,110 230,140 150,140 C70,140 20,110 20,75 C20,40 70,10 150,10 C230,10 280,40 280,75 Z" fill="url(#gradPan)" stroke="#8b5a2b" stroke-width="2"/>
+                        <!-- Corte Central -->
+                        <path d="M60,65 C90,45 210,45 240,65 C210,55 90,55 60,65 Z" fill="url(#gradCorte)" stroke="#bf9765" stroke-width="1"/>
+                        <!-- Texturas -->
+                        <path d="M90,110 C120,115 180,115 210,110" stroke="#a87132" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+                        <path d="M100,35 C130,30 170,30 200,35" stroke="#d4a373" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+                    </g>
+                </svg>
+
+                <!-- CONTENEDOR LIBRE PARA PARTICULAS/MIGAJAS (FUERA DE LA MÁSCARA) -->
+                <div id="crumbs-container" class="absolute inset-0 pointer-events-none overflow-visible z-30"></div>
             </div>
         </div>
     </div>
+
+    <!-- ESTILOS Y ANIMACIONES -->
+    <style>
+        /* Animación para los panes sutiles del fondo */
+        @keyframes float-slow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            20%, 80% { opacity: 0.8; }
+            50% { transform: translate(15px, -15px) rotate(5deg); }
+        }
+        .animate-float-slow {
+            animation: float-slow 15s infinite ease-in-out;
+        }
+
+        /* Animación de caída con rebote al reaparecer el bolillo */
+        @keyframes bolillo-bounce-drop {
+            0% {
+                transform: translateY(-260px) scale(0.85);
+                opacity: 0;
+            }
+            60% {
+                transform: translateY(0px) scale(1.06, 0.92);
+                opacity: 1;
+            }
+            78% {
+                transform: translateY(-16px) scale(0.97, 1.02);
+            }
+            90% {
+                transform: translateY(0px) scale(1.02, 0.99);
+            }
+            100% {
+                transform: translateY(0px) scale(1);
+            }
+        }
+
+        .animate-bounce-drop {
+            animation: bolillo-bounce-drop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* Estilo base de migajas dinámicas */
+        .crumb-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+    </style>
+
+    <!-- LÓGICA DE INTERACCIÓN, MORDIDAS Y FÍSICAS -->
+    <script>
+        function initEatingBolillo() {
+            const clipPath = document.getElementById('bite-clip-path');
+            const wrapper = document.getElementById('bolillo-wrapper');
+            const svg = document.getElementById('bolillo-svg');
+            const crumbsContainer = document.getElementById('crumbs-container');
+
+            if (!clipPath || !wrapper || !svg || !crumbsContainer) return;
+
+            let biteStep = 0;
+            const totalBites = 6; // Cantidad total de mordiscos de izquierda a derecha
+            let activeParticles = [];
+            let animationFrameId = null;
+            let timerId = null;
+
+            // Función para generar una mordida orgánica e irregular usando curvas Bézier
+            function getBiteClipPathD(xFront) {
+                if (xFront <= 0) {
+                    return "M 0 0 H 350 V 150 H 0 Z";
+                }
+                if (xFront >= 310) {
+                    // Mueve la máscara completamente fuera de la derecha para consumir la punta final por completo
+                    return "M 350 0 H 350 V 150 H 350 Z";
+                }
+
+                // Genera muescas orgánicas tipo bocado a lo largo del frente vertical xFront
+                const r1 = Math.sin(xFront) * 8;
+                const r2 = Math.cos(xFront * 1.5) * 10;
+                
+                // Bocado natural formado por 3 arcos redondeados hacia la derecha
+                return `
+                    M 350 0
+                    H ${xFront}
+                    Q ${xFront + 18 + r1} 25, ${xFront + 4} 50
+                    Q ${xFront + 22 + r2} 75, ${xFront + 2} 100
+                    Q ${xFront + 16 - r1} 125, ${xFront} 150
+                    H 350
+                    Z
+                `.replace(/\s+/g, ' ').trim();
+            }
+
+            // Motor de físicas para partículas (migajas)
+            function updatePhysics() {
+                const now = performance.now();
+                
+                for (let i = activeParticles.length - 1; i >= 0; i--) {
+                    const p = activeParticles[i];
+                    const elapsed = (now - p.startTime) / 1000; // segundos
+
+                    if (elapsed >= p.life) {
+                        p.el.remove();
+                        activeParticles.splice(i, 1);
+                        continue;
+                    }
+
+                    // Físicas: Velocidad inicial + Gravedad creciente
+                    p.x += p.vx;
+                    p.vy += 0.35; // Gravedad
+                    p.y += p.vy;
+                    p.rotation += p.vRot;
+
+                    const opacity = 1 - (elapsed / p.life);
+
+                    p.el.style.transform = `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.rotation}deg)`;
+                    p.el.style.opacity = opacity.toString();
+                }
+
+                if (activeParticles.length > 0) {
+                    animationFrameId = requestAnimationFrame(updatePhysics);
+                } else {
+                    animationFrameId = null;
+                }
+            }
+
+            // Disparo de migajas dispersas al dar el bocado
+            function spawnCrumbs(xPos) {
+                const svgRect = svg.getBoundingClientRect();
+                const wrapperRect = wrapper.getBoundingClientRect();
+
+                // Calcular posición X e Y relativa dentro del contenedor en relación a la escala SVG
+                const scaleX = svgRect.width / 300;
+                const scaleY = svgRect.height / 150;
+                
+                const originX = xPos * scaleX;
+                const originY = 75 * scaleY; // Altura central del bocado
+
+                const colors = ['#f4d4a4', '#e7c08a', '#d4a373', '#c48b47', '#bf9765'];
+                const crumbCount = 12 + Math.floor(Math.random() * 8);
+
+                for (let i = 0; i < crumbCount; i++) {
+                    const el = document.createElement('div');
+                    el.className = 'crumb-particle';
+                    
+                    const size = 3 + Math.random() * 5;
+                    el.style.width = `${size}px`;
+                    el.style.height = `${size}px`;
+                    el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+                    crumbsContainer.appendChild(el);
+
+                    // Ángulo de dispersión hacia la derecha y arriba/abajo
+                    const angle = (Math.random() * 120 - 60) * (Math.PI / 180);
+                    const speed = 2 + Math.random() * 5;
+
+                    activeParticles.push({
+                        el: el,
+                        x: originX + (Math.random() * 10 - 5),
+                        y: originY + (Math.random() * 40 - 20),
+                        vx: Math.cos(angle) * speed + (Math.random() * 2),
+                        vy: Math.sin(angle) * speed - (1 + Math.random() * 3), // Impulso inicial hacia arriba
+                        rotation: Math.random() * 360,
+                        vRot: (Math.random() - 0.5) * 20,
+                        startTime: performance.now(),
+                        life: 0.8 + Math.random() * 0.6 // Duración en segundos
+                    });
+                }
+
+                if (!animationFrameId) {
+                    animationFrameId = requestAnimationFrame(updatePhysics);
+                }
+            }
+
+            // Bucle ejecutor de mordiscos
+            function executeNextBite() {
+                biteStep++;
+
+                if (biteStep <= totalBites) {
+                    // Avance de X progresivo de izquierda a derecha (0 a 320)
+                    const xFront = (biteStep / totalBites) * 320;
+                    
+                    // Actualiza la máscara dinámica para borrar de un solo paso todo lo que quede atrás
+                    clipPath.setAttribute('d', getBiteClipPathD(xFront));
+                    
+                    // Explotan partículas tipo migajas
+                    spawnCrumbs(xFront - 15);
+
+                    if (biteStep < totalBites) {
+                        // Tiempo entre bocado y bocado disperso aleatoriamente entre 0.5s y 2.5s
+                        const randomDelay = Math.floor(Math.random() * 2000) + 500;
+                        timerId = setTimeout(executeNextBite, randomDelay);
+                    } else {
+                        // Último bocado terminado, preparar reaparición del bolillo nuevo
+                        timerId = setTimeout(resetAndDropNewBolillo, 1000);
+                    }
+                }
+            }
+
+            // Reinicio y animación de caída de nuevo bolillo
+            function resetAndDropNewBolillo() {
+                // Restablece la máscara al 100% visible
+                clipPath.setAttribute('d', "M 0 0 H 350 V 150 H 0 Z");
+                biteStep = 0;
+
+                // Aplica clase de animación de rebote
+                svg.classList.remove('animate-bounce-drop');
+                void svg.offsetWidth; // Reflow forzado para reiniciar animación CSS
+                svg.classList.add('animate-bounce-drop');
+
+                // Inicia la secuencia de bocados nuevamente tras terminar la caída
+                timerId = setTimeout(() => {
+                    svg.classList.remove('animate-bounce-drop');
+                    const initialDelay = Math.floor(Math.random() * 1500) + 800;
+                    timerId = setTimeout(executeNextBite, initialDelay);
+                }, 900);
+            }
+
+            // Arrancar el proceso
+            const firstDelay = Math.floor(Math.random() * 1500) + 600;
+            timerId = setTimeout(executeNextBite, firstDelay);
+        }
+
+        // Carga inicial
+        initEatingBolillo();
+
+        // Soporte para Astro View Transitions (si se navega entre páginas)
+        document.addEventListener('astro:page-load', initEatingBolillo);
+    </script>
 </section>

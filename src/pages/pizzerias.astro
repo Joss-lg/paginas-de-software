@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import PizzeriaHero from '../components/pizzerias/PizzeriaHero.astro';
 import PizzeriaFeatures from '../components/pizzerias/PizzeriaFeatures.astro';
 import PizzeriaDetails from '../components/pizzerias/PizzeriaDetails.astro';
@@ -28,16 +29,8 @@ const description =
     <PizzeriaDispositivos />
     <VideoPizzeria />
     <PlanesPizzerias />
+    <Footer />
   </main>
 
-  <footer class="bg-stone-900 text-gray-400 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center">
-      <p class="mb-4 md:mb-0">© 2026 Ollintem. Todos los derechos reservados.</p>
-      <div class="flex space-x-6">
-        <a href="#" class="hover:text-white transition-colors">Soporte</a>
-        <a href="#" class="hover:text-white transition-colors">Términos</a>
-        <a href="#" class="hover:text-white transition-colors">Privacidad</a>
-      </div>
-    </div>
-  </footer>
+  
 </Layout>
