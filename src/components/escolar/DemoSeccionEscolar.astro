@@ -1,15 +1,38 @@
 ---
 // Modulo: DemoSeccionEscolar
-// Propósito: Llamado a la acción final (CTA)
+// Propósito: Llamado a la acción final (CTA) con espacio para video o imagen demostrativa y animaciones de interacción.
 ---
-<section class="py-16 bg-white border-t border-[#A8D08D]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-[#2A4B2A] mb-4">Gestione la matrícula de su institución hoy mismo</h2>
-        <p class="text-lg text-[#2A4B2A]/80 mb-8">
-            Implemente un sistema capaz de manejar sus historiales a largo plazo con el control de roles y permisos que su escuela necesita.
-        </p>
-        <button class="bg-[#4C8B3D] text-white font-medium px-8 py-3 rounded-lg hover:bg-[#2A4B2A] transition-colors duration-300 shadow-md shadow-[#4C8B3D]/30">
-            Solicitar demostración del sistema
-        </button>
+<section id="demo" class="py-16 bg-white border-t border-[#A8D08D] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            
+            <!-- Columna Izquierda: Espacio Reservado para Video o Imagen (Agrandamiento + Inclinación de 2° a la derecha) -->
+            <div class="bg-[#E2F6E3]/30 border-2 border-dashed border-[#A8D08D] rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-[320px] transition-all duration-300 ease-in-out transform hover:scale-[1.03] hover:rotate-2 hover:border-[#2A4B2A] hover:shadow-lg group">
+                <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-md mb-4 border border-[#A8D08D] group-hover:scale-110 transition-transform duration-300">
+                    <!-- Icono de Reproducción / Video -->
+                    <svg class="w-8 h-8 text-[#4C8B3D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <p class="text-base font-semibold text-[#2A4B2A]">Espacio para Video o Imagen del sistema</p>
+                <span class="text-xs text-[#2A4B2A]/60 mt-1">Soporta reproductor multimedia o capturas destacadas</span>
+            </div>
+
+            <!-- Columna Derecha: Contenido Actual (CTA) -->
+            <div class="text-center lg:text-left">
+                <h2 class="text-3xl font-bold text-[#2A4B2A] mb-4 leading-tight">
+                    Pida su demostración hoy mismo
+                </h2>
+                <p class="text-lg text-[#2A4B2A]/80 mb-8 leading-relaxed">
+                    Implemente un sistema capaz de manejar sus historiales a largo plazo con el control de roles y permisos que su escuela necesita.
+                </p>
+                <!-- Botón con Animación de Agrandamiento -->
+                <button class="bg-[#4C8B3D] text-white font-medium px-8 py-3.5 rounded-lg hover:bg-[#2A4B2A] transition-all duration-300 ease-in-out shadow-md shadow-[#4C8B3D]/30 hover:shadow-lg transform hover:scale-105">
+                    Solicitar demostración del sistema
+                </button>
+            </div>
+
+        </div>
     </div>
 </section>

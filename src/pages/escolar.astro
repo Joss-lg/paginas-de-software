@@ -1,18 +1,28 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Navbar from '../components/Navbar.astro';
 import HeroEscolar from '../components/escolar/HeroEscolar.astro';
 import CaracteristicasEscolar from '../components/escolar/CaracteristicasEscolar.astro';
+import DispositivosEscolar from '../components/escolar/DispositivosEscolar.astro';
 import ModulosOperativosEscolar from '../components/escolar/ModulosOperativosEscolar.astro';
 import PlanPreciosEscolar from '../components/escolar/PlanPreciosEscolar.astro';
 import DemoSeccionEscolar from '../components/escolar/DemoSeccionEscolar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Software de Gestión Escolar | Control Académico">
+    <Navbar />
+
+    <!-- Enlace estructural preparado para la vista común (sin interactuar con el navbar/sidebar) -->
+  <div id="vista-comun-enlace" data-common-view-route="/comun/catalogo-sistemas" class="hidden"></div>
+
     <main class="w-full">
         <HeroEscolar />
         <CaracteristicasEscolar />
+        <DispositivosEscolar />
         <ModulosOperativosEscolar />
         <PlanPreciosEscolar />
         <DemoSeccionEscolar />
     </main>
+    <Footer />
 </Layout>

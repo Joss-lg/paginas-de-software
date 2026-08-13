@@ -1,29 +1,139 @@
 ---
 // Modulo: CaracteristicasEscolar
-// Propósito: Desglosar las funciones base (roles, materias, historial).
+// Propósito: Desglosar las funciones base con animación de desacomode escalonado e intercalado en pares al interactuar.
 ---
-<section class="py-16 bg-white">
+<section class="py-16 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-[#2A4B2A] text-center mb-12">Características del Sistema</h2>
+        <h2 class="text-3xl font-bold text-verde-oscuro text-center mb-16">Características del Sistema</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#A8D08D]">
-                <div class="w-12 h-12 bg-[#4C8B3D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-6 shadow-md shadow-[#4C8B3D]/20">1</div>
-                <h3 class="text-xl font-semibold text-[#2A4B2A] mb-3">Roles y Permisos</h3>
-                <p class="text-[#2A4B2A]/70">Administración de accesos controlados para asegurar que la información correcta llegue al usuario indicado dentro de la institución.</p>
-            </div>
+        <div class="space-y-12">
             
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#A8D08D]">
-                <div class="w-12 h-12 bg-[#4C8B3D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-6 shadow-md shadow-[#4C8B3D]/20">2</div>
-                <h3 class="text-xl font-semibold text-[#2A4B2A] mb-3">Materias Disponibles</h3>
-                <p class="text-[#2A4B2A]/70">Genera y organiza las materias disponibles en el ciclo escolar, facilitando la asignación y el seguimiento del progreso académico.</p>
+            <!-- Nivel 1: Inclinación Hacia el Centro (+2° Izq / -2° Der) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center group">
+                <!-- Tarjeta de Texto (Izquierda -> +2deg hacia el centro) -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-verde-claro h-full min-h-[315px] flex flex-col justify-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rotate-2 group-hover:shadow-lg">
+                    <div class="w-12 h-12 bg-verde-principal text-white rounded-lg flex items-center justify-center mb-6 shadow-md shadow-verde-principal/20">
+                        <!-- Icono: Roles y Permisos -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-verde-oscuro mb-3">Roles y Permisos Controlados</h3>
+                    <p class="text-verde-oscuro/80">Administración detallada de accesos para directivos, maestros y padres de familia, asegurando que cada perfil interactúe exclusivamente con la información que le corresponde dentro de la institución.</p>
+                </div>
+                
+                <!-- Contenedor de Imagen (Derecha -> -2deg hacia el centro) -->
+                <div class="bg-verde-pastel/40 border-2 border-dashed border-verde-claro rounded-xl min-h-[315px] flex flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:-rotate-2 group-hover:border-verde-principal group-hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3 border border-verde-claro">
+                        <svg class="w-8 h-8 text-verde-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium text-verde-oscuro/60">Espacio reservado para imagen 1</span>
+                </div>
             </div>
-            
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-[#A8D08D]">
-                <div class="w-12 h-12 bg-[#4C8B3D] text-white rounded-lg flex items-center justify-center font-bold text-xl mb-6 shadow-md shadow-[#4C8B3D]/20">3</div>
-                <h3 class="text-xl font-semibold text-[#2A4B2A] mb-3">Historiales Académicos</h3>
-                <p class="text-[#2A4B2A]/70">Almacenamiento y gestión de bases de datos pesadas para mantener el historial a largo plazo de cada alumno con total integridad.</p>
+
+            <!-- Nivel 2: Inclinación Hacia Afuera (-2° Izq / +2° Der) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center group">
+                <!-- Contenedor de Imagen (Izquierda -> -2deg hacia afuera) -->
+                <div class="order-2 lg:order-1 bg-verde-pastel/40 border-2 border-dashed border-verde-claro rounded-xl min-h-[315px] flex flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:-rotate-2 group-hover:border-verde-principal group-hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3 border border-verde-claro">
+                        <svg class="w-8 h-8 text-verde-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium text-verde-oscuro/60">Espacio reservado para imagen 2</span>
+                </div>
+
+                <!-- Tarjeta de Texto (Derecha -> +2deg hacia afuera) -->
+                <div class="order-1 lg:order-2 bg-white p-8 rounded-xl shadow-sm border border-verde-claro h-full min-h-[315px] flex flex-col justify-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rotate-2 group-hover:shadow-lg">
+                    <div class="w-12 h-12 bg-verde-principal text-white rounded-lg flex items-center justify-center mb-6 shadow-md shadow-verde-principal/20">
+                        <!-- Icono: Materias Disponibles -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-verde-oscuro mb-3">Gestión de Materias Disponibles</h3>
+                    <p class="text-verde-oscuro/80">Organización estructurada de la oferta educativa, permitiendo generar y administrar las asignaturas de cada ciclo escolar para facilitar el seguimiento académico de los alumnos.</p>
+                </div>
             </div>
+
+            <!-- Nivel 3: Inclinación Hacia el Centro (+2° Izq / -2° Der) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center group">
+                <!-- Tarjeta de Texto (Izquierda -> +2deg hacia el centro) -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-verde-claro h-full min-h-[315px] flex flex-col justify-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rotate-2 group-hover:shadow-lg">
+                    <div class="w-12 h-12 bg-verde-principal text-white rounded-lg flex items-center justify-center mb-6 shadow-md shadow-verde-principal/20">
+                        <!-- Icono: Historiales Académicos -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-verde-oscuro mb-3">Resguardo de Historiales Académicos</h3>
+                    <p class="text-verde-oscuro/80">Conservación segura y estructurada de la trayectoria de cada estudiante. Un diseño enfocado en mantener registros extensos a lo largo de los años con total integridad para futuras consultas.</p>
+                </div>
+
+                <!-- Contenedor de Imagen (Derecha -> -2deg hacia el centro) -->
+                <div class="bg-verde-pastel/40 border-2 border-dashed border-verde-claro rounded-xl min-h-[315px] flex flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:-rotate-2 group-hover:border-verde-principal group-hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3 border border-verde-claro">
+                        <svg class="w-8 h-8 text-verde-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium text-verde-oscuro/60">Espacio reservado para imagen 3</span>
+                </div>
+            </div>
+
+            <!-- Nivel 4: Inclinación Hacia Afuera (-2° Izq / +2° Der) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center group">
+                <!-- Contenedor de Imagen (Izquierda -> -2deg hacia afuera) -->
+                <div class="order-2 lg:order-1 bg-verde-pastel/40 border-2 border-dashed border-verde-claro rounded-xl min-h-[315px] flex flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:-rotate-2 group-hover:border-verde-principal group-hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3 border border-verde-claro">
+                        <svg class="w-8 h-8 text-verde-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium text-verde-oscuro/60">Espacio reservado para imagen 4</span>
+                </div>
+
+                <!-- Tarjeta de Texto (Derecha -> +2deg hacia afuera) -->
+                <div class="order-1 lg:order-2 bg-white p-8 rounded-xl shadow-sm border border-verde-claro h-full min-h-[315px] flex flex-col justify-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rotate-2 group-hover:shadow-lg">
+                    <div class="w-12 h-12 bg-verde-principal text-white rounded-lg flex items-center justify-center mb-6 shadow-md shadow-verde-principal/20">
+                        <!-- Icono: Control de Calificaciones -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-verde-oscuro mb-3">Control y Registro de Calificaciones</h3>
+                    <p class="text-verde-oscuro/80">Herramientas centralizadas para que el personal autorizado evalúe y documente el desempeño escolar, manteniendo el control de los alumnos de forma organizada y continua.</p>
+                </div>
+            </div>
+
+            <!-- Nivel 5: Inclinación Hacia el Centro (+2° Izq / -2° Der) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center group">
+                <!-- Tarjeta de Texto (Izquierda -> +2deg hacia el centro) -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-verde-claro h-full min-h-[315px] flex flex-col justify-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rotate-2 group-hover:shadow-lg">
+                    <div class="w-12 h-12 bg-verde-principal text-white rounded-lg flex items-center justify-center mb-6 shadow-md shadow-verde-principal/20">
+                        <!-- Icono: Portales de Consulta -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-verde-oscuro mb-3">Portales de Consulta Individual</h3>
+                    <p class="text-verde-oscuro/80">Accesos personalizados y transparentes orientados a los padres de familia, permitiéndoles ingresar al sistema para dar seguimiento a la trayectoria e historial académico de sus hijos en cualquier momento.</p>
+                </div>
+
+                <!-- Contenedor de Imagen (Derecha -> -2deg hacia el centro) -->
+                <div class="bg-verde-pastel/40 border-2 border-dashed border-verde-claro rounded-xl min-h-[315px] flex flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:-rotate-2 group-hover:border-verde-principal group-hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3 border border-verde-claro">
+                        <svg class="w-8 h-8 text-verde-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-sm font-medium text-verde-oscuro/60">Espacio reservado para imagen 5</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

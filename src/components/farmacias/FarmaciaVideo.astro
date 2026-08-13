@@ -1,0 +1,38 @@
+---
+// src/components/farmacias/FarmaciaVideo.astro
+---
+
+<section class="bg-[#002B24] py-24 sm:py-32 relative overflow-hidden">
+  <!-- Efecto de resplandor de fondo -->
+  <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-[#29A09B]/20 to-transparent opacity-60 blur-3xl"></div>
+  </div>
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Descubre cómo funciona tu nueva <span class="text-[#7CC6C1]">Farmacia</span>
+      </h2>
+      <p class="mt-4 text-lg text-[#E5F3F2]/70">
+        Un recorrido rápido por las herramientas que agilizarán tus ventas, el control de caducidades y el manejo de recetas.
+      </p>
+    </div>
+    
+    <!-- Contenedor del Video -->
+    <div class="mx-auto max-w-5xl rounded-3xl p-2 lg:p-4 bg-[#006C5B]/20 ring-1 ring-[#7CC6C1]/20 backdrop-blur-md shadow-2xl shadow-[#001A15]/50 group cursor-pointer">
+      <!-- Reemplaza este div por tu etiqueta <video> o <iframe> -->
+      <div class="relative overflow-hidden rounded-2xl bg-[#001A15] aspect-video flex items-center justify-center border border-[#006C5B]/50 transition-transform duration-500 group-hover:scale-[0.99]">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#006C5B]/40 to-transparent mix-blend-overlay"></div>
+        
+        <!-- Botón de Play animado -->
+        <button class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-[#29A09B] shadow-lg shadow-[#29A09B]/40 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#7CC6C1]">
+          <svg class="h-10 w-10 text-white translate-x-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        
+        <span class="absolute bottom-4 right-6 text-sm text-[#7CC6C1]/60 font-medium tracking-wide">
+          Demo del Sistema Ollintem
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

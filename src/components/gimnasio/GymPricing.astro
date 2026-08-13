@@ -49,24 +49,12 @@ const plans = [
 
 <section id="planes" class="py-24 bg-gym-bg text-gym-light relative overflow-hidden">
 
-  <style>
-    @keyframes badgePulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(124, 110, 239, 0.5); }
-      50% { box-shadow: 0 0 0 8px rgba(124, 110, 239, 0); }
-    }
-    .animate-badge-pulse { animation: badgePulse 2.4s ease-in-out infinite; }
-    @media (prefers-reduced-motion: reduce) {
-      .animate-badge-pulse { animation: none !important; }
-    }
-  </style>
-
-  <!-- Efecto de resplandor central -->
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gym-primary/10 blur-[150px] rounded-full pointer-events-none"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-gym-primary-light">Inversión Inteligente</h2>
+      <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-gym-primary-light">// Inversión inteligente</h2>
       <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">
         Planes transparentes adaptados a tu escala
       </p>
@@ -75,47 +63,43 @@ const plans = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-      {plans.map((plan) => (
-        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 ${
-          plan.highlighted
-            ? 'bg-gradient-to-b from-gym-primary/20 via-gym-bg to-gym-bg border-2 border-gym-primary-light shadow-2xl shadow-gym-primary/20 lg:-translate-y-4'
-            : 'bg-gym-light/[0.02] border border-gym-light/10 hover:border-gym-primary-light/40 hover:-translate-y-1'
-        }`}>
+    <div class="grid grid-cols-1 lg:grid-cols-3 border border-gym-light/10">
+      {plans.map((plan, i) => (
+        <div class={`relative flex flex-col justify-between p-8 ${
+          i !== plans.length - 1 ? 'lg:border-r border-gym-light/10' : ''
+        } ${plan.highlighted ? 'bg-gym-primary/10' : ''}`}>
 
           {plan.highlighted && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-gym-primary to-gym-primary-light text-white text-xs font-extrabold uppercase tracking-wider shadow-md animate-badge-pulse">
-              Más Popular
+            <div class="absolute top-0 right-0 bg-gym-primary-light text-gym-bg text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1.5">
+              Más elegido
             </div>
           )}
 
           <div>
-            <h3 class="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-            <p class="text-sm text-gym-light/60 mb-6">{plan.description}</p>
+            <h3 class="text-xl font-bold text-white mb-2">{plan.name}</h3>
+            <p class="text-sm text-gym-light/60 mb-6 min-h-[40px]">{plan.description}</p>
 
-            <div class="flex items-baseline gap-1 mb-8">
+            <div class="flex items-baseline gap-1 mb-8 font-mono">
               <span class="text-5xl font-black text-white">{plan.price}</span>
-              <span class="text-sm text-gym-light/60">/{plan.period}</span>
+              <span class="text-sm text-gym-light/50">/{plan.period}</span>
             </div>
 
-            <ul class="space-y-4 mb-8">
+            <ul class="space-y-3.5 mb-10">
               {plan.features.map((feature) => (
-                <li class="flex items-center gap-3 text-sm text-gym-light/80">
-                  <span class={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                    plan.highlighted ? 'bg-gym-pale text-gym-bg' : 'bg-gym-primary-light/20 text-gym-primary-light'
-                  }`}>✓</span>
+                <li class="flex items-start gap-3 text-sm text-gym-light/80">
+                  <span class="font-mono text-gym-primary-light mt-0.5">+</span>
                   {feature}
                 </li>
               ))}
             </ul>
           </div>
 
-          <a href="#" class={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 block ${
+          <a href="#" class={`w-full py-3.5 font-bold text-center transition-all duration-300 block border ${
             plan.highlighted
-              ? 'bg-gradient-to-r from-gym-primary to-gym-primary-light text-white shadow-lg shadow-gym-primary/30 hover:scale-105'
-              : 'bg-gym-light/10 text-white hover:bg-gym-light/20'
+              ? 'bg-gym-primary-light text-gym-bg border-gym-primary-light hover:opacity-90'
+              : 'border-gym-light/20 text-white hover:border-gym-primary-light hover:text-gym-primary-light'
           }`}>
-            Elegir {plan.name}
+            Elegir plan
           </a>
 
         </div>

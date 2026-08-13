@@ -1,14 +1,287 @@
 ---
 // Modulo: HeroEscolar
-// Propósito: Introducción al software enfocado en la gestión robusta a largo plazo.
+// Propósito: Tarjeta compacta con animación de crecimiento elástico desde el centro, gráficos rectangulares y borrado progresivo.
 ---
 <section class="bg-[#E2F6E3] py-20 border-b border-[#A8D08D]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl font-extrabold text-[#2A4B2A] sm:text-5xl lg:text-6xl tracking-tight">
-            Software para Gestión de Calificaciones y Control de Alumnos
-        </h1>
-        <p class="mt-6 text-xl text-[#2A4B2A]/80 max-w-3xl mx-auto">
-            Un sistema especializado para instituciones. Diseñado para gestionar bases de datos pesadas e historiales académicos a largo plazo, sin depender de transacciones minuto a minuto.
-        </p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Columna Izquierda: Información Principal + Botones + Certificaciones -->
+            <div class="text-left">
+                <!-- Etiqueta del sistema -->
+                <span class="inline-block py-1 px-3 rounded-full bg-[#2A4B2A]/10 text-[#2A4B2A] text-sm font-semibold mb-6 border border-[#2A4B2A]/20 mt-[22px]">
+                    Sistema para Instituciones Educativas
+                </span>
+                <h1 class="text-4xl font-extrabold text-[#2A4B2A] sm:text-5xl lg:text-6xl tracking-tight">
+                    Sistema para instituciones educativas
+                </h1>
+                <p class="mt-6 text-xl text-[#2A4B2A]/80">
+                    Lleva el control de alumnos, materias y calificaciones en un solo lugar, sin complicaciones. Directivos, maestros y padres de familia acceden fácilmente al historial académico de cada estudiante, con los permisos que les corresponden a cada uno.
+                </p>
+
+                <!-- Botones de Acción con Animación Hover Scale -->
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                   <!-- Botón Principal -->
+                    <a 
+                        href="#demo" 
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-[#2A4B2A] hover:bg-[#1e361e] shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 group"
+                    >
+                        Agendar demostración
+                        <svg class="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    
+                    <!-- Botón Secundario -->
+                    <a 
+                        href="#planes" 
+                        class="inline-flex items-center justify-center px-6 py-3 border-2 border-[#2A4B2A] text-base font-semibold rounded-lg text-[#2A4B2A] bg-transparent hover:bg-[#2A4B2A]/10 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95"
+                    >
+                        Ver tarifas
+                    </a>
+                </div>
+
+                <!-- Certificaciones con Palomitas -->
+                <div class="mt-8 pt-6 border-t border-[#A8D08D]/60 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#2A4B2A]">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#2A4B2A] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Basado en la nube</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#2A4B2A] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Accesos controlados</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#2A4B2A] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Sin instalaciones</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta Compacta Estilo Ventana Web -->
+            <div class="w-full flex justify-center items-center min-h-[420px]">
+                
+                <!-- Tarjeta Contenedora con Crecimiento Elástico y Desaparición por Reducción -->
+                <div class="relative w-full max-w-sm bg-white rounded-xl shadow-2xl border-2 border-gray-300 animate-pizarron-loop origin-center overflow-hidden">
+                    
+                    <!-- Barra superior del Navegador -->
+                    <div class="h-8 bg-gray-100 border-b border-gray-200 flex items-center px-3 gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                        <div class="ml-2 w-32 h-4 bg-white rounded border border-gray-200 text-[9px] text-gray-400 flex items-center px-1.5 font-mono">
+                            app.sistema.com
+                        </div>
+                    </div>
+
+                    <!-- Contenedor Interno Estilo Dashboard Compacto -->
+                    <div class="relative bg-white p-4 font-mono">
+                        
+                        <!-- Borrador Móvil Animado (Limpia la pantalla de izquierda a derecha al final) -->
+                        <div class="absolute inset-y-0 w-20 bg-gray-200/80 border-x border-gray-300 rounded z-20 shadow-lg opacity-0 animate-borrador-loop flex items-center justify-center backdrop-blur-xs">
+                            <div class="w-1.5 h-full bg-gray-400/50"></div>
+                        </div>
+
+                        <!-- Contenido Animado (Calificaciones y Gráfica con Barras Rectangulares) -->
+                        <div class="animate-contenido-fade">
+                            
+                            <!-- Encabezado del Dashboard -->
+                            <div class="flex justify-between items-center mb-3 border-b border-gray-200 pb-1.5 text-gray-500 text-[11px] tracking-widest uppercase">
+                                <span>Panel Escolar</span>
+                                <span class="text-blue-600 font-bold">Parcial 1</span>
+                            </div>
+
+                            <!-- Módulo 1: Lista de Materias y Calificaciones (Aparición 1) -->
+                            <div class="mb-2 text-gray-800 text-xs font-bold tracking-wide opacity-0 animate-eq1-loop space-y-1 bg-gray-50 p-2.5 rounded border border-gray-100 shadow-xs">
+                                <div class="flex justify-between border-b border-gray-200 pb-0.5">
+                                    <span class="text-gray-600">Matemáticas:</span>
+                                    <span class="text-blue-600 font-extrabold">9.8</span>
+                                </div>
+                                <div class="flex justify-between border-b border-gray-200 pb-0.5">
+                                    <span class="text-gray-600">Programación:</span>
+                                    <span class="text-blue-600 font-extrabold">10.0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Física:</span>
+                                    <span class="text-blue-600 font-extrabold">9.2</span>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 2: Gráfica de Barras Rectangulares (Trazado Progresivo SVG) -->
+                            <div class="relative w-full h-36 my-2 bg-gray-50 rounded p-1.5 border border-gray-100">
+                                <svg class="w-full h-full" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Cuadrícula detallada de fondo -->
+                                    <path d="M 0 25 L 280 25 M 0 55 L 280 55 M 0 85 L 280 85 M 0 115 L 280 115" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="3 3"/>
+                                    
+                                    <!-- Ejes Cartesianos / Línea base -->
+                                    <g class="opacity-0 animate-ejes-loop">
+                                        <path d="M 25 120 L 265 120" stroke="#9ca3af" stroke-width="2" stroke-linecap="square"/>
+                                        <path d="M 25 15 L 25 120" stroke="#9ca3af" stroke-width="2" stroke-linecap="square"/>
+                                    </g>
+
+                                    <!-- Barra 1: Asistencia (Rectangular puro) -->
+                                    <path d="M 65 120 L 65 30" stroke="#3b82f6" stroke-width="26" stroke-linecap="butt" class="grafica-path animate-curva-loop"/>
+
+                                    <!-- Barra 2: Aprobación (Rectangular puro) -->
+                                    <path d="M 145 120 L 145 20" stroke="#10b981" stroke-width="26" stroke-linecap="butt" class="grafica-path animate-curva-loop"/>
+
+                                    <!-- Barra 3: Tareas (Rectangular puro) -->
+                                    <path d="M 225 120 L 225 45" stroke="#f59e0b" stroke-width="26" stroke-linecap="butt" class="grafica-path animate-curva-loop"/>
+
+                                    <!-- Puntos, Valores y Etiquetas de la Gráfica -->
+                                    <g class="opacity-0 animate-puntos-loop">
+                                        <text x="65" y="22" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">98%</text>
+                                        <text x="65" y="132" fill="#4b5563" font-size="9" text-anchor="middle" font-weight="bold" font-family="monospace">Asist.</text>
+
+                                        <text x="145" y="12" fill="#047857" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">95%</text>
+                                        <text x="145" y="132" fill="#4b5563" font-size="9" text-anchor="middle" font-weight="bold" font-family="monospace">Aprob.</text>
+
+                                        <text x="225" y="37" fill="#b45309" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">90%</text>
+                                        <text x="225" y="132" fill="#4b5563" font-size="9" text-anchor="middle" font-weight="bold" font-family="monospace">Tareas</text>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- Módulo 3: Promedio General (Aparición 2) -->
+                            <div class="mt-2 text-gray-800 text-xs font-bold tracking-wide flex justify-between items-center opacity-0 animate-eq2-loop bg-blue-50 p-2 rounded border border-blue-100 shadow-xs">
+                                <span class="text-blue-900">PROMEDIO GENERAL:</span>
+                                <span class="text-sm text-blue-700 font-extrabold bg-white px-2 py-0.5 rounded border border-blue-200 shadow-xs">9.6</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Barra inferior simulada -->
+                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-[9px] text-gray-400">
+                            <span>Estado: Sincronizado</span>
+                            <span>CBT 5</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </section>
+
+<style>
+    /* Trazo de las barras rectangulares */
+    .grafica-path {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+    }
+
+    /* Animación Principal: Crecimiento elástico desde el centro, mantenimiento de 4s y desaparición por reducción */
+    .animate-pizarron-loop {
+        animation: pizarronLoop 9s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+
+    @keyframes pizarronLoop {
+        0% { 
+            opacity: 0; 
+            transform: scale(0); 
+        }
+        12% {
+            opacity: 1;
+            transform: scale(1.06); /* Sobrecrecimiento elástico inicial */
+        }
+        15%, 82% { 
+            opacity: 1; 
+            transform: scale(1); /* Tamaño normal y estable (pausa activa de ~4s) */
+        }
+        88% { 
+            opacity: 1; 
+            transform: scale(1.03); /* Ligero impulso previo a desaparecer */
+        }
+        95%, 100% { 
+            opacity: 0; 
+            transform: scale(0); /* Se reduce hasta desaparecer por completo */
+        }
+    }
+
+    /* 2. Aparición Elemento 1 */
+    .animate-eq1-loop {
+        animation: fadeInLoop 9s linear infinite;
+    }
+
+    @keyframes fadeInLoop {
+        0%, 28% { opacity: 0; transform: translateY(5px); }
+        33%, 72% { opacity: 1; transform: translateY(0); }
+        76%, 100% { opacity: 0; }
+    }
+
+    /* 3. Aparición Ejes */
+    .animate-ejes-loop {
+        animation: ejesLoop 9s linear infinite;
+    }
+
+    @keyframes ejesLoop {
+        0%, 34% { opacity: 0; }
+        38%, 72% { opacity: 1; }
+        76%, 100% { opacity: 0; }
+    }
+
+    /* 4. Dibujo de las Barras Rectangulares */
+    .animate-curva-loop {
+        animation: curvaLoop 9s linear infinite;
+    }
+
+    @keyframes curvaLoop {
+        0%, 38% { stroke-dashoffset: 200; }
+        48%, 72% { stroke-dashoffset: 0; }
+        76%, 100% { stroke-dashoffset: 200; }
+    }
+
+    /* 5. Puntos y Etiquetas */
+    .animate-puntos-loop {
+        animation: puntosLoop 9s linear infinite;
+    }
+
+    @keyframes puntosLoop {
+        0%, 48% { opacity: 0; }
+        52%, 72% { opacity: 1; }
+        76%, 100% { opacity: 0; }
+    }
+
+    /* 6. Aparición Elemento 2 */
+    .animate-eq2-loop {
+        animation: eq2Loop 9s linear infinite;
+    }
+
+    @keyframes eq2Loop {
+        0%, 52% { opacity: 0; transform: translateY(5px); }
+        58%, 72% { opacity: 1; transform: translateY(0); }
+        76%, 100% { opacity: 0; }
+    }
+
+    /* 7. Desvanecimiento del contenido al borrar */
+    .animate-contenido-fade {
+        animation: contenidoFadeLoop 9s linear infinite;
+    }
+
+    @keyframes contenidoFadeLoop {
+        0%, 72% { opacity: 1; }
+        77%, 100% { opacity: 0; }
+    }
+
+    /* 8. Movimiento del Borrador de izquierda a derecha */
+    .animate-borrador-loop {
+        animation: borradorLoop 9s ease-in-out infinite;
+    }
+
+    @keyframes borradorLoop {
+        0%, 71% { opacity: 0; left: -100px; }
+        73% { opacity: 0.9; left: -30px; }
+        78% { opacity: 0.9; left: 100%; } /* Pasa barriendo de izquierda a derecha */
+        80%, 100% { opacity: 0; left: 100%; }
+    }
+</style>

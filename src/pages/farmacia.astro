@@ -1,0 +1,33 @@
+---
+// src/pages/farmacia.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FarmaciaHero from '../components/farmacias/FarmaciaHero.astro';
+import FarmaciaFeatures from '../components/farmacias/FarmaciaFeatures.astro';
+import FarmaciaVideo from '../components/farmacias/FarmaciaVideo.astro';
+import FarmaciaDispositivos from '../components/farmacias/FarmaciaDispositivos.astro';
+import FarmaciaPlanes from '../components/farmacias/FarmaciaPlanes.astro';
+
+const title = 'Sistema Punto de Venta para Farmacias | Ollintem';
+const description =
+  'Software POS especializado en farmacias: control de caducidades, lotes, búsqueda por sustancia activa y facturación electrónica. Planes a tu medida.';
+---
+
+<Layout title={title}>
+  <meta slot="head" name="description" content={description} />
+  <meta slot="head" name="keywords" content="sistema punto de venta farmacia, software farmacias, POS farmacia, control de caducidades, inventario médico" />
+
+  <Navbar />
+
+  <main class="bg-[#E5F3F2] font-sans selection:bg-[#29A09B] selection:text-white min-h-screen">
+    <FarmaciaHero />
+    <FarmaciaFeatures />
+    <FarmaciaVideo />
+    <FarmaciaDispositivos />
+    <FarmaciaPlanes />
+  </main>
+
+    <Footer />
+
+</Layout>

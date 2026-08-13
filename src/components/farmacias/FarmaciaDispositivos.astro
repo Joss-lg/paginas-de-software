@@ -1,0 +1,126 @@
+---
+// src/components/farmacias/FarmaciaDispositivos.astro
+---
+
+<section class="py-24 sm:py-32 bg-white overflow-hidden relative">
+  <!-- Círculo decorativo sutil -->
+  <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#E5F3F2]/50 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Columna 1: Textos y Características (Ocupa 6 columnas en desktop) -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#006C5B] bg-[#E5F3F2] border border-[#7CC6C1]/30">
+          Multiplataforma Médica
+        </div>
+        
+        <h2 class="text-3xl font-extrabold tracking-tight text-[#006C5B] sm:text-4xl leading-tight">
+          Control en el mostrador y <span class="text-[#29A09B]">desde cualquier lugar</span>
+        </h2>
+        
+        <p class="text-lg leading-8 text-[#006C5B]/70">
+          Ya sea que estés facturando en tu mostrador con nuestra <span class="font-bold text-[#006C5B]">interfaz web ultrarrápida</span> o revisando el inventario desde el pasillo con la <span class="font-bold text-[#006C5B]">app móvil</span>, tendrás todo sincronizado al segundo.
+        </p>
+        
+        <ul class="space-y-4 pt-2">
+          <li class="flex gap-x-4 items-center group">
+            <div class="flex-none w-10 h-10 rounded-full bg-[#E5F3F2] flex items-center justify-center text-[#29A09B] group-hover:bg-[#29A09B] group-hover:text-white transition-colors shadow-sm">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <span class="text-[#006C5B]/80 font-medium">Sincronización de cajas e inventario en tiempo real.</span>
+          </li>
+          
+          <li class="flex gap-x-4 items-center group">
+            <div class="flex-none w-10 h-10 rounded-full bg-[#E5F3F2] flex items-center justify-center text-[#29A09B] group-hover:bg-[#29A09B] group-hover:text-white transition-colors shadow-sm">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            </div>
+            <span class="text-[#006C5B]/80 font-medium">Auditoría remota desde tu celular.</span>
+          </li>
+          
+          <li class="flex gap-x-4 items-center group">
+            <div class="flex-none w-10 h-10 rounded-full bg-[#E5F3F2] flex items-center justify-center text-[#29A09B] group-hover:bg-[#29A09B] group-hover:text-white transition-colors shadow-sm">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" /></svg>
+            </div>
+            <span class="text-[#006C5B]/80 font-medium">Interfaz adaptada a pantallas táctiles de mostrador.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Mockups Visuales Interactivos (Ocupa 6 columnas en desktop) -->
+      <div class="lg:col-span-6 relative h-[480px] sm:h-[520px] w-full mt-10 lg:mt-0">
+        
+        <!-- Mockup Web (Fondo superior izquierdo) -->
+        <div class="group absolute top-0 left-0 w-full sm:w-[95%] rounded-2xl bg-white border border-[#E5F3F2] shadow-2xl shadow-[#006C5B]/10 overflow-hidden z-10 transition-all duration-500 hover:shadow-[#29A09B]/30 hover:-translate-y-1">
+          <div class="bg-[#E5F3F2] border-b border-[#7CC6C1]/20 px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="h-3 w-3 rounded-full bg-red-400"></div>
+              <div class="h-3 w-3 rounded-full bg-amber-400"></div>
+              <div class="h-3 w-3 rounded-full bg-[#29A09B]"></div>
+            </div>
+            <span class="text-[10px] font-bold text-[#006C5B]/60 uppercase tracking-wider">Pasa el cursor para ver sistema web</span>
+          </div>
+          
+          <!-- Contenedor Pantalla Web con efecto Hover -->
+          <div class="aspect-[16/10] relative bg-[#E5F3F2]/40 overflow-hidden">
+            <!-- Estado por defecto (Wireframe esquema) -->
+            <div class="absolute inset-0 p-4 bg-white flex gap-4 transition-opacity duration-500 group-hover:opacity-0">
+              <div class="w-1/4 bg-[#E5F3F2] rounded-xl h-full border border-[#7CC6C1]/20"></div>
+              <div class="w-3/4 flex flex-col gap-4">
+                <div class="h-16 bg-[#E5F3F2] rounded-xl w-full border border-[#7CC6C1]/20"></div>
+                <div class="flex-1 bg-white border border-[#7CC6C1]/30 rounded-xl flex items-center justify-center text-xs text-[#006C5B]/60 font-medium">
+                  🖥️ Interfaz de Mostrador (Preview)
+                </div>
+              </div>
+            </div>
+
+            <!-- Estado Hover (Imagen real que "se enciende") -->
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-105 group-hover:scale-100">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Sistema web de farmacia" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#006C5B]/40 to-transparent"></div>
+              <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-[#006C5B] shadow">
+                Panel Web Activo
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Móvil (Esquina inferior derecha) -->
+        <div class="group absolute bottom-0 right-0 sm:right-4 w-52 sm:w-60 rounded-[2.5rem] bg-[#006C5B] p-2 shadow-2xl shadow-[#006C5B]/30 ring-4 ring-white z-20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[#29A09B]/40">
+          <div class="h-full w-full rounded-[2rem] bg-white overflow-hidden relative">
+            <!-- Isla / Notch superior del teléfono -->
+            <div class="absolute top-0 inset-x-0 h-5 bg-[#006C5B] rounded-b-xl w-28 mx-auto z-30 flex items-center justify-center">
+              <div class="w-8 h-1 bg-[#004d43] rounded-full"></div>
+            </div>
+            
+            <!-- Contenedor Pantalla Móvil con efecto Hover -->
+            <div class="aspect-[9/18] relative bg-[#E5F3F2]/40 overflow-hidden pt-5">
+              <!-- Estado por defecto (Wireframe esquema móvil) -->
+              <div class="absolute inset-0 p-3 pt-8 bg-[#E5F3F2] flex flex-col gap-3 transition-opacity duration-500 group-hover:opacity-0">
+                <div class="h-20 bg-gradient-to-br from-[#29A09B] to-[#006C5B] rounded-xl w-full shadow-inner"></div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="h-14 bg-white rounded-xl shadow-sm border border-[#7CC6C1]/20"></div>
+                  <div class="h-14 bg-white rounded-xl shadow-sm border border-[#7CC6C1]/20"></div>
+                </div>
+                <div class="flex-1 bg-white rounded-xl shadow-sm border border-[#7CC6C1]/20 flex items-center justify-center text-center p-2 text-[10px] text-[#006C5B]/60 font-medium">
+                  📱 App Móvil (Preview)
+                </div>
+              </div>
+
+              <!-- Estado Hover (Imagen real que "se enciende" en el celular) -->
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-105 group-hover:scale-100">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="App móvil de farmacia" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#006C5B]/50 to-transparent"></div>
+                <div class="absolute bottom-2 left-2 right-2 text-center bg-white/90 backdrop-blur-md px-2 py-1 rounded-lg text-[10px] font-bold text-[#006C5B] shadow">
+                  App Sincronizada
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

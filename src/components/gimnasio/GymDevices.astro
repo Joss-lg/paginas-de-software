@@ -4,96 +4,101 @@
 
 <section class="py-24 bg-gym-card text-gym-light overflow-hidden relative">
 
-  <!-- Resplandor sutil -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gym-primary/10 blur-[140px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <!-- Encabezado -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gym-primary-light/10 border border-gym-primary-light/30 text-gym-primary-light text-xs font-semibold tracking-wide uppercase">
-        Disponible en todos lados
-      </span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
+      <h2 class="font-mono text-xs font-bold uppercase tracking-widest text-gym-primary-light mb-4">// Disponible en todos lados</h2>
+      <p class="text-3xl md:text-4xl font-extrabold">
         Tu gimnasio, en la pantalla que necesites<span class="text-gym-primary-light">.</span>
-      </h2>
-      <p class="text-gym-light/70 text-base md:text-lg">
-        Administra desde la computadora de recepción y supervisa todo desde tu celular. Un mismo sistema, sincronizado en tiempo real, sin importar el dispositivo.
+      </p>
+      <p class="text-gym-light/70 text-base md:text-lg mt-4 max-w-2xl mx-auto">
+        Administra desde la computadora de recepción y supervisa todo desde tu celular. Un mismo sistema, sincronizado en tiempo real.
       </p>
     </div>
 
     <!-- Web + Móvil -->
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
+    <div class="grid lg:grid-cols-12 gap-px bg-gym-light/10 border border-gym-light/10">
 
       <!-- Vista web -->
-      <div class="lg:col-span-8 bg-gym-bg p-6 rounded-3xl border border-gym-light/10 shadow-2xl">
-        <div class="flex items-center justify-between mb-6 px-2">
-          <div class="flex items-center space-x-2">
-            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-            <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
-            <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
-          </div>
-          <span class="text-xs font-black text-gym-light/40 uppercase tracking-widest">Panel de escritorio</span>
+      <div class="lg:col-span-8 bg-gym-bg p-8">
+        <div class="flex items-center justify-between mb-6 font-mono text-[11px] tracking-widest text-gym-light/50">
+          <span>TERMINAL // PANEL-WEB</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>ACTIVO</span>
         </div>
 
-        <div class="rounded-2xl overflow-hidden border border-gym-light/10 bg-gym-card aspect-[16/9]">
-          <img
-            src="https://placehold.co/1000x560/171d30/7C6EEF?font=roboto&text=Dashboard+completo+de+gesti%C3%B3n"
-            alt="Vista de escritorio del sistema de gestión para gimnasios"
-            class="w-full h-full object-cover"
-          />
+        <!-- Reemplaza por una captura real del panel de escritorio -->
+        <div class="relative">
+          <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-gym-primary-light z-10"></div>
+          <div class="overflow-hidden border border-gym-light/10 aspect-[16/9]">
+            <img
+              src="https://placehold.co/1000x560/171d30/7C6EEF?font=roboto&text=Dashboard+completo+de+gesti%C3%B3n"
+              alt="Espacio para captura de escritorio del sistema de gestión para gimnasios"
+              class="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div class="mt-6">
           <h3 class="text-xl font-bold text-white">Panel administrativo completo</h3>
-          <p class="text-gym-light/60 text-sm mt-2">
+          <p class="text-gym-light/60 text-sm mt-2 max-w-lg">
             Controla membresías, accesos, cobros y reportes desde una sola pantalla en recepción, sin instalar nada adicional.
           </p>
         </div>
       </div>
 
       <!-- Vista móvil -->
-      <div class="lg:col-span-4 flex flex-col gap-6">
-        <div class="bg-gym-bg p-6 rounded-3xl border border-gym-light/10 shadow-2xl h-full">
-          <div class="flex items-center justify-between mb-6 px-2">
-            <span class="text-xs font-black text-gym-primary-light uppercase tracking-widest">App móvil</span>
-            <div class="w-2 h-2 bg-gym-primary-light rounded-full animate-pulse"></div>
-          </div>
+      <div class="lg:col-span-4 bg-gym-bg p-8 flex flex-col">
+        <div class="flex items-center justify-between mb-6 font-mono text-[11px] tracking-widest text-gym-light/50">
+          <span>APP-MOVIL</span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-gym-primary-light"></span>SYNC</span>
+        </div>
 
-          <div class="rounded-2xl overflow-hidden border border-gym-light/10 bg-gym-card aspect-[9/16] max-w-[280px] mx-auto">
+        <!-- Reemplaza por una captura real de la app -->
+        <div class="relative mx-auto max-w-[240px] w-full">
+          <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-gym-primary-light z-10"></div>
+          <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-gym-primary-light z-10"></div>
+          <div class="overflow-hidden border border-gym-light/10 aspect-[9/16]">
             <img
               src="https://placehold.co/450x800/171d30/7C6EEF?font=roboto&text=App+para+socios+y+administraci%C3%B3n"
-              alt="Vista móvil de la app del sistema para gimnasios"
+              alt="Espacio para captura móvil de la app del sistema para gimnasios"
               class="w-full h-full object-cover"
             />
           </div>
+        </div>
 
-          <div class="mt-6 text-center">
-            <h3 class="text-xl font-bold text-white">Supervisión desde tu celular</h3>
-            <p class="text-gym-light/60 text-sm mt-2">
-              Revisa accesos, ingresos del día y nuevas inscripciones sin necesidad de estar en el gimnasio.
-            </p>
-          </div>
+        <div class="mt-6 text-center">
+          <h3 class="text-xl font-bold text-white">Supervisión desde tu celular</h3>
+          <p class="text-gym-light/60 text-sm mt-2">
+            Revisa accesos, ingresos del día y nuevas inscripciones sin estar en el gimnasio.
+          </p>
         </div>
       </div>
 
     </div>
 
     <!-- Beneficios inferiores -->
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="text-center p-6 bg-gym-light/[0.03] border border-gym-light/10 rounded-2xl">
-        <div class="text-gym-primary-light text-2xl mb-3">●</div>
-        <h4 class="font-bold text-white">Sincronización total</h4>
+    <div class="mt-px grid grid-cols-1 md:grid-cols-3 border border-t-0 border-gym-light/10 divide-y md:divide-y-0 md:divide-x divide-gym-light/10">
+      <div class="p-8 text-center md:text-left">
+        <span class="font-mono text-[11px] text-gym-primary-light tracking-widest">01</span>
+        <h4 class="font-bold text-white mt-2">Sincronización total</h4>
         <p class="text-gym-light/60 text-sm mt-1">Los cambios en accesos y pagos se reflejan al instante en todos los dispositivos.</p>
       </div>
-      <div class="text-center p-6 bg-gym-light/[0.03] border border-gym-light/10 rounded-2xl">
-        <div class="text-gym-primary text-2xl mb-3">●</div>
-        <h4 class="font-bold text-white">Acceso desde cualquier lugar</h4>
+      <div class="p-8 text-center md:text-left">
+        <span class="font-mono text-[11px] text-gym-primary-light tracking-widest">02</span>
+        <h4 class="font-bold text-white mt-2">Acceso desde cualquier lugar</h4>
         <p class="text-gym-light/60 text-sm mt-1">Supervisa tu gimnasio desde casa, otra sucursal o de viaje, sin restricciones.</p>
       </div>
-      <div class="text-center p-6 bg-gym-light/[0.03] border border-gym-light/10 rounded-2xl">
-        <div class="text-emerald-400 text-2xl mb-3">●</div>
-        <h4 class="font-bold text-white">Sin instalaciones</h4>
+      <div class="p-8 text-center md:text-left">
+        <span class="font-mono text-[11px] text-gym-primary-light tracking-widest">03</span>
+        <h4 class="font-bold text-white mt-2">Sin instalaciones</h4>
         <p class="text-gym-light/60 text-sm mt-1">Funciona desde el navegador o la app, sin equipos costosos ni configuraciones complejas.</p>
       </div>
     </div>
