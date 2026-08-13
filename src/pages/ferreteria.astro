@@ -1,0 +1,43 @@
+---
+// Importación del Layout principal de tu proyecto
+import Layout from '../layouts/Layout.astro';
+
+// Importación de los 5 componentes de Ferretería
+import HeroFerreteria from '../components/ferreteria/HeroFerreteria.astro';
+import CaracteristicasFerreteria from '../components/ferreteria/CaracteristicasFerreteria.astro';
+import EcosistemaFerreteria from '../components/ferreteria/EcosistemaFerreteria.astro';
+import VideoDemoFerreteria from '../components/ferreteria/VideoDemoFerreteria.astro';
+import ModulosFerreteria from '../components/ferreteria/ModulosFerreteria.astro';
+---
+
+<Layout 
+  title="Sistema Punto de Venta y Control de Inventarios para Ferreterías"
+  description="Software especializado para ferreterías. Búsqueda rápida por código o clave, venta a granel/metros, control de stock ciego y facturación en mostrador."
+>
+  <main class="bg-slate-950 min-h-screen text-slate-100 selection:bg-amber-500 selection:text-slate-950">
+    
+    <!-- 1. Hero Principal -->
+    <HeroFerreteria 
+      heroImage="/ferreteria/ferreteria-hero-mockup.webp"
+      imageAlt="Vista de la interfaz de cobranza para mostrador de ferretería"
+    />
+
+    <!-- 2. Características y Funcionalidades -->
+    <CaracteristicasFerreteria />
+
+    <!-- 3. Consola Central / Ecosistema -->
+    <EcosistemaFerreteria 
+      dashboardImage="/ferreteria/dashboard-ferreteria.webp"
+    />
+
+    <!-- 4. Demostración en Video -->
+    <VideoDemoFerreteria 
+      videoSrc="/videos/demo-ferreteria.mp4"
+      posterImage="/images/ferreteria-video-poster.webp"
+    />
+
+    <!-- 5. Planes de Suscripción -->
+    <ModulosFerreteria />
+
+  </main>
+</Layout>

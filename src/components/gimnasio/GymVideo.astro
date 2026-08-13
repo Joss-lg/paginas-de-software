@@ -1,0 +1,31 @@
+---
+// src/components/gimnasio/GymVideo.astro
+---
+
+<section class="py-24 bg-gym-bg text-gym-light">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gym-primary-light/10 border border-gym-primary-light/30 text-gym-primary-light text-xs font-semibold tracking-wide uppercase">
+      Demostración en video
+    </span>
+    <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
+      Mira el sistema operando en tiempo real
+    </h2>
+    <p class="text-lg text-gym-light/70 max-w-2xl mx-auto mb-10">
+      Descubre lo fácil que es registrar accesos, controlar membresías y revisar los cobros del día desde una sola plataforma.
+    </p>
+
+    <div class="aspect-video rounded-3xl shadow-2xl relative overflow-hidden group border border-gym-light/10">
+      <img
+        src="https://placehold.co/1200x675/111625/7C6EEF?font=roboto&text=Demostraci%C3%B3n%3A+Accesos%2C+cobros+y+reportes"
+        alt="Miniatura del video de demostración del sistema para gimnasios"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gym-bg/50 group-hover:bg-gym-bg/30 transition-colors"></div>
+      <button class="absolute inset-0 flex items-center justify-center">
+        <span class="flex items-center gap-3 text-white bg-gradient-to-r from-gym-primary to-gym-primary-light px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-gym-primary/40">
+          <span class="text-2xl">▶</span> Reproducir Demostración
+        </span>
+      </button>
+    </div>
+  </div>
+</section>

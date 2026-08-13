@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/gimnasio/GymHero.astro';
+import Features from '../components/gimnasio/GymFeatures.astro';
+import GymDevices from '../components/gimnasio/GymDevices.astro';
+import Pricing from '../components/gimnasio/GymPricing.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Sistema de Gestión para Gimnasios | FitPulse Pro';
+const description =
+  'Software integral para gimnasios: control de accesos biométricos, gestión de membresías, punto de venta y app móvil para socios. 100% en la nube.';
+---
+
+<Layout title={title}>
+  <meta slot="head" name="description" content={description} />
+  <meta slot="head" name="keywords" content="sistema para gimnasios, software de gestión gimnasio, control de accesos gym, punto de venta gimnasio, app para gimnasio" />
+
+  <Navbar />
+
+  <main class="pt-20 bg-gym-bg text-gym-light min-h-screen">
+    <Hero />
+    <Features />
+    <GymDevices />
+    <Pricing />
+    <Footer />
+  </main>
+</Layout>

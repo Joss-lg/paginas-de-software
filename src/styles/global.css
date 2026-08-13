@@ -12,6 +12,15 @@
   (utilidad nativa de Tailwind) para respetar accesibilidad.
 */
 
+@import "tailwindcss";
+
+@theme {
+  --color-verde-principal: #4C8B3D;
+  --color-verde-claro: #A8D08D;
+  --color-verde-oscuro: #2A4B2A;
+  --color-verde-pastel: #E2F6E3;
+}
+
 @theme {
   --animate-card-float: card-float 5s ease-in-out infinite;
   --animate-scan-laser: scan-laser 2.2s ease-in-out infinite;
@@ -19,6 +28,15 @@
   --animate-total-glow: total-glow 4.4s ease-in-out infinite;
   --animate-ticket-slide: ticket-slide 4.4s ease-in-out infinite;
   --animate-badge-float: badge-float 3.6s ease-in-out infinite;
+}
+
+@theme {
+  --color-gym-bg: #111625;
+  --color-gym-card: #171d30;
+  --color-gym-primary: #5b45e0;
+  --color-gym-primary-light: #7c6eef;
+  --color-gym-light: #f0f4ff;
+  --color-gym-pale: #e7eaff;
 }
 
 @keyframes card-float {

@@ -1,0 +1,142 @@
+---
+// src/components/ferreteria/ModulosFerreteria.astro
+const planesFerreteria = [
+  {
+    nombre: "Plan Inicial (1 Caja)",
+    subtitulo: "Ideal para ferreterías pequeñas o de un solo mostrador",
+    precioMensual: "599.00",
+    precioAnual: "5,990.00",
+    msi3: "1,996.67",
+    msi6: "998.33",
+    destacado: false,
+    caracteristicas: [
+      "1 Terminal POS de cobro",
+      "Catálogo ilimitado de productos y claves",
+      "Venta por código de barras y piezas",
+      "Cortes de caja y reportes de venta",
+      "Impresión de tickets de compra"
+    ]
+  },
+  {
+    nombre: "Plan Profesional",
+    subtitulo: "Para ferreterías con flujo constante y venta a granel",
+    precioMensual: "999.00",
+    precioAnual: "9,990.00",
+    msi3: "3,330.00",
+    msi6: "1,665.00",
+    destacado: true,
+    etiqueta: "RECOMENDADO",
+    caracteristicas: [
+      "Hasta 3 cajas de cobro en red",
+      "Módulo de venta por kilo, metro y fraccionado",
+      "Gestión de lista de precios (Público / Mayoreo)",
+      "Alertas de stock mínimo y compras a proveedores",
+      "Roles de usuario (Cajero / Administrador)"
+    ]
+  },
+  {
+    nombre: "Plan Empresarial",
+    subtitulo: "Para ferreterías grandes, múltiples cajas o sucursales",
+    precioMensual: "1,299.00",
+    precioAnual: "12,990.00",
+    msi3: "4,330.00",
+    msi6: "2,165.00",
+    destacado: false,
+    caracteristicas: [
+      "Cajas de cobro y terminales ilimitadas",
+      "Facturación electrónica SAT en mostrador",
+      "Auditoría avanzada de inventario (Kardex)",
+      "Multi-almacén y traspasos de mercancía",
+      "Soporte técnico preferente y capacitaciones"
+    ]
+  }
+];
+---
+<section id="planes" class="py-20 bg-slate-950 text-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="px-3.5 py-1 text-xs font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest">
+        Suscripción
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+        Planes de Inversión para Ferreterías
+      </h2>
+      <p class="mt-3 text-slate-400 text-base">
+        Elige el plan ideal según tus puntos de venta. Obtén <strong class="text-amber-400">2 meses gratis en pago anual</strong>.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      {planesFerreteria.map((plan) => (
+        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 group ${
+          plan.destacado 
+            ? 'bg-slate-900 border-2 border-amber-500 shadow-2xl shadow-amber-500/20 lg:-translate-y-2 z-10 hover:shadow-amber-500/35' 
+            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700 hover:shadow-xl'
+        }`}>
+          
+          {plan.destacado && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-lg animate-pulse">
+              {plan.etiqueta}
+            </div>
+          )}
+
+          <div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">{plan.nombre}</h3>
+            <p class="text-xs text-slate-400 mt-1.5 min-h-[32px]">{plan.subtitulo}</p>
+
+            <!-- Bloque de Precio -->
+            <div class="mt-6 p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80 group-hover:border-amber-500/30 transition-colors">
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-black text-white">${plan.precioMensual}</span>
+                <span class="text-xs text-slate-400 font-medium">MXN / mes</span>
+              </div>
+
+              <div class="mt-3 text-xs space-y-1.5 text-slate-300 border-t border-slate-800/80 pt-3">
+                <p class="flex justify-between">
+                  <span class="text-slate-400">Pago Anual (-2 meses):</span>
+                  <strong class="text-amber-400">${plan.precioAnual} MXN</strong>
+                </p>
+                <p class="flex justify-between">
+                  <span class="text-slate-400">3 MSI:</span>
+                  <span>${plan.msi3} MXN / mes</span>
+                </p>
+                <p class="flex justify-between">
+                  <span class="text-slate-400">6 MSI:</span>
+                  <span>${plan.msi6} MXN / mes</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de Características -->
+            <ul class="mt-6 space-y-3">
+              {plan.caracteristicas.map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-300">
+                  <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a 
+              href="#contacto" 
+              class={`block w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all duration-300 hover:scale-[1.02] ${
+                plan.destacado 
+                  ? 'bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 shadow-lg shadow-amber-500/25' 
+                  : 'bg-slate-800 hover:bg-slate-700 text-white'
+              }`}
+            >
+              Seleccionar Plan
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

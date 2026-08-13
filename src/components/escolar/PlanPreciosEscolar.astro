@@ -1,0 +1,67 @@
+---
+// Modulo: PlanPreciosEscolar
+// Propósito: Mostrar los planes basados en el volumen de usuarios/matrícula.
+---
+<section class="py-20 bg-[#2A4B2A] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold sm:text-4xl text-white">Sistema Institucional</h2>
+            <p class="mt-4 text-xl text-[#E2F6E3]">Cobro por volumen de usuarios o tamaño del plantel</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Plan Básico -->
+            <div class="bg-[#2A4B2A] rounded-2xl p-8 border border-[#4C8B3D] flex flex-col shadow-lg shadow-[#4C8B3D]/10">
+                <h3 class="text-2xl font-semibold text-white mb-2">Plan Básico</h3>
+                <p class="text-[#A8D08D] mb-6">Ideal para instituciones en crecimiento</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-white">$1,500</span>
+                    <span class="text-[#A8D08D]"> / mes</span>
+                </div>
+                <div class="bg-[#4C8B3D]/30 border border-[#4C8B3D] rounded-lg p-4 mb-8 text-sm text-[#E2F6E3]">
+                    <span class="font-semibold text-white">Límite:</span> Hasta 150 alumnos.
+                </div>
+                <ul class="space-y-4 mb-8 text-[#E2F6E3] flex-1">
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#A8D08D] mt-1 font-bold">✓</span> Control de alumnos y materias.
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#A8D08D] mt-1 font-bold">✓</span> Gestión de calificaciones.
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#A8D08D] mt-1 font-bold">✓</span> Acceso exclusivo a directivos y maestros.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Plan Institucional -->
+            <div class="bg-[#4C8B3D] rounded-2xl p-8 border border-[#A8D08D] relative flex flex-col shadow-2xl shadow-[#1f371f]">
+                <div class="absolute top-0 right-8 transform -translate-y-1/2">
+                    <span class="bg-[#E2F6E3] text-[#2A4B2A] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">Máxima Capacidad</span>
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Plan Institucional</h3>
+                <p class="text-[#E2F6E3] mb-6">Para bases de datos y planteles grandes</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-white">$3,000 a $4,500</span>
+                    <span class="text-[#E2F6E3]"> / mes</span>
+                </div>
+                <div class="bg-[#2A4B2A]/40 rounded-lg p-4 mb-8 text-sm text-[#E2F6E3]">
+                    <span class="font-semibold text-white">Límite:</span> Alumnos ilimitados.
+                </div>
+                <ul class="space-y-4 mb-8 text-white flex-1">
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#E2F6E3] mt-1 font-bold">✓</span> Incluye todas las funciones del Plan Básico.
+                    </li>
+                    <li class="flex items-start gap-3 font-semibold">
+                        <span class="text-[#E2F6E3] mt-1 font-bold">✓</span> Acceso completo al sistema.
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#E2F6E3] mt-1 font-bold">✓</span> Portales individuales para que los padres de familia consulten el historial académico.
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>

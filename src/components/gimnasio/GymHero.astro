@@ -1,0 +1,127 @@
+---
+// src/components/gimnasio/Hero.astro
+---
+
+<section class="relative min-h-[90vh] bg-gym-bg text-gym-light overflow-hidden flex items-center pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+
+  <style>
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes scanMove {
+      0%, 100% { top: 6%; opacity: 0.9; }
+      50% { top: 92%; opacity: 0.9; }
+    }
+    .animate-badge-float { animation: badgeFloat 3.8s ease-in-out infinite; }
+    .animate-scan { animation: scanMove 3.2s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-badge-float, .animate-scan {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Textura de puntos sutil -->
+  <div
+    class="absolute inset-0 opacity-[0.05] pointer-events-none"
+    style="background-image: radial-gradient(circle, #F0F4FF 1.5px, transparent 1.5px); background-size: 28px 28px;"
+  ></div>
+
+  <!-- Efectos de luz de fondo (Glows con la paleta) -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gym-primary/20 blur-[140px] rounded-full pointer-events-none"></div>
+  <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-gym-primary-light/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+
+    <!-- Columna de Texto -->
+    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gym-primary-light/10 border border-gym-primary-light/30 text-gym-primary-light text-xs font-semibold tracking-wide uppercase backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-gym-primary-light animate-pulse"></span>
+        Nueva Versión 4.2 Disponible
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+        Revoluciona la gestión de tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-gym-primary-light to-gym-primary">Gimnasio</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-gym-light/70 max-w-2xl mx-auto lg:mx-0 font-normal">
+        Automatiza accesos, controla membresías, optimiza cobros y potencia el rendimiento de tus atletas desde una plataforma inteligente y ultrarrápida.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+        <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gym-primary to-gym-primary-light text-white font-bold shadow-lg shadow-gym-primary/30 hover:scale-105 hover:shadow-xl hover:shadow-gym-primary/40 transition-all duration-300 text-center">
+          Comenzar Prueba Gratis
+        </a>
+        <a href="#caracteristicas" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gym-light/5 border border-gym-light/10 text-gym-light font-semibold hover:bg-gym-light/10 transition-all duration-300 text-center backdrop-blur-sm">
+          Ver Demostración
+        </a>
+      </div>
+
+      <!-- Métricas rápidas -->
+      <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gym-light/10 max-w-lg mx-auto lg:mx-0">
+        <div>
+          <p class="text-2xl sm:text-3xl font-black text-gym-primary-light">+99%</p>
+          <p class="text-xs text-gym-light/60 uppercase tracking-wider">Retención</p>
+        </div>
+        <div>
+          <p class="text-2xl sm:text-3xl font-black text-gym-primary">24/7</p>
+          <p class="text-xs text-gym-light/60 uppercase tracking-wider">Soporte Cloud</p>
+        </div>
+        <div>
+          <p class="text-2xl sm:text-3xl font-black text-gym-primary-light">10k+</p>
+          <p class="text-xs text-gym-light/60 uppercase tracking-wider">Atletas Activos</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna de Imagen / Mockup Dinámico -->
+    <div class="lg:col-span-5 relative">
+      <div class="relative mx-auto max-w-md lg:max-w-none">
+
+        <!-- Tarjeta decorativa flotante: acceso registrado -->
+        <div class="absolute -top-6 -left-6 z-20 bg-gym-bg/80 border border-gym-primary-light/30 p-4 rounded-2xl backdrop-blur-xl shadow-2xl hidden sm:block animate-badge-float">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gym-primary/20 flex items-center justify-center text-gym-primary-light font-bold">⚡</div>
+            <div>
+              <p class="text-xs text-gym-light/60">Acceso Registrado</p>
+              <p class="text-sm font-bold text-white">Carlos Mendoza (VIP)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta decorativa flotante: pago recibido -->
+        <div class="absolute -bottom-6 -right-4 sm:-right-6 z-20 bg-gym-bg/80 border border-gym-primary-light/30 p-4 rounded-2xl backdrop-blur-xl shadow-2xl hidden sm:block animate-badge-float" style="animation-delay: 1.4s;">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gym-pale flex items-center justify-center text-gym-bg font-bold">✓</div>
+            <div>
+              <p class="text-xs text-gym-light/60">Pago Recibido</p>
+              <p class="text-sm font-bold text-white">$850.00 MXN</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor principal de imagen -->
+        <div class="relative rounded-3xl p-2 bg-gradient-to-b from-gym-primary-light/40 to-gym-primary/10 shadow-2xl shadow-gym-primary/20">
+          <div class="relative rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
+              alt="Dashboard de Sistema de Gimnasio"
+              class="object-cover w-full h-[400px] sm:h-[450px] filter saturate-125 hover:scale-[1.02] transition-transform duration-500"
+            />
+            <!-- Overlay de reconocimiento biométrico -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gym-bg/60 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute left-4 right-4 h-[2px] bg-gym-primary-light shadow-[0_0_12px_3px_rgba(124,110,239,0.7)] animate-scan"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-1.5 bg-gym-bg/70 border border-gym-primary-light/30 backdrop-blur-md px-2.5 py-1 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-[10px] font-bold text-gym-light uppercase tracking-wider">Escaneo biométrico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

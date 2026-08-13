@@ -1,0 +1,67 @@
+---
+// src/components/gimnasio/GymFeatures.astro
+const features = [
+  {
+    icon: "📊",
+    title: "Control Financiero y Caja",
+    description: "Monitorea ingresos diarios, cortes de caja automáticos, control de adeudos y reportes de rentabilidad en tiempo real."
+  },
+  {
+    icon: "🆔",
+    title: "Control de Acceso Biométrico",
+    description: "Sincronización con torniquetes, reconocimiento facial y huella dactilar para bloquear automáticamente membresías vencidas."
+  },
+  {
+    icon: "📱",
+    title: "App Móvil para Socios",
+    description: "Tus clientes podrán reservar clases grupales, ver sus rutinas asignadas, historial de pagos y rutinas personalizadas."
+  },
+  {
+    icon: "⚙️",
+    title: "Gestión de Rutinas y Clases",
+    description: "Asigna entrenamientos avanzados, programa capacidad máxima en áreas comunes y controla instructores sin fricción."
+  }
+];
+---
+
+<section id="caracteristicas" class="py-24 bg-gym-bg text-gym-light relative overflow-hidden">
+
+  <!-- Resplandor sutil de fondo -->
+  <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gym-primary/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-gym-primary-light">Potencia Operativa</h2>
+      <p class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+        Todo lo que necesitas para operar en piloto automático
+      </p>
+      <p class="text-gym-light/70 text-base sm:text-lg">
+        Diseñado específicamente para eliminar cuellos de botella administrativos y escalar tu negocio fitness.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature, i) => (
+        <div class="group relative p-8 rounded-2xl bg-gym-light/[0.02] border border-gym-light/10 hover:border-gym-primary-light/50 transition-all duration-300 hover:-translate-y-2 hover:bg-gym-light/[0.05] overflow-hidden">
+
+          <!-- Línea de acento superior -->
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gym-primary to-gym-primary-light scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
+
+          <span class="absolute top-6 right-7 text-[11px] font-bold text-gym-light/20 tracking-widest">0{i + 1}</span>
+
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gym-primary/25 to-gym-primary-light/10 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 text-gym-primary-light">
+            {feature.icon}
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-white group-hover:text-gym-primary-light transition-colors">
+            {feature.title}
+          </h3>
+          <p class="text-sm text-gym-light/60 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

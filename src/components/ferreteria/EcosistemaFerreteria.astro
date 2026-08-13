@@ -1,0 +1,56 @@
+---
+// src/components/ferreteria/EcosistemaFerreteria.astro
+interface Props {
+  dashboardImage?: string;
+}
+
+const { dashboardImage = "/ferreteria/dashboard-ferreteria.webp" } = Astro.props;
+---
+<section class="py-20 bg-slate-950 text-white border-t border-slate-900/80 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-5xl mx-auto space-y-12">
+      
+      <!-- Encabezado -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full inline-block">
+          Control Centralizado
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Sincronización Total Mostrador & Almacén
+        </h2>
+        <p class="text-slate-400 text-base">
+          Visualiza ventas en tiempo real, monitorea las existencias críticas y controla las cajas desde un solo panel administrativo.
+        </p>
+      </div>
+
+      <!-- IMAGEN DE LA CONSOLA (Arriba) -->
+      <div class="relative rounded-3xl bg-slate-900/90 p-3 sm:p-4 border border-slate-800 shadow-2xl hover:border-amber-500/40 transition-all duration-500 group">
+        
+        <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 px-3">
+          <div>
+            <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Panel de Administración de Inventarios</h3>
+            <p class="text-xs text-slate-400">Control de entradas, kardex y ventas generales</p>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            En línea
+          </span>
+        </div>
+
+        <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 aspect-[16/8] mt-3">
+          <img 
+            src={dashboardImage} 
+            alt="Dashboard principal del sistema para ferreterías" 
+            loading="lazy"
+            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
