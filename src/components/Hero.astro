@@ -1,66 +1,81 @@
 ---
 // Hero.astro
 ---
-<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-50">
-  <!-- Fondo 
-   decorativo: Cuadrícula sutil moderna -->
-  <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
   
-  <!-- Luces de fondo en colores Azul Esmeralda (teal) y Verde Menta (emerald) -->
+  <!-- Fondo decorativo: Cuadrícula oscura moderna -->
+  <div class="absolute inset-0 -z-10 h-full w-full bg-slate-900 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  
+  <!-- Luces de fondo en colores Azul Esmeralda (teal) y Verde Menta (emerald) ajustadas para Dark Mode -->
   <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full overflow-hidden -z-10 pointer-events-none">
-    <div class="absolute -top-40 right-0 md:-right-40 w-[30rem] h-[30rem] bg-teal-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-pulse"></div>
-    <div class="absolute top-40 -left-20 md:-left-40 w-[30rem] h-[30rem] bg-emerald-300 rounded-full mix-blend-multiply filter blur-[128px] opacity-30"></div>
+    <div class="absolute -top-40 right-0 md:-right-40 w-[40rem] h-[40rem] bg-teal-600/20 rounded-full mix-blend-screen filter blur-[128px] animate-pulse"></div>
+    <div class="absolute top-40 -left-20 md:-left-40 w-[40rem] h-[40rem] bg-emerald-500/20 rounded-full mix-blend-screen filter blur-[128px]"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
     <div class="max-w-3xl mx-auto">
       
-      <!-- Etiqueta superior (Badge) -->
-      <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-teal-50 text-teal-800 text-sm font-semibold mb-6 border border-teal-200 shadow-sm">
+      <!-- Etiqueta superior (Badge) oscuro -->
+      <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-slate-800/80 text-teal-400 text-sm font-semibold mb-6 border border-slate-700 shadow-sm backdrop-blur-sm">
         <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
         <span class="flex h-2 w-2 rounded-full bg-emerald-500 absolute"></span>
         El ecosistema SaaS para tu empresa
       </span>
 
       <!-- Título Principal -->
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
         Centraliza y escala tu negocio con <br class="hidden md:block" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
           Sistemas Ollintem
         </span>
       </h1>
 
       <!-- Subtítulo -->
-      <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto">
         Descubre nuestro catálogo de plataformas de gestión. Desde potentes puntos de venta hasta administración integral, todo bajo un modelo de suscripción que crece contigo.
       </p>
 
       <!-- Botones de Acción (CTAs) -->
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#sistemas" class="bg-teal-600 text-white px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-teal-700 transition-all shadow-lg shadow-teal-600/30 hover:shadow-teal-600/50 hover:-translate-y-0.5 duration-300">
+        <a href="#sistemas" class="bg-teal-500 text-slate-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-teal-400 transition-all shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_30px_rgba(20,184,166,0.6)] hover:-translate-y-0.5 duration-300">
           Explorar Catálogo
         </a>
-        <a href="#contacto" class="bg-white text-slate-700 border border-slate-200 px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
-          Agendar Demostración
+        <a href="#contacto" class="bg-slate-800/50 text-white border border-slate-600 px-8 py-3.5 rounded-full font-semibold text-lg hover:bg-slate-700 hover:border-slate-500 backdrop-blur-sm transition-all shadow-sm">
+          Solicita tu Demo
         </a>
       </div>
     </div>
 
-    <!-- Mockup de Interfaz (Gran gancho visual para hacer scroll) -->
-    <div class="mt-16 mx-auto max-w-5xl relative group perspective">
+    <!-- Mockup de Interfaz Premium Dark -->
+    <div class="mt-20 mx-auto max-w-5xl relative group perspective">
       <!-- Sombra brillante detrás del mockup -->
-      <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+      <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
       
       <!-- Contenedor de la imagen del sistema -->
-      <div class="relative rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden aspect-video flex items-center justify-center bg-slate-50 transform transition-transform duration-500 hover:scale-[1.01]">
+      <div class="relative rounded-[1.5rem] bg-slate-900 border border-slate-700 shadow-2xl overflow-hidden flex flex-col transform transition-transform duration-500 hover:scale-[1.02]">
         
-        <!-- IDEA: Reemplaza este div con una imagen real (<img>) de uno de tus mejores sistemas -->
-        <div class="text-slate-400 text-center px-4">
-          <svg class="mx-auto h-16 w-16 mb-4 text-teal-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <p class="font-medium text-lg">Coloca aquí un pantallazo de tu mejor sistema</p>
-          <p class="text-sm mt-2">La gente amará ver cómo luce la plataforma antes de comprar.</p>
+        <!-- Barra de navegador estilo macOS oscura -->
+        <div class="h-12 bg-slate-800/80 border-b border-slate-700 flex items-center px-4 gap-2 backdrop-blur-md">
+          <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+          <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+          <!-- URL Falsa -->
+          <div class="mx-auto bg-slate-900/50 h-7 rounded-md w-1/3 border border-slate-700 flex items-center justify-center px-3 absolute left-1/2 transform -translate-x-1/2 hidden sm:flex">
+            <svg class="w-3 h-3 text-slate-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            <span class="text-[11px] text-slate-400 font-mono tracking-wider">app.ollintem.com</span>
+          </div>
+        </div>
+
+        <!-- Área del Mockup (Reemplaza este bloque con la etiqueta <img> de tu plataforma) -->
+        <div class="aspect-video flex items-center justify-center bg-slate-900/50 relative">
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+          <div class="text-slate-500 text-center px-4 relative z-10">
+            <svg class="mx-auto h-16 w-16 mb-4 text-teal-500/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <p class="font-medium text-xl text-slate-300 mb-2">Pantallazo del sistema Ollintem</p>
+            <p class="text-sm max-w-sm mx-auto">Sube aquí una imagen en alta resolución de tu dashboard. Las métricas y gráficos venden por sí solos.</p>
+          </div>
         </div>
         
       </div>

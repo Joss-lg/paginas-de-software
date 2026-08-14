@@ -27,8 +27,8 @@ const sistemas = [
     title: "Control Escolar",
     description: "Administración integral de alumnos, calificaciones, colegiaturas y reportes académicos.",
     icon: "🎓",
-    status: "en_proceso",
-    link: "#"
+    status: "disponible",
+    link: "/escolar"
   },
   {
     title: "Abarroteras",
@@ -41,22 +41,22 @@ const sistemas = [
     title: "Ferreterías",
     description: "Gestión de miles de SKUs, cotizaciones dinámicas y facturación rápida en mostrador.",
     icon: "🛠️",
-    status: "en_proceso",
-    link: "#"
+    status: "disponible",
+    link: "/ferreteria"
   },
   {
     title: "Farmacias",
     description: "Manejo estricto de lotes, control de caducidades y dispensación de medicamentos.",
     icon: "💊",
-    status: "en_proceso",
-    link: "#"
+    status: "disponible",
+    link: "/farmacia"
   },
   {
     title: "Gimnasios",
     description: "Control de accesos, membresías recurrentes y administración de clases en tiempo real.",
     icon: "🏋️",
-    status: "en_proceso",
-    link: "#"
+    status: "disponible",
+    link: "/gimnasio"
   },
   {
     title: "Llanteras",
@@ -68,84 +68,63 @@ const sistemas = [
 ];
 ---
 
-<section id="sistemas" class="relative py-24 bg-slate-50 overflow-hidden border-y border-slate-200/60">
+<section id="sistemas" class="relative py-32 bg-slate-900 overflow-hidden">
   
-  <!-- Patrón de fondo tecnológico -->
-  <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image: radial-gradient(#0F766E 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <!-- Patrón de fondo y luces -->
+  <div class="absolute inset-0 z-0 opacity-[0.05]" style="background-image: radial-gradient(#6EE7B7 1px, transparent 1px); background-size: 40px 40px;"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-teal-900/40 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-16">
-      <span class="inline-block py-1 px-3 rounded-full bg-teal-100/50 text-teal-700 text-sm font-semibold mb-4 border border-teal-200">
+    <!-- Encabezado de la sección -->
+    <div class="text-center mb-20">
+      <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-sm font-bold mb-6 tracking-wide uppercase shadow-sm">
+        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.381z" clip-rule="evenodd" />
+        </svg>
         Ecosistema SaaS
       </span>
-      <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-        Catálogo de Soluciones Empresariales
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Catálogo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Soluciones Empresariales</span>
       </h2>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Plataformas modulares con bases de datos relacionales de alto rendimiento. Arquitectura diseñada a la medida para escalar las operaciones de tu sector.
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Plataformas modulares con bases de datos relacionales de alto rendimiento. Arquitectura diseñada a la medida para escalar la operación de tu negocio.
       </p>
     </div>
 
-    <!-- Grid adaptable -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Grid de Sistemas (Matriz 3x3) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {sistemas.map((sistema) => (
         <a 
           href={sistema.status === 'disponible' ? sistema.link : '#'} 
-          class={`group relative flex flex-col p-6 rounded-[2rem] border transition-all duration-500 overflow-hidden ${
-            sistema.status === 'disponible' 
-              ? 'bg-white border-slate-200 hover:border-teal-500/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1.5 cursor-pointer z-10' 
-              : 'bg-slate-100/50 border-slate-200/60 cursor-default opacity-85 hover:opacity-100'
-          }`}
+          class="group relative flex flex-col p-8 rounded-[2rem] bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 hover:border-teal-500/50 transition-all duration-500 overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.15)] z-10"
         >
-          <!-- Resplandor de fondo al pasar el cursor (solo disponibles) -->
-          {sistema.status === 'disponible' && (
-            <div class="absolute inset-0 bg-gradient-to-br from-teal-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-          )}
+          <!-- Efecto Glow interno en hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
-          <!-- Encabezado de la tarjeta (Icono y Badge) -->
-          <div class="flex justify-between items-start mb-6">
-            <div class={`w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm transition-transform duration-500 group-hover:scale-110 ${
-              sistema.status === 'disponible' 
-                ? 'bg-gradient-to-br from-teal-100 to-emerald-50 border border-teal-200' 
-                : 'bg-slate-200 border border-slate-300'
-            }`}>
-              {sistema.icon}
+          <div class="flex justify-between items-start mb-8">
+            <!-- Contenedor del Icono -->
+            <div class="relative w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-3xl shadow-inner group-hover:border-teal-500/30 transition-colors duration-500">
+              <!-- Resplandor detrás del icono -->
+              <div class="absolute inset-0 bg-teal-400/20 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="relative z-10 transform group-hover:scale-110 transition-transform duration-500">{sistema.icon}</span>
             </div>
 
-            <!-- Badge de Estado -->
-            {sistema.status === 'en_proceso' ? (
-              <span class="inline-flex items-center gap-1.5 rounded-full bg-slate-200/80 px-2.5 py-1 text-[10px] font-bold text-slate-600 uppercase tracking-wider border border-slate-300">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                Próximamente
-              </span>
-            ) : (
-              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-100/80 px-2.5 py-1 text-[10px] font-bold text-emerald-700 uppercase tracking-wider border border-emerald-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                Activo
-              </span>
-            )}
+            <!-- Flecha superior derecha -->
+            <div class="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center border border-slate-700 text-slate-500 group-hover:bg-teal-500 group-hover:text-slate-900 group-hover:border-teal-400 transition-all duration-500">
+              <svg class="w-5 h-5 transform group-hover:rotate-45 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
           </div>
           
-          <!-- Contenido -->
-          <h3 class={`text-xl font-bold mb-3 transition-colors duration-300 ${
-            sistema.status === 'disponible' ? 'text-slate-900 group-hover:text-teal-700' : 'text-slate-700'
-          }`}>
+          <!-- Textos -->
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors duration-300">
             {sistema.title}
           </h3>
           
-          <p class="text-slate-500 text-sm leading-relaxed flex-grow">
+          <p class="text-slate-400 text-base leading-relaxed flex-grow">
             {sistema.description}
           </p>
-
-          <!-- Flecha indicadora (solo si está disponible) -->
-          {sistema.status === 'disponible' && (
-            <div class="mt-6 flex items-center text-teal-600 font-bold text-sm group-hover:text-teal-700">
-              Explorar plataforma
-              <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          )}
         </a>
       ))}
     </div>

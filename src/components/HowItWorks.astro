@@ -2,90 +2,127 @@
 // HowItWorks.astro
 ---
 
-<section id="funcionamiento" class="py-24 bg-white overflow-hidden relative border-y border-slate-100">
-  <!-- Decoración de fondo sutil -->
-  <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-teal-50/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<section id="funcionamiento" class="py-32 bg-slate-900 relative overflow-hidden border-t border-slate-800/50">
+  
+  <!-- Resplandores de fondo para profundidad volumétrica -->
+  <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/3 w-[800px] h-[800px] bg-teal-900/20 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+  <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] bg-emerald-900/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row items-center gap-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="flex flex-col lg:flex-row items-center gap-20">
       
-      <!-- Columna de Texto -->
+      <!-- Columna Izquierda: Copywriting y Pasos -->
       <div class="lg:w-1/2">
-        <span class="text-teal-600 font-bold tracking-wider uppercase text-sm mb-3 block">Arquitectura Escalable</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
-          Diseñado para crecer al ritmo de tu operación
-        </h2>
-        <p class="text-slate-600 mb-10 text-lg leading-relaxed">
-          Nuestro modelo SaaS te permite activar herramientas según las necesites. Gestiona tu negocio a través de una suscripción mensual o anual, accediendo a los módulos exactos que tu volumen de trabajo requiere sin pagar de más.
-        </p>
+        <div class="mb-12">
+          <span class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-slate-800 border border-slate-700 text-teal-400 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Despliegue Ágil
+          </span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+            Ingeniería diseñada para <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">crecer contigo</span>
+          </h2>
+          <p class="text-slate-400 text-lg leading-relaxed">
+            Olvida las instalaciones locales y los servidores físicos. Nuestro ecosistema opera 100% en la nube, permitiéndote encender o apagar módulos según el volumen de transacciones de tu operación.
+          </p>
+        </div>
         
-        <div class="space-y-8">
+        <div class="space-y-6">
           <!-- Paso 1 -->
-          <div class="flex gap-5 group">
-            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-xl border border-teal-100 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shadow-sm">
-              1
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Implementación Inmediata</h3>
-              <p class="text-slate-600 leading-relaxed">Configuramos el entorno en la nube y conectamos tu base de datos para que comiences a operar rápidamente, sin complejas instalaciones locales.</p>
+          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/80 hover:border-teal-500/30 transition-all duration-300 group">
+            <div class="flex gap-5">
+              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-slate-900 border border-slate-700 text-teal-500 flex items-center justify-center font-black text-xl group-hover:bg-teal-500 group-hover:text-slate-900 group-hover:border-teal-400 transition-colors shadow-inner">
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Implementación Inmediata</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Configuramos tu base de datos y levantamos tu instancia en minutos. Entras, te logueas y empiezas a operar en tiempo récord.</p>
+              </div>
             </div>
           </div>
           
           <!-- Paso 2 -->
-          <div class="flex gap-5 group">
-            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-xl border border-teal-100 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shadow-sm">
-              2
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Planes Flexibles</h3>
-              <p class="text-slate-600 leading-relaxed">El ecosistema se adapta a ti. Activa módulos avanzados de comandas, inventario o finanzas escalando tu plan conforme tu negocio se expande.</p>
+          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/80 hover:border-teal-500/30 transition-all duration-300 group">
+            <div class="flex gap-5">
+              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-slate-900 border border-slate-700 text-teal-500 flex items-center justify-center font-black text-xl group-hover:bg-teal-500 group-hover:text-slate-900 group-hover:border-teal-400 transition-colors shadow-inner">
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Planes Modulares</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">¿Necesitas control de inventario avanzado o facturación masiva? Activa los módulos exactos que tu empresa requiere sin pagar excedentes.</p>
+              </div>
             </div>
           </div>
 
           <!-- Paso 3 -->
-          <div class="flex gap-5 group">
-            <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-xl border border-teal-100 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300 shadow-sm">
-              3
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">Operación y Soporte</h3>
-              <p class="text-slate-600 leading-relaxed">No te dejamos solo. Incluimos capacitación continua para tu personal y garantizamos una operación fluida respaldada por nuestro soporte técnico.</p>
+          <div class="p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/80 hover:border-teal-500/30 transition-all duration-300 group">
+            <div class="flex gap-5">
+              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-slate-900 border border-slate-700 text-teal-500 flex items-center justify-center font-black text-xl group-hover:bg-teal-500 group-hover:text-slate-900 group-hover:border-teal-400 transition-colors shadow-inner">
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Operación y Respaldo</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Respaldos de información automáticos, actualizaciones de sistema transparentes y capacitación continua para tu equipo de trabajo.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Columna Visual (Mockup de Pantalla) -->
-      <div class="lg:w-1/2 relative w-full perspective mt-10 lg:mt-0">
-        <!-- Sombra brillante trasera -->
-        <div class="absolute -inset-2 bg-gradient-to-tr from-teal-400 to-emerald-300 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+      <!-- Columna Derecha: Composición Visual (UI Flotante) -->
+      <div class="lg:w-1/2 relative">
+        <!-- Glow base -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-emerald-500/20 rounded-[2.5rem] blur-3xl opacity-50"></div>
         
-        <!-- Contenedor del Mockup -->
-        <div class="relative bg-slate-900 rounded-[1.5rem] border border-slate-700 shadow-2xl overflow-hidden aspect-[4/3] flex flex-col transform transition-transform hover:-translate-y-2 duration-500">
+        <!-- Dashboard Principal (Cristal) -->
+        <div class="relative bg-slate-800/60 backdrop-blur-2xl rounded-[2rem] border border-slate-600/50 shadow-2xl p-2 transform transition-transform hover:-translate-y-2 duration-700">
           
-          <!-- Barra superior del navegador falsa -->
-          <div class="h-12 bg-slate-800 border-b border-slate-700 flex items-center px-4 gap-2">
-            <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
-            <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-            <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-            <div class="ml-4 bg-slate-900/50 h-7 rounded-md w-2/3 border border-slate-700 flex items-center px-3">
-              <svg class="w-3 h-3 text-slate-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-              <span class="text-[11px] text-slate-400 font-mono tracking-wider">app.ollintem.com/dashboard</span>
+          <div class="bg-slate-900 rounded-[1.5rem] overflow-hidden border border-slate-700">
+            <!-- Barra superior macOS Dark -->
+            <div class="h-10 bg-slate-800/80 border-b border-slate-700 flex items-center px-4 gap-2">
+              <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+              <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+              <div class="w-3 h-3 rounded-full bg-slate-600"></div>
+            </div>
+            
+            <!-- Interior del Dashboard (Placeholder) -->
+            <div class="aspect-[4/3] bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:20px_20px] flex flex-col items-center justify-center p-8 text-center relative">
+              <div class="w-20 h-20 bg-slate-800 rounded-2xl border border-slate-700 flex items-center justify-center mb-6 shadow-lg">
+                <svg class="w-10 h-10 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                </svg>
+              </div>
+              <h4 class="text-white font-bold text-xl mb-2">Base de Datos Conectada</h4>
+              <p class="text-slate-400 text-sm max-w-[280px]">Aquí puedes subir una captura de pantalla de los módulos de reportes y métricas de tus sistemas.</p>
+            </div>
+          </div>
+          
+          <!-- Elemento flotante decorativo 1 -->
+          <div class="absolute -right-8 top-12 bg-slate-800/80 backdrop-blur-xl border border-slate-600 rounded-2xl p-4 shadow-xl shadow-slate-900/50 animate-[bounce_4s_infinite]">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-bold">Módulo Activo</p>
+                <p class="text-teal-400 text-xs">Latencia: 12ms</p>
+              </div>
             </div>
           </div>
 
-          <!-- Área para tu imagen (Reemplaza este div con un <img> cuando la tengas) -->
-          <div class="flex-grow flex flex-col items-center justify-center p-8 text-center relative overflow-hidden bg-slate-900">
-            <!-- Cuadrícula de fondo -->
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#47556920_1px,transparent_1px),linear-gradient(to_bottom,#47556920_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-            
-            <svg class="w-16 h-16 text-teal-500/60 mb-4 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <h4 class="text-white font-bold text-lg mb-2 relative z-10">Tu sistema aquí</h4>
-            <p class="text-slate-400 text-sm max-w-[250px] relative z-10">Coloca una captura de tu dashboard principal. Las interfaces limpias venden mejor el software.</p>
+          <!-- Elemento flotante decorativo 2 -->
+          <div class="absolute -left-8 bottom-12 bg-slate-800/80 backdrop-blur-xl border border-slate-600 rounded-2xl p-4 shadow-xl shadow-slate-900/50 animate-[bounce_5s_infinite_reverse]">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <p class="text-white text-sm font-bold">Tráfico Seguro</p>
+                <p class="text-slate-400 text-xs">Cifrado SSL</p>
+              </div>
+            </div>
           </div>
-          
+
         </div>
       </div>
 

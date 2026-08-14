@@ -1,23 +1,40 @@
 ---
+// src/pages/index.astro
+
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import SystemsGrid from '../components/SystemsGrid.astro';
 import HowItWorks from '../components/HowItWorks.astro';
-
+import Reviews from '../components/Reviews.astro';
 import Footer from '../components/Footer.astro';
-import Reviews from '../components/Reviews.astro'; //
 ---
 
-<Layout title="Ollintem - Sistemas POS y SaaS para Gastronomía">
+<Layout title="Ollintem | Ecosistema de Software y Gestión Empresarial">
+  
+  <!-- Navegación Superior -->
   <Navbar />
   
-  <main>
+  <!-- Contenedor principal. Usamos bg-slate-900 para unificar el fondo oscuro -->
+  <main class="w-full bg-slate-900 min-h-screen flex flex-col">
+    
+    <!-- 1. El Gancho (Hero): Atrapa la atención y muestra el dashboard -->
     <Hero />
+
+    <!-- 2. Soluciones (Catálogo): Demuestra que cubres las necesidades de su sector -->
     <SystemsGrid />
+
+    <!-- 3. Metodología (Cómo Funciona): Rompe la objeción de "es muy difícil de usar/instalar" -->
+    <!-- Nota: Si prefieres que esta sección también sea oscura para no romper el flujo, 
+         puedes cambiar sus clases bg-white a bg-slate-900 en el archivo HowItWorks.astro -->
     <HowItWorks />
-   <Reviews />
+
+    <!-- 4. Prueba Social (Reseñas): Genera confianza con clientes reales -->
+    <Reviews />
+    
   </main>
 
+  <!-- 5. Cierre y Enlaces (Footer): Pre-Footer CTA para atrapar a los que hicieron scroll hasta el final -->
   <Footer />
+
 </Layout>
