@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FarmaciaHero from '../components/farmacias/FarmaciaHero.astro';
 import FarmaciaFeatures from '../components/farmacias/FarmaciaFeatures.astro';
+import BannerFarmacia from '../components/farmacias/BannerFarmacia.astro';
 import FarmaciaVideo from '../components/farmacias/FarmaciaVideo.astro';
 import FarmaciaDispositivos from '../components/farmacias/FarmaciaDispositivos.astro';
 import FarmaciaPlanes from '../components/farmacias/FarmaciaPlanes.astro';
@@ -23,9 +24,23 @@ const description =
   <main class="bg-[#E5F3F2] font-sans selection:bg-[#29A09B] selection:text-white min-h-screen">
     <FarmaciaHero />
     <FarmaciaFeatures />
+    <BannerFarmacia 
+    image="/public/farmacia/banner-farmacia-uno.webp" 
+    alt="Gestión de inventario de medicamentos en la enfermería"
+    customClass="-mt-12" 
+>
+    "Manos que curan, <span class="text-[#83BCAE] underline decoration-[#298F7E]">corazones</span> que acompañan"
+</BannerFarmacia>
     <FarmaciaVideo />
     <FarmaciaDispositivos />
     <FarmaciaPlanes />
+    <BannerFarmacia 
+    image="/public/farmacia/banner-farmacia-dos.webp" 
+    alt="Gestión de inventario de medicamentos en la enfermería"
+    customClass="-mt-12" 
+>
+    "Cuidamos de tu salud <span class="text-[#83BCAE] underline decoration-[#298F7E]">hoy</span> para un mejor mañana."
+</BannerFarmacia>
   </main>
 
     <Footer />

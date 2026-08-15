@@ -4,10 +4,12 @@ import Layout from '../layouts/Layout.astro';
 
 // Importación de los 5 componentes de Ferretería
 import HeroFerreteria from '../components/ferreteria/HeroFerreteria.astro';
+import BannerFerreteria from '../components/ferreteria/BannerFerreteria.astro';
 import CaracteristicasFerreteria from '../components/ferreteria/CaracteristicasFerreteria.astro';
 import EcosistemaFerreteria from '../components/ferreteria/EcosistemaFerreteria.astro';
 import VideoDemoFerreteria from '../components/ferreteria/VideoDemoFerreteria.astro';
 import ModulosFerreteria from '../components/ferreteria/ModulosFerreteria.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout 
@@ -21,6 +23,14 @@ import ModulosFerreteria from '../components/ferreteria/ModulosFerreteria.astro'
       heroImage="/ferreteria/ferreteria-hero-mockup.webp"
       imageAlt="Vista de la interfaz de cobranza para mostrador de ferretería"
     />
+
+    <BannerFerreteria 
+    image="/public/ferreteria/banner-taller-escolar.webp" 
+    alt="Gestión de herramientas y suministros en el taller escolar"
+    customClass="-mt-12" 
+>
+    "<span class="text-[#FF9F00] underline decoration-[#CC7A00]">Todo</span> para construir, reparar y crear."
+</BannerFerreteria>
 
     <!-- 2. Características y Funcionalidades -->
     <CaracteristicasFerreteria />
@@ -38,6 +48,15 @@ import ModulosFerreteria from '../components/ferreteria/ModulosFerreteria.astro'
 
     <!-- 5. Planes de Suscripción -->
     <ModulosFerreteria />
+    <BannerFerreteria 
+    image="/public/ferreteria/banner-taller-escolar.webp" 
+    alt="Gestión de herramientas y suministros en el taller escolar"
+    customClass="-mt-12" 
+>
+    "<span class="text-[#FF9F00] underline decoration-[#CC7A00]">Soluciones</span> a la medida de tus manos ."
+</BannerFerreteria>
 
   </main>
+
+  <Footer />
 </Layout>

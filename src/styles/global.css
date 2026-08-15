@@ -31,13 +31,14 @@
 }
 
 @theme {
-  --color-gym-bg: #111625;
-  --color-gym-card: #171d30;
-  --color-gym-primary: #5b45e0;
-  --color-gym-primary-light: #7c6eef;
-  --color-gym-light: #f0f4ff;
-  --color-gym-pale: #e7eaff;
+  --color-gym-bg: #fff8e9        (antes fondo oscuro → ahora crema pálido)
+--color-gym-card: #ffffff      (antes tarjeta oscura → ahora blanco)
+--color-gym-primary: #fb8c00   (naranja vivo)
+--color-gym-primary-light: #ffc107  (ámbar/dorado)
+--color-gym-light: #3a3226     (antes texto casi-blanco → ahora tinta cálida oscura)
+--color-gym-pale: #fff3d6      (chip pálido ámbar)
 }
+
 
 @keyframes card-float {
   0%,

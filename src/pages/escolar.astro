@@ -2,6 +2,7 @@
 import Layout from '../layouts/layout.astro';
 import Navbar from '../components/Navbar.astro';
 import HeroEscolar from '../components/escolar/HeroEscolar.astro';
+import BannerEscolar from '../components/escolar/BannerEscolar.astro';
 import CaracteristicasEscolar from '../components/escolar/CaracteristicasEscolar.astro';
 import DispositivosEscolar from '../components/escolar/DispositivosEscolar.astro';
 import ModulosOperativosEscolar from '../components/escolar/ModulosOperativosEscolar.astro';
@@ -18,8 +19,22 @@ import Footer from '../components/Footer.astro';
 
     <main class="w-full">
         <HeroEscolar />
+        <BannerEscolar 
+    image="/public/escolar/banner-escolar-uno.webp" 
+    alt="Estudiantes colaborando en el campus escolar"
+    customClass="-mt-12" 
+>
+    "El lugar donde <span class="text-[#A8D08D] underline decoration-[#4C8B3D]">crece</span> tu futuro."
+</BannerEscolar>
         <CaracteristicasEscolar />
         <DispositivosEscolar />
+        <BannerEscolar 
+    image="/public/escolar/banner-escolar-dos.webp" 
+    alt="Estudiantes colaborando en el campus escolar"
+    customClass="-mt-12" 
+>
+    "Educación con <span class="text-[#A8D08D] underline decoration-[#4C8B3D]">valores</span> , futuro con propósito."
+</BannerEscolar>
         <ModulosOperativosEscolar />
         <PlanPreciosEscolar />
         <DemoSeccionEscolar />

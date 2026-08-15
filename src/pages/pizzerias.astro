@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import PizzeriaHero from '../components/pizzerias/PizzeriaHero.astro';
+import BannerPizzeria from '../components/pizzerias/BannerPizzeria.astro';
 import PizzeriaFeatures from '../components/pizzerias/PizzeriaFeatures.astro';
 import PizzeriaDetails from '../components/pizzerias/PizzeriaDetails.astro';
 import PizzeriaSystem from '../components/pizzerias/PizzeriaSystem.astro';
@@ -23,9 +24,23 @@ const description =
 
   <main class="pt-16 bg-white">
     <PizzeriaHero />
+    <BannerPizzeria 
+    image="/public/banner-pizzas-uno.webp" 
+    alt="Gestión de pizzería desde una terminal"
+    customClass="-mt-12" 
+>
+    "El sistema de gestión <span class="text-[#00D09C] underline decoration-[#00D09C]">ideal</span> para tu pizzería."
+</BannerPizzeria>
     <PizzeriaFeatures />
     <PizzeriaDetails />
     <PizzeriaSystem />
+    <BannerPizzeria 
+    image="/public/banner-pizzas-dos.webp" 
+    alt="Gestión de pizzería desde una terminal"
+    customClass="-mt-12" 
+>
+    "El sistema de gestión <span class="text-[#00D09C] underline decoration-[#00D09C]">ideal</span> para tu pizzería."
+</BannerPizzeria>
     <PizzeriaDispositivos />
     <VideoPizzeria />
     <PlanesPizzerias />

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import HeroPanaderia from '../components/panaderia/HeroPanaderia.astro';
+import BannerPanaderia from '../components/panaderia/BannerPanaderia.astro';
 import Caracteristicas from '../components/panaderia/Caracteristicas.astro';
 import ModulosOperativos from '../components/panaderia/ModulosOperativos.astro';
 import PlanesPrecios from '../components/panaderia/PlanesPrecios.astro';
@@ -17,7 +18,23 @@ import Footer from '../components/Footer.astro';
 
   <main class="overflow-hidden bg-white">
     <HeroPanaderia />
+    <!-- 1. Primer Banner (El de tu captura) -->
+<BannerPanaderia 
+    image="/public/panaderia/banner-uno-pan.webp" 
+    alt="Variedad de panes artesanales"
+    customClass="-mt-12" 
+>
+    "El aroma que <span class="text-[#f4d4a4] underline decoration-[#c48b47]">convierte</span> una casa en hogar."
+</BannerPanaderia>
     <Caracteristicas />
+    <!-- 3. SEGUNDO BANNER (NUEVO DESCANSO VISUAL) -->
+<!-- Aquí no le ponemos el -mt-12 para que fluya normal entre las secciones -->
+<BannerPanaderia 
+    image="/public/panaderia/banner-dos-pan.webp" 
+    alt="Pan dulce tradicional recién horneado"
+>
+    "Cada <span class="text-[#f4d4a4] underline decoration-[#c48b47]">crujido</span> cuenta la historia de una tradición."
+</BannerPanaderia>
     <ModulosOperativos />
     <PlanesPrecios />
     <DemoSeccion />

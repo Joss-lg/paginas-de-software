@@ -2,37 +2,32 @@
 // src/components/gimnasio/Hero.astro
 ---
 
-<section class="relative min-h-[90vh] bg-gym-bg text-gym-light overflow-hidden flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+<section class="relative min-h-[90vh] bg-gradient-to-br from-[#FACC15] via-[#EAB308] to-[#CA8A04] text-[#1C1917] overflow-hidden flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8">
 
   <style is:global>
     @keyframes blink-gym {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
+      50% { opacity: 0.3; }
     }
-    
     @keyframes repLift {
       0%, 15% { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
       35%, 50% { transform: translateY(-110px); animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
       75%, 100% { transform: translateY(0); }
     }
-    
     @keyframes repSpin {
       0%, 15% { transform: rotate(0deg); animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
       35%, 50% { transform: rotate(360deg); animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
       75%, 100% { transform: rotate(0deg); }
     }
-
     @keyframes repCable {
       0%, 15% { transform: scaleY(1); animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
       35%, 50% { transform: scaleY(0.5); animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
       75%, 100% { transform: scaleY(1); }
     }
-
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.1); }
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
     }
-    
     .animate-blink-gym { animation: blink-gym 1.6s ease-in-out infinite; }
     .animate-rep-lift { animation: repLift 4.5s infinite; }
     .animate-rep-spin { animation: repSpin 4.5s infinite; }
@@ -44,168 +39,145 @@
     }
   </style>
 
-  <!-- Textura de puntos sutil -->
   <div
-    class="absolute inset-0 opacity-[0.05] pointer-events-none"
-    style="background-image: radial-gradient(circle, #F0F4FF 1.5px, transparent 1.5px); background-size: 28px 28px;"
+    class="absolute inset-0 opacity-[0.1] pointer-events-none"
+    style="background-image: radial-gradient(circle, #1C1917 1.2px, transparent 1.2px); background-size: 32px 32px;"
   ></div>
 
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gym-primary/20 blur-[140px] rounded-full pointer-events-none"></div>
-  <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-gym-primary-light/15 blur-[120px] rounded-full pointer-events-none"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/20 blur-[140px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto w-full relative z-10">
 
-    <!-- Barra de estado superior -->
-    <div class="flex items-center justify-center lg:justify-start gap-3 font-mono text-[11px] tracking-widest text-gym-light/50 mb-10 pb-4 border-b border-gym-light/10">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink-gym"></span>
+    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/80 border border-[#1C1917]/15 font-mono text-[11px] tracking-widest text-[#1C1917] mb-10 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-[#1C1917] animate-blink-gym"></span>
       <span>SISTEMA_EN_LINEA</span>
-      <span class="text-gym-light/20">/</span>
-      <span class="text-gym-primary-light">BUILD_4.2.0</span>
+      <span class="text-[#1C1917]/30">/</span>
+      <span class="font-bold">BUILD_4.2.0_GYM</span>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-      <!-- Columna de Texto -->
       <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
-          Revoluciona la gestión de tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-gym-primary-light to-gym-primary">Gimnasio</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-[#1C1917]">
+          Revoluciona la gestión de tu <span class="text-white drop-shadow-sm">Gimnasio</span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-gym-light/70 max-w-2xl mx-auto lg:mx-0 font-normal">
+        <p class="text-lg sm:text-xl text-[#1C1917]/80 max-w-2xl mx-auto lg:mx-0 font-medium">
           Automatiza accesos, controla membresías, optimiza cobros y potencia el rendimiento de tus atletas desde una plataforma inteligente y ultrarrápida.
         </p>
 
-        <!-- Botones de Acción -->
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-md bg-gradient-to-r from-gym-primary to-gym-primary-light text-white font-bold shadow-lg shadow-gym-primary/30 hover:scale-105 hover:shadow-xl hover:shadow-gym-primary/40 transition-all duration-300 text-center">
+          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#1C1917] font-bold shadow-lg shadow-black/10 hover:bg-[#1C1917] hover:text-white hover:scale-105 transition-all duration-300 text-center">
             Comenzar Prueba Gratis
           </a>
-          <a href="#caracteristicas" class="w-full sm:w-auto px-8 py-4 rounded-md border border-gym-light/20 text-gym-light font-semibold hover:bg-gym-light/5 hover:border-gym-primary-light/50 transition-all duration-300 text-center">
+          <a href="#caracteristicas" class="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-[#1C1917]/25 text-[#1C1917] font-semibold hover:bg-white/40 transition-all duration-300 text-center">
             Ver Demostración
           </a>
         </div>
 
-        <!-- Métricas tipo consola -->
-        <div class="flex justify-center lg:justify-start divide-x divide-gym-light/10 pt-8 border-t border-gym-light/10 max-w-lg mx-auto lg:mx-0 font-mono">
+        <div class="flex justify-center lg:justify-start divide-x divide-[#1C1917]/20 pt-8 border-t border-[#1C1917]/15 max-w-lg mx-auto lg:mx-0 font-mono">
           <div class="px-5 first:pl-0">
-            <p class="text-2xl sm:text-3xl font-black text-gym-primary-light">+99%</p>
-            <p class="text-[10px] text-gym-light/50 uppercase tracking-wider mt-1">Retención</p>
+            <p class="text-2xl sm:text-3xl font-black text-[#1C1917]">+99%</p>
+            <p class="text-[10px] text-[#1C1917]/70 uppercase tracking-wider mt-1">Retención</p>
           </div>
           <div class="px-5">
-            <p class="text-2xl sm:text-3xl font-black text-gym-primary">24/7</p>
-            <p class="text-[10px] text-gym-light/50 uppercase tracking-wider mt-1">Soporte Cloud</p>
+            <p class="text-2xl sm:text-3xl font-black text-[#1C1917]">24/7</p>
+            <p class="text-[10px] text-[#1C1917]/70 uppercase tracking-wider mt-1">Soporte Cloud</p>
           </div>
           <div class="px-5">
-            <p class="text-2xl sm:text-3xl font-black text-gym-primary-light">10K+</p>
-            <p class="text-[10px] text-gym-light/50 uppercase tracking-wider mt-1">Atletas Activos</p>
+            <p class="text-2xl sm:text-3xl font-black text-[#1C1917]">10K+</p>
+            <p class="text-[10px] text-[#1C1917]/70 uppercase tracking-wider mt-1">Atletas Activos</p>
           </div>
         </div>
       </div>
 
-      <!-- Columna de imagen / Animación -->
       <div class="lg:col-span-5 relative">
         <div class="relative mx-auto max-w-md lg:max-w-none">
 
-          <!-- Marco tipo visor de cámara -->
           <div class="relative">
-            <div class="absolute -top-px -left-px w-6 h-6 border-t-2 border-l-2 border-gym-primary-light z-20"></div>
-            <div class="absolute -top-px -right-px w-6 h-6 border-t-2 border-r-2 border-gym-primary-light z-20"></div>
-            <div class="absolute -bottom-px -left-px w-6 h-6 border-b-2 border-l-2 border-gym-primary-light z-20"></div>
-            <div class="absolute -bottom-px -right-px w-6 h-6 border-b-2 border-r-2 border-gym-primary-light z-20"></div>
+            <div class="absolute -top-px -left-px w-6 h-6 border-t-2 border-l-2 border-[#1C1917] z-20"></div>
+            <div class="absolute -top-px -right-px w-6 h-6 border-t-2 border-r-2 border-[#1C1917] z-20"></div>
+            <div class="absolute -bottom-px -left-px w-6 h-6 border-b-2 border-l-2 border-[#1C1917] z-20"></div>
+            <div class="absolute -bottom-px -right-px w-6 h-6 border-b-2 border-r-2 border-[#1C1917] z-20"></div>
 
-            <!-- ZONA ANIMADA: MÁQUINA DE POLEA INTELIGENTE -->
-            <div class="relative w-full h-[400px] sm:h-[450px] bg-gym-card/40 backdrop-blur-md border border-gym-light/10 overflow-hidden flex flex-col items-center rounded-sm">
+            <div class="relative w-full h-[420px] sm:h-[460px] bg-white border border-[#1C1917]/20 overflow-hidden flex flex-col items-center rounded-2xl shadow-2xl">
               
-              <!-- Cuadros luminosos de fondo para rellenar y dar estética tecnológica -->
-              <div class="absolute top-12 left-6 w-24 h-16 bg-gym-primary/10 border border-gym-primary-light/20 rounded-md backdrop-blur-sm p-2 flex flex-col justify-between animate-pulse-glow pointer-events-none">
-                <span class="text-[8px] font-mono text-gym-light/40">ZONA_A</span>
-                <span class="text-[10px] font-mono font-bold text-gym-primary-light">SYNC_OK</span>
+              <div class="absolute top-12 left-6 w-24 h-16 bg-[#FAFAF9] border border-[#1C1917]/10 rounded-lg p-2 flex flex-col justify-between animate-pulse-glow pointer-events-none shadow-sm">
+                <span class="text-[8px] font-mono text-[#1C1917]/50">ZONA_A</span>
+                <span class="text-[10px] font-mono font-bold text-[#CA8A04]">SYNC_OK</span>
               </div>
-              <div class="absolute top-12 right-6 w-24 h-16 bg-gym-primary-light/10 border border-gym-primary-light/20 rounded-md backdrop-blur-sm p-2 flex flex-col justify-between animate-pulse-glow [animation-delay:1.5s] pointer-events-none">
-                <span class="text-[8px] font-mono text-gym-light/40">FLOW_RATE</span>
-                <span class="text-[10px] font-mono font-bold text-emerald-400">98.4%</span>
+              <div class="absolute top-12 right-6 w-24 h-16 bg-yellow-50 border border-yellow-200 rounded-lg p-2 flex flex-col justify-between animate-pulse-glow [animation-delay:1.5s] pointer-events-none shadow-sm">
+                <span class="text-[8px] font-mono text-[#1C1917]/50">FLOW_RATE</span>
+                <span class="text-[10px] font-mono font-bold text-yellow-700">98.4%</span>
               </div>
-              <div class="absolute bottom-12 left-6 w-24 h-12 bg-gym-card/80 border border-gym-light/10 rounded-md backdrop-blur-sm px-2.5 flex items-center justify-between pointer-events-none">
-                <span class="text-[8px] font-mono text-gym-light/50">NODE</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-gym-primary-light"></span>
+              <div class="absolute bottom-12 left-6 w-24 h-12 bg-white border border-[#1C1917]/10 rounded-lg px-2.5 flex items-center justify-between pointer-events-none shadow-sm">
+                <span class="text-[8px] font-mono text-[#1C1917]/60">NODE</span>
+                <span class="w-2 h-2 rounded-full bg-[#EAB308]"></span>
               </div>
-              <div class="absolute bottom-12 right-6 w-24 h-12 bg-gym-card/80 border border-gym-light/10 rounded-md backdrop-blur-sm px-2.5 flex items-center justify-between pointer-events-none">
-                <span class="text-[8px] font-mono text-gym-light/50">PING</span>
-                <span class="text-[9px] font-mono text-emerald-400">12ms</span>
+              <div class="absolute bottom-12 right-6 w-24 h-12 bg-white border border-[#1C1917]/10 rounded-lg px-2.5 flex items-center justify-between pointer-events-none shadow-sm">
+                <span class="text-[8px] font-mono text-[#1C1917]/60">PING</span>
+                <span class="text-[9px] font-mono text-yellow-700 font-bold">12ms</span>
               </div>
 
-              <!-- Gradiente de iluminación central -->
-              <div class="absolute inset-0 bg-gradient-to-b from-gym-primary-light/5 via-transparent to-gym-primary/5 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-b from-[#EAB308]/10 via-transparent to-[#EAB308]/10 pointer-events-none"></div>
 
-              <!-- Estructura superior de la polea -->
               <div class="absolute top-4 left-1/2 -translate-x-1/2 flex flex-col items-center z-25">
-                <div class="w-20 h-2 bg-gym-light/15 rounded-t-sm shadow-inner"></div>
-                <div class="w-10 h-6 bg-gym-card border-x border-b border-gym-light/20 flex justify-center items-center">
-                  <div class="w-2 h-2 rounded-full bg-gym-primary-light/50"></div>
+                <div class="w-20 h-2 bg-[#1C1917]/20 rounded-t-sm shadow-inner"></div>
+                <div class="w-10 h-6 bg-[#FAFAF9] border-x border-b border-[#1C1917]/20 flex justify-center items-center">
+                  <div class="w-2 h-2 rounded-full bg-[#EAB308]"></div>
                 </div>
                 
-                <!-- Rueda de la polea animada -->
-                <div class="relative w-16 h-16 rounded-full border-4 border-gym-light/10 border-t-gym-primary-light border-b-gym-primary flex items-center justify-center animate-rep-spin shadow-[0_0_20px_rgba(124,110,239,0.3)] mt-[-4px] bg-gym-bg">
-                  <div class="w-4 h-4 rounded-full bg-gym-primary-light flex items-center justify-center">
-                    <div class="w-1.5 h-1.5 bg-gym-bg rounded-full"></div>
+                <div class="relative w-16 h-16 rounded-full border-4 border-[#1C1917]/10 border-t-[#EAB308] border-b-[#1C1917] flex items-center justify-center animate-rep-spin shadow-[0_0_15px_rgba(234,179,8,0.3)] mt-[-4px] bg-white">
+                  <div class="w-4 h-4 rounded-full bg-[#EAB308] flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
                   </div>
-                  <!-- Rayos internos de la rueda -->
-                  <div class="absolute w-full h-0.5 bg-gym-light/10"></div>
-                  <div class="absolute h-full w-0.5 bg-gym-light/10"></div>
+                  <div class="absolute w-full h-0.5 bg-[#1C1917]/10"></div>
+                  <div class="absolute h-full w-0.5 bg-[#1C1917]/10"></div>
                 </div>
               </div>
 
-              <!-- Guías laterales de acero (rieles) -->
-              <div class="absolute top-12 bottom-0 left-[28%] sm:left-[32%] w-1.5 bg-gradient-to-r from-gym-light/5 via-gym-light/15 to-gym-light/5 border-x border-gym-light/5 shadow-inner"></div>
-              <div class="absolute top-12 bottom-0 right-[28%] sm:right-[32%] w-1.5 bg-gradient-to-r from-gym-light/5 via-gym-light/15 to-gym-light/5 border-x border-gym-light/5 shadow-inner"></div>
+              <div class="absolute top-12 bottom-0 left-[28%] sm:left-[32%] w-1.5 bg-gradient-to-r from-[#1C1917]/5 via-[#1C1917]/15 to-[#1C1917]/5 shadow-inner"></div>
+              <div class="absolute top-12 bottom-0 right-[28%] sm:right-[32%] w-1.5 bg-gradient-to-r from-[#1C1917]/5 via-[#1C1917]/15 to-[#1C1917]/5 shadow-inner"></div>
 
-              <!-- Cable Central con anclaje superior y estiramiento -->
-              <div class="absolute top-[88px] left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-gym-light/40 to-gym-light/20 h-[220px] z-10 shadow-[0_0_6px_rgba(255,255,255,0.2)] origin-top animate-rep-cable"></div>
+              <div class="absolute top-[88px] left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-[#1C1917]/40 to-[#1C1917]/20 h-[220px] z-10 shadow-[0_0_6px_rgba(0,0,0,0.1)] origin-top animate-rep-cable"></div>
 
-              <!-- CONTENEDOR DEL STACK DE PESAS -->
               <div class="absolute bottom-6 w-[55%] sm:w-[50%] flex flex-col items-center z-30">
                 
-                <!-- PARTE MÓVIL (Las que se levantan) -->
                 <div class="w-full flex flex-col items-center animate-rep-lift relative z-40">
-                  <!-- Gancho de agarre -->
-                  <div class="w-5 h-6 bg-gym-light/20 rounded-t-md border-x border-t border-gym-light/30 mb-1 flex justify-center pt-1.5">
-                    <div class="w-1.5 h-1.5 rounded-full bg-gym-bg"></div>
+                  <div class="w-5 h-6 bg-[#1C1917]/20 rounded-t-md border-x border-t border-[#1C1917]/30 mb-1 flex justify-center pt-1.5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
                   </div>
 
-                  <!-- Tarjeta Principal (Placa superior de peso) -->
-                  <div class="w-full h-12 bg-gradient-to-r from-gym-bg to-gym-card border border-gym-primary-light/70 rounded-md flex items-center justify-between px-3 shadow-[0_0_15px_rgba(124,110,239,0.35)] mb-1 relative overflow-hidden">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gym-primary-light"></div>
+                  <div class="w-full h-12 bg-[#FAFAF9] border border-[#EAB308]/70 rounded-lg flex items-center justify-between px-3 shadow-md mb-1 relative overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#EAB308]"></div>
                     <div class="flex items-center gap-2">
                       <div class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
                       </div>
                       <div class="flex flex-col">
-                        <span class="text-[8px] font-mono text-gym-light/50 tracking-wider">ESTADO</span>
-                        <span class="text-[10px] font-mono text-gym-primary-light font-bold">MEMBRESÍA</span>
+                        <span class="text-[8px] font-mono text-[#1C1917]/60 tracking-wider">ESTADO</span>
+                        <span class="text-[10px] font-mono text-[#1C1917] font-bold">MEMBRESÍA</span>
                       </div>
                     </div>
-                    <span class="text-[10px] font-mono font-bold text-gym-light/90">#805</span>
+                    <span class="text-[10px] font-mono font-bold text-[#1C1917]">#805</span>
                   </div>
 
-                  <!-- Placas de peso levantadas -->
-                  <div class="w-full h-8 bg-gym-card border border-gym-light/10 rounded-md flex items-center justify-end px-3 mb-1 shadow-sm">
-                    <span class="text-[9px] font-mono text-gym-light/40">120 LBS</span>
+                  <div class="w-full h-8 bg-white border border-[#1C1917]/15 rounded-md flex items-center justify-end px-3 mb-1 shadow-sm">
+                    <span class="text-[9px] font-mono text-[#1C1917]/50 font-semibold">120 LBS</span>
                   </div>
-                  <div class="w-full h-8 bg-gym-card border border-gym-light/10 rounded-md flex items-center justify-end px-3 shadow-sm relative">
-                    <!-- Pin selector de peso -->
-                    <div class="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gym-primary-light shadow-[0_0_8px_rgba(124,110,239,0.8)] border border-gym-bg"></div>
-                    <span class="text-[9px] font-mono text-gym-light/40 mr-1.5">100 LBS</span>
+                  <div class="w-full h-8 bg-white border border-[#1C1917]/15 rounded-md flex items-center justify-end px-3 shadow-sm relative">
+                    <div class="absolute -right-1.5 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#EAB308] shadow-[0_0_8px_rgba(234,179,8,0.8)] border border-white"></div>
+                    <span class="text-[9px] font-mono text-[#1C1917]/50 font-semibold mr-1.5">100 LBS</span>
                   </div>
                 </div>
 
-                <!-- PARTE ESTÁTICA (Las que se quedan abajo) -->
                 <div class="w-full flex flex-col items-center pt-1 relative z-30">
-                  <div class="w-full h-8 bg-gym-bg/60 border border-gym-light/5 rounded-md flex items-center justify-end px-3 mb-1">
-                    <span class="text-[9px] font-mono text-gym-light/25">80 LBS</span>
+                  <div class="w-full h-8 bg-[#FAFAF9] border border-[#1C1917]/10 rounded-md flex items-center justify-end px-3 mb-1">
+                    <span class="text-[9px] font-mono text-[#1C1917]/30">80 LBS</span>
                   </div>
-                  <div class="w-full h-8 bg-gym-bg/60 border border-gym-light/5 rounded-md flex items-center justify-end px-3">
-                    <span class="text-[9px] font-mono text-gym-light/25">60 LBS</span>
+                  <div class="w-full h-8 bg-[#FAFAF9] border border-[#1C1917]/10 rounded-md flex items-center justify-end px-3">
+                    <span class="text-[9px] font-mono text-[#1C1917]/30">60 LBS</span>
                   </div>
                 </div>
 
@@ -213,17 +185,16 @@
             </div>
           </div>
 
-          <!-- Registro de actividad estilo consola -->
-          <div class="mt-4 bg-gym-card border border-gym-light/10 divide-y divide-gym-light/5 font-mono text-[11px] relative z-20">
-            <div class="flex items-center justify-between px-4 py-2.5">
-              <span class="text-gym-light/40">14:32:01</span>
-              <span class="text-gym-light/80">Acceso concedido — C. Mendoza</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span>
+          <div class="mt-4 bg-white/90 backdrop-blur-sm border border-[#1C1917]/15 divide-y divide-[#1C1917]/10 font-mono text-[11px] rounded-xl shadow-md overflow-hidden relative z-20">
+            <div class="flex items-center justify-between px-4 py-3">
+              <span class="text-[#1C1917]/60">14:32:01</span>
+              <span class="text-[#1C1917] font-medium">Acceso concedido — C. Mendoza</span>
+              <span class="w-2 h-2 rounded-full bg-yellow-600 flex-shrink-0"></span>
             </div>
-            <div class="flex items-center justify-between px-4 py-2.5">
-              <span class="text-gym-light/40">14:31:47</span>
-              <span class="text-gym-light/80">Pago recibido — $850.00 MXN</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gym-primary-light flex-shrink-0"></span>
+            <div class="flex items-center justify-between px-4 py-3">
+              <span class="text-[#1C1917]/60">14:31:47</span>
+              <span class="text-[#1C1917] font-medium">Pago recibido — $850.00 MXN</span>
+              <span class="w-2 h-2 rounded-full bg-[#EAB308] flex-shrink-0"></span>
             </div>
           </div>
         </div>

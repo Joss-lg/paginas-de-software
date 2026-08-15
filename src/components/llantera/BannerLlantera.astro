@@ -1,0 +1,36 @@
+---
+// Definimos las propiedades que puede recibir este componente
+interface Props {
+    image: string;
+    alt: string;
+    customClass?: string; // Hacemos la clase opcional para controlar márgenes
+}
+
+const { image, alt, customClass = "" } = Astro.props;
+---
+
+<div class={`relative w-full z-20 ${customClass}`}>
+    <!-- Contenedor con sombra para profundidad y bordes acordes a la temática llantera -->
+    <div class="relative w-full h-48 lg:h-64 overflow-hidden shadow-2xl border-y-4 border-slate-800 bg-slate-900">
+        
+        <!-- Imagen de fondo dinámica con zoom suave al pasar el cursor -->
+        <img 
+            src={image} 
+            alt={alt} 
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 transform hover:scale-110 transition-transform duration-[2s] ease-out"
+        />
+        
+        <!-- Capa oscura en tonos slate/azulado para respetar la paleta de la llantera -->
+        <div class="absolute inset-0 bg-slate-950/50"></div>
+
+        <!-- Contenido dinámico usando <slot /> -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center px-4 tracking-tight drop-shadow-lg italic">
+                <slot />
+            </h2>
+        </div>
+    </div>
+
+    <!-- Decoración de borde inferior con desvanecimiento sutil hacia el fondo del sitio -->
+    <div class="absolute -bottom-1 left-0 w-full h-4 bg-gradient-to-t from-slate-900 to-transparent"></div>
+</div>

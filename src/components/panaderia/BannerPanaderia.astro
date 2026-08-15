@@ -1,0 +1,36 @@
+---
+// Definimos las propiedades que puede recibir este componente
+interface Props {
+    image: string;
+    alt: string;
+    customClass?: string; // Hacemos la clase opcional para controlar márgenes
+}
+
+const { image, alt, customClass = "" } = Astro.props;
+---
+
+<div class={`relative w-full z-20 ${customClass}`}>
+    <!-- Contenedor con sombra para dar profundidad y efecto de "salida" -->
+    <div class="relative w-full h-48 lg:h-64 overflow-hidden shadow-2xl border-y-4 border-[#3a2618]">
+        
+        <!-- Imagen de fondo dinámica (Animación intacta) -->
+        <img 
+            src={image} 
+            alt={alt} 
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 transform hover:scale-110 transition-transform duration-[2s] ease-out"
+        />
+        
+        <!-- Capa oscura AJUSTADA: Redujimos la opacidad a 35% y quitamos el blur -->
+        <div class="absolute inset-0 bg-[#3a2618]/35"></div>
+
+        <!-- Contenido dinámico usando <slot /> -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center px-4 tracking-tight drop-shadow-lg italic">
+                <slot />
+            </h2>
+        </div>
+    </div>
+
+    <!-- Decoración de borde inferior con forma de migajas o ondas sutiles -->
+    <div class="absolute -bottom-1 left-0 w-full h-4 bg-gradient-to-t from-[#2d1d12] to-transparent"></div>
+</div>

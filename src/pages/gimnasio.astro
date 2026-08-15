@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/gimnasio/GymHero.astro';
+import BannerGimnasio from '../components/gimnasio/BannerGimnasio.astro';
 import Features from '../components/gimnasio/GymFeatures.astro';
 import GymDevices from '../components/gimnasio/GymDevices.astro';
 import Gymvideo from '../components/gimnasio/GymVideo.astro';
@@ -21,8 +22,23 @@ const description =
 
   <main class="pt-20 bg-gym-bg text-gym-light min-h-screen">
     <Hero />
+<BannerGimnasio 
+    image="/public/gimnasio/banner-deportes-escolar.webp" 
+    alt="Alumnos entrenando en el polideportivo escolar"
+    customClass="-mt-12" 
+>
+    "La <span class="text-[#F4C10F] underline decoration-[#04D09C]">disciplina</span>  le gana al talento cuando el esfuerzo es constante."
+</BannerGimnasio>
+
     <Features />
     <GymDevices />
+    <BannerGimnasio 
+    image="/public/gimnasio/banner-deportes-escolar.webp" 
+    alt="Alumnos entrenando en el polideportivo escolar"
+    customClass="-mt-12" 
+>
+    "El cambio comienza cuando sales de tu zona de  <span class="text-[#F4C10F] underline decoration-[#04D09C]">confort</span>."
+</BannerGimnasio>
     <Gymvideo />
     <Pricing />
     <Footer />
