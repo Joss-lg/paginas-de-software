@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import AbarroteraHero from '../components/abarrotera/AbarroteraHero.astro';
+import BannerAbarrotes from '../components/abarrotera/BannerAbarrotes.astro';
 import AbarroteraFeatures from '../components/abarrotera/AbarroteraFeatures.astro';
 import AbarroteraPricing from '../components/abarrotera/AbarroteraPricing.astro';
 import AbarroteraVideo from '../components/abarrotera/AbarroteraVideo.astro';
@@ -16,6 +17,14 @@ import AbarroteraServices from '../components/abarrotera/AbarroteraServices.astr
     <!-- Hero Section -->
     <AbarroteraHero />
 
+    <BannerAbarrotes 
+    image="/public/abarrotera/banner-abarrotes-uno.webp" 
+    alt="Alumnos comprando en la cooperativa escolar"
+    customClass="-mt-12" 
+>
+    "<span class="text-[#FF8A95] underline decoration-[#00D09C]">Sistema</span> de inventarios para optimizar tu comercio local."
+</BannerAbarrotes>
+
     <!-- Features Bento Grid -->
     <AbarroteraFeatures />
 
@@ -24,6 +33,14 @@ import AbarroteraServices from '../components/abarrotera/AbarroteraServices.astr
 
     <!-- Dispositivos Compatibles -->
     <AbarroteraServices />
+
+    <BannerAbarrotes 
+    image="/public/abarrotera/banner-abarrotes-dos.webp" 
+    alt="Alumnos comprando en la cooperativa escolar"
+    customClass="-mt-12" 
+>
+    "Punto de venta <span class="text-[#FF8A95] underline decoration-[#00D09C]">digital</span> para modernizar tu abarrotera."
+</BannerAbarrotes>
 
     <!-- Pricing Section -->
     <AbarroteraPricing />

@@ -1,142 +1,88 @@
 ---
 // src/components/ferreteria/ModulosFerreteria.astro
-const planesFerreteria = [
+interface Modulo {
+  codigo: string;
+  nombre: string;
+  detalle: string;
+  imagen?: string;
+  altImagen?: string;
+}
+
+const modulos: Modulo[] = [
   {
-    nombre: "Plan Inicial (1 Caja)",
-    subtitulo: "Ideal para ferreterías pequeñas o de un solo mostrador",
-    precioMensual: "599.00",
-    precioAnual: "5,990.00",
-    msi3: "1,996.67",
-    msi6: "998.33",
-    destacado: false,
-    caracteristicas: [
-      "1 Terminal POS de cobro",
-      "Catálogo ilimitado de productos y claves",
-      "Venta por código de barras y piezas",
-      "Cortes de caja y reportes de venta",
-      "Impresión de tickets de compra"
-    ]
+    codigo: "01",
+    nombre: "Caja y Punto de Venta",
+    detalle: "Cobros rápidos en efectivo, tarjeta o transferencias con emisión inmediata de tickets.",
+    imagen: "/ferreteria/modulo-caja.webp",
+    altImagen: "Captura del módulo de caja"
   },
   {
-    nombre: "Plan Profesional",
-    subtitulo: "Para ferreterías con flujo constante y venta a granel",
-    precioMensual: "999.00",
-    precioAnual: "9,990.00",
-    msi3: "3,330.00",
-    msi6: "1,665.00",
-    destacado: true,
-    etiqueta: "RECOMENDADO",
-    caracteristicas: [
-      "Hasta 3 cajas de cobro en red",
-      "Módulo de venta por kilo, metro y fraccionado",
-      "Gestión de lista de precios (Público / Mayoreo)",
-      "Alertas de stock mínimo y compras a proveedores",
-      "Roles de usuario (Cajero / Administrador)"
-    ]
+    codigo: "02",
+    nombre: "Gestión de Inventarios",
+    detalle: "Multialmacén, kardex detallado, transferencias entre sucursales y ajustes de stock.",
+    imagen: "/ferreteria/modulo-inventarios.webp",
+    altImagen: "Captura del módulo de inventarios"
   },
   {
-    nombre: "Plan Empresarial",
-    subtitulo: "Para ferreterías grandes, múltiples cajas o sucursales",
-    precioMensual: "1,299.00",
-    precioAnual: "12,990.00",
-    msi3: "4,330.00",
-    msi6: "2,165.00",
-    destacado: false,
-    caracteristicas: [
-      "Cajas de cobro y terminales ilimitadas",
-      "Facturación electrónica SAT en mostrador",
-      "Auditoría avanzada de inventario (Kardex)",
-      "Multi-almacén y traspasos de mercancía",
-      "Soporte técnico preferente y capacitaciones"
-    ]
+    codigo: "03",
+    nombre: "Proveedores y Compras",
+    detalle: "Carga masiva de facturas XML/PDF, historial de costos y sugeridos de compra inteligentes.",
+    imagen: "/ferreteria/modulo-compras.webp",
+    altImagen: "Captura del módulo de compras"
+  },
+  {
+    codigo: "04",
+    nombre: "Créditos y Clientes",
+    detalle: "Manejo de cuentas por cobrar, límites de crédito para maestros de obra y estados de cuenta.",
+    imagen: "/ferreteria/modulo-creditos.webp",
+    altImagen: "Captura del módulo de créditos"
   }
 ];
 ---
-<section id="planes" class="py-20 bg-slate-950 text-white relative">
+
+<section id="modulos" class="py-20 bg-slate-50 border-y border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="px-3.5 py-1 text-xs font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest">
-        Suscripción
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">
-        Planes de Inversión para Ferreterías
+      <span class="text-purple-600 font-extrabold text-sm uppercase tracking-wider">Módulos Integrados</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-2">
+        Todo lo que tu negocio necesita en un solo lugar
       </h2>
-      <p class="mt-3 text-slate-400 text-base">
-        Elige el plan ideal según tus puntos de venta. Obtén <strong class="text-amber-400">2 meses gratis en pago anual</strong>.
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-      {planesFerreteria.map((plan) => (
-        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 group ${
-          plan.destacado 
-            ? 'bg-slate-900 border-2 border-amber-500 shadow-2xl shadow-amber-500/20 lg:-translate-y-2 z-10 hover:shadow-amber-500/35' 
-            : 'bg-slate-900/60 border border-slate-800 hover:border-slate-700 hover:shadow-xl'
-        }`}>
-          
-          {plan.destacado && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-lg animate-pulse">
-              {plan.etiqueta}
-            </div>
-          )}
-
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {modulos.map((m) => (
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-purple-300 transition-all duration-300">
           <div>
-            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">{plan.nombre}</h3>
-            <p class="text-xs text-slate-400 mt-1.5 min-h-[32px]">{plan.subtitulo}</p>
-
-            <!-- Bloque de Precio -->
-            <div class="mt-6 p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80 group-hover:border-amber-500/30 transition-colors">
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-black text-white">${plan.precioMensual}</span>
-                <span class="text-xs text-slate-400 font-medium">MXN / mes</span>
-              </div>
-
-              <div class="mt-3 text-xs space-y-1.5 text-slate-300 border-t border-slate-800/80 pt-3">
-                <p class="flex justify-between">
-                  <span class="text-slate-400">Pago Anual (-2 meses):</span>
-                  <strong class="text-amber-400">${plan.precioAnual} MXN</strong>
-                </p>
-                <p class="flex justify-between">
-                  <span class="text-slate-400">3 MSI:</span>
-                  <span>${plan.msi3} MXN / mes</span>
-                </p>
-                <p class="flex justify-between">
-                  <span class="text-slate-400">6 MSI:</span>
-                  <span>${plan.msi6} MXN / mes</span>
-                </p>
+            <div class="flex gap-4 items-start mb-4">
+              <span class="text-2xl font-black text-purple-600">{m.codigo}</span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">{m.nombre}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">{m.detalle}</p>
               </div>
             </div>
-
-            <!-- Lista de Características -->
-            <ul class="mt-6 space-y-3">
-              {plan.caracteristicas.map((item) => (
-                <li class="flex items-start gap-2.5 text-sm text-slate-300">
-                  <svg class="w-4 h-4 text-amber-400 shrink-0 mt-0.5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div class="mt-8">
-            <a 
-              href="#contacto" 
-              class={`block w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all duration-300 hover:scale-[1.02] ${
-                plan.destacado 
-                  ? 'bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 shadow-lg shadow-amber-500/25' 
-                  : 'bg-slate-800 hover:bg-slate-700 text-white'
-              }`}
-            >
-              Seleccionar Plan
-            </a>
+          <!-- ESPACIO / CONTENEDOR DE LA IMAGEN -->
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            {m.imagen ? (
+              <div class="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
+                <img 
+                  src={m.imagen} 
+                  alt={m.altImagen || m.nombre} 
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ) : (
+              <div class="w-full h-48 rounded-xl border-2 border-dashed border-purple-200 bg-purple-50/50 flex flex-col items-center justify-center text-purple-400 p-4">
+                <svg class="w-8 h-8 mb-2 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-xs font-medium text-purple-600/70">Inserta la ruta de la imagen en <code class="bg-purple-100 px-1 py-0.5 rounded">imagen</code></span>
+              </div>
+            )}
           </div>
-
         </div>
       ))}
     </div>
-
   </div>
 </section>

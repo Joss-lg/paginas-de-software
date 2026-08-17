@@ -1,14 +1,15 @@
 ---
 // Importación del Layout principal de tu proyecto
 import Layout from '../layouts/Layout.astro';
-
+import Navbar from '../components/Navbar.astro';
 // Importación de los 5 componentes de Ferretería
 import HeroFerreteria from '../components/ferreteria/HeroFerreteria.astro';
 import BannerFerreteria from '../components/ferreteria/BannerFerreteria.astro';
 import CaracteristicasFerreteria from '../components/ferreteria/CaracteristicasFerreteria.astro';
-import EcosistemaFerreteria from '../components/ferreteria/EcosistemaFerreteria.astro';
+
 import VideoDemoFerreteria from '../components/ferreteria/VideoDemoFerreteria.astro';
 import ModulosFerreteria from '../components/ferreteria/ModulosFerreteria.astro';
+import PlanesFerreteria from '../components/ferreteria/PlanesFerreteria.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -17,7 +18,7 @@ import Footer from '../components/Footer.astro';
   description="Software especializado para ferreterías. Búsqueda rápida por código o clave, venta a granel/metros, control de stock ciego y facturación en mostrador."
 >
   <main class="bg-slate-950 min-h-screen text-slate-100 selection:bg-amber-500 selection:text-slate-950">
-    
+    <Navbar/>
     <!-- 1. Hero Principal -->
     <HeroFerreteria 
       heroImage="/ferreteria/ferreteria-hero-mockup.webp"
@@ -25,36 +26,38 @@ import Footer from '../components/Footer.astro';
     />
 
     <BannerFerreteria 
-    image="/public/ferreteria/banner-taller-escolar.webp" 
+    image="/public/ferreteria/banner-ferreteria-uno.webp" 
     alt="Gestión de herramientas y suministros en el taller escolar"
     customClass="-mt-12" 
 >
-    "<span class="text-[#FF9F00] underline decoration-[#CC7A00]">Todo</span> para construir, reparar y crear."
+    "<span class="text-[#4A1D96] underline decoration-[#00D09C]">Sistema</span> de inventario para controlar tu negoció."
 </BannerFerreteria>
 
     <!-- 2. Características y Funcionalidades -->
     <CaracteristicasFerreteria />
 
     <!-- 3. Consola Central / Ecosistema -->
-    <EcosistemaFerreteria 
       dashboardImage="/ferreteria/dashboard-ferreteria.webp"
     />
 
+ <BannerFerreteria 
+    image="/public/ferreteria/banner-ferreteria-dos.webp" 
+    alt="Gestión de herramientas y suministros en el taller escolar"
+    customClass="-mt-12" 
+>
+    "<span class="text-[#4A1D96] underline decoration-[#00D09C]">Sistema</span> de gestión para construir un negocio sólido."
+</BannerFerreteria>
+
     <!-- 4. Demostración en Video -->
     <VideoDemoFerreteria 
-      videoSrc="/videos/demo-ferreteria.mp4"
+      video Src="/videos/demo-ferreteria.mp4"
       posterImage="/images/ferreteria-video-poster.webp"
     />
 
     <!-- 5. Planes de Suscripción -->
     <ModulosFerreteria />
-    <BannerFerreteria 
-    image="/public/ferreteria/banner-taller-escolar.webp" 
-    alt="Gestión de herramientas y suministros en el taller escolar"
-    customClass="-mt-12" 
->
-    "<span class="text-[#FF9F00] underline decoration-[#CC7A00]">Soluciones</span> a la medida de tus manos ."
-</BannerFerreteria>
+
+    <PlanesFerreteria />
 
   </main>
 

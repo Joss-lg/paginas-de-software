@@ -1,90 +1,43 @@
 ---
 // src/components/ferreteria/CaracteristicasFerreteria.astro
-const caracteristicas = [
+const funciones = [
   {
-    titulo: "Búsqueda Ultra Rápida por Código o Nombre",
-    descripcion: "Encuentra conectores, tornillos o herramientas en milisegundos mediante código de barras, clave o descripciones aproximadas.",
-    icono: "🔍",
-    imagen: "/ferreteria/busqueda-codigo.webp"
+    titulo: "Búsqueda Inteligente",
+    descripcion: "Encuentra productos por nombre, marcas o categorías al instante.",
+    icono: "🔍"
   },
   {
-    titulo: "Venta a Granel, Metros y Fraccionada",
-    descripcion: "Soporte nativo para vender cables por metro, clavos por kilo, tubos por tramo o pintura por fracción sin desajustar el inventario.",
-    icono: "⚖️",
-    imagen: "/ferreteria/venta-granel.webp"
+    titulo: "Control de Stock",
+    descripcion: "Mantén un registro preciso y actualizado de la mercancía en tiempo real.",
+    icono: "📊"
   },
   {
-    titulo: "Control de Existencias y Stock Mínimo",
-    descripcion: "Alertas automáticas cuando un producto esté por agotarse. Genera sugerencias de pedido para tus proveedores a tiempo.",
-    icono: "📦",
-    imagen: "/ferreteria/control-stock.webp"
-  },
-  {
-    titulo: "Gestión de Múltiples Unidades y Precios",
-    descripcion: "Maneja precio público, mayoreo y precios por volumen en un mismo producto de forma transparente al momento de cobrar.",
-    icono: "🏷️",
-    imagen: "/ferreteria/precios-mayoreo.webp"
-  },
-  {
-    titulo: "Corte de Caja y Aperturas Rápidas",
-    descripcion: "Control total del flujo de efectivo con cierres ciegos, registro de entradas/salidas de caja y reporte detallado de utilidades.",
-    icono: "💵",
-    imagen: "/ferreteria/corte-caja.webp"
-  },
-  {
-    titulo: "Facturación Electrónica en Mostrador",
-    descripcion: "Emite facturas al instante desde la pantalla de cobro o genera tickets con código QR para autofacturación del cliente.",
-    icono: "📄",
-    imagen: "/ferreteria/facturacion.webp"
+    titulo: "Alertas de Stock Mínimo",
+    descripcion: "Evita quedarte sin productos de alta rotación con notificaciones automáticas.",
+    icono: "📦"
   }
 ];
 ---
-<section class="py-20 bg-slate-950 text-white relative">
+
+<section id="caracteristicas" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full inline-block">
-        Herramientas de alto rendimiento
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+        Un sistema de inventario para controlar el ritmo de tu negocio
       </h2>
-      <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        Todo lo que tu Ferretería Necesita para Vender Más
-      </p>
-      <p class="text-slate-400 text-base sm:text-lg">
-        Funciones pensadas para resolver la complejidad del mostrador y el almacén.
+      <p class="mt-4 text-slate-600 text-lg">
+        Herramientas para simplificar la atención al cliente en mostrador y evitar pérdidas.
       </p>
     </div>
 
-    <!-- Grid de Tarjetas con Imagen Grande Arriba -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {caracteristicas.map((item) => (
-        <div class="rounded-3xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col group backdrop-blur-sm">
-          
-          <!-- 1. IMAGEN EN GRANDE (ARRIBA) -->
-          <div class="p-3 pb-0">
-            <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 aspect-[16/8]">
-              <img 
-                src={item.imagen} 
-                alt={item.titulo} 
-                loading="lazy"
-                class="w-full h-full object-cover object-top group-hover:scale-108 transition-transform duration-700 ease-out"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          </div>
-
-          <!-- 2. ICONO, TÍTULO Y DESCRIPCIÓN (ABAJO) -->
-          <div class="p-6 sm:p-7 flex-1 flex flex-col justify-start">
-            <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-slate-700/60 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-300">
-              <span class="group-hover:rotate-12 transition-transform duration-300 inline-block">{item.icono}</span>
-            </div>
-
-            <h3 class="text-xl font-bold text-white mb-2.5 leading-snug group-hover:text-amber-400 transition-colors duration-300">{item.titulo}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed font-normal">{item.descripcion}</p>
-          </div>
-
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {funciones.map((f) => (
+        <div class="p-8 rounded-2xl bg-purple-50/50 border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+          <div class="text-4xl mb-4">{f.icono}</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{f.titulo}</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">{f.descripcion}</p>
         </div>
       ))}
     </div>
-
   </div>
 </section>

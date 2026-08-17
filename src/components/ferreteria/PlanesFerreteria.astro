@@ -1,0 +1,111 @@
+---
+// src/components/ferreteria/PlanesFerreteria.astro
+const planesOriginales = [
+  {
+    nombre: "Inicial",
+    precioMensual: "$599",
+    descripcion: "Ideal para negocios pequeños que van comenzando.",
+    caracteristicas: [
+      "1 Punto de venta (Caja)",
+      "Hasta 5,000 productos",
+      "Control de inventario básico",
+      "Ventas rápidas de mostrador",
+      "Soporte por correo"
+    ],
+    ctaText: "Comenzar Plan Inicial",
+    ctaHref: "#contacto"
+  },
+  {
+    nombre: "Profesional",
+    popular: true,
+    precioMensual: "$999",
+    descripcion: "La solución completa para mostradores con alto flujo de clientes.",
+    caracteristicas: [
+      "Cajas e impresoras ilimitadas",
+      "Catálogo ilimitado de productos",
+      "Gestión de créditos a clientes",
+      "Alertas de stock mínimo",
+      "Soporte prioritario 24/7"
+    ],
+    ctaText: "Probar Gratis 14 Días",
+    ctaHref: "#contacto"
+  },
+  {
+    nombre: "Empresarial",
+    precioMensual: "$1,299",
+    descripcion: "Para negocios con múltiples sucursales que necesitan sincronización.",
+    caracteristicas: [
+      "Todo lo incluido en Plan Profesional",
+      "Múltiples sucursales y almacenes",
+      "Transferencias de stock entre tiendas",
+      "Reportes consolidados en la nube",
+      "Ajustes masivos por XML/Excel",
+      "Asesor dedicado"
+    ],
+    ctaText: "Contactar Ventas",
+    ctaHref: "#contacto"
+  }
+];
+---
+
+<section id="planes" class="py-20 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-purple-600 font-extrabold text-sm uppercase tracking-wider">Planes y Precios</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-2">
+        Un sistema flexible adaptado al tamaño de tu negocio
+      </h2>
+      <p class="mt-4 text-slate-600 text-base sm:text-lg">
+        Sin plazos forzosos. Cancela o cambia de plan en cualquier momento.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      {planesOriginales.map((plan) => (
+        <div class={`relative flex flex-col justify-between p-8 rounded-3xl transition-all duration-300 ${
+          plan.popular 
+            ? 'bg-white border-2 border-purple-600 shadow-2xl shadow-purple-500/10 lg:-translate-y-2' 
+            : 'bg-white border border-slate-200 shadow-sm hover:border-purple-300'
+        }`}>
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-purple-600 text-white text-xs font-black uppercase tracking-wider rounded-full shadow-md">
+              Más Popular
+            </div>
+          )}
+
+          <div>
+            <h3 class="text-2xl font-black text-slate-900 mb-2">{plan.nombre}</h3>
+            <p class="text-slate-600 text-sm min-h-[40px] mb-6 leading-relaxed">{plan.descripcion}</p>
+
+            <div class="flex items-baseline gap-1 mb-8 pb-6 border-b border-slate-100">
+              <span class="text-4xl sm:text-5xl font-black tracking-tight text-slate-900">{plan.precioMensual}</span>
+              <span class="text-slate-500 font-medium text-sm"> MXN / mes</span>
+            </div>
+
+            <ul class="space-y-3.5 mb-8">
+              {plan.caracteristicas.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-slate-700">
+                  <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                    ✓
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            href={plan.ctaHref}
+            class={`w-full py-3.5 px-6 rounded-xl font-extrabold text-center text-sm transition-all duration-200 ${
+              plan.popular
+                ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg shadow-purple-500/25 hover:-translate-y-0.5'
+                : 'bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200'
+            }`}
+          >
+            {plan.ctaText}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

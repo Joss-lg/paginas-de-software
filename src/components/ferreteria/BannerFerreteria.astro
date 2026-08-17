@@ -1,38 +1,55 @@
 ---
-// Definimos las propiedades que puede recibir este componente
+// src/components/ferreteria/BannerFerreteria.astro
 interface Props {
-    image: string;
-    alt: string;
-    customClass?: string; // Hacemos la clase opcional para controlar márgenes
+  image: string;
+  alt: string;
+  customClass?: string;
+  heightClass?: string;
 }
 
-const { image, alt, customClass = "" } = Astro.props;
+const { 
+  image, 
+  alt, 
+  customClass = "", 
+  heightClass = "h-56 lg:h-72" 
+} = Astro.props;
 ---
 
-<div class={`relative w-full z-20 ${customClass}`}>
-    <!-- Contenedor con sombra para dar profundidad -->
-    <!-- Borde ajustado al Naranja Vibrante del botón y textos de la imagen -->
-    <div class="relative w-full h-48 lg:h-64 overflow-hidden shadow-2xl border-y-4 border-[#FF9F00]">
-        
-        <!-- Imagen de fondo dinámica (Animación intacta) -->
-        <img 
-            src={image} 
-            alt={alt} 
-            class="absolute inset-0 w-full h-full object-cover object-center scale-105 transform hover:scale-110 transition-transform duration-[2s] ease-out"
-        />
-        
-        <!-- Capa oscura AJUSTADA: Usamos el fondo Azul Noche con 65% de opacidad -->
-        <div class="absolute inset-0 bg-[#0A0E17]/65"></div>
+<div class={`relative w-full z-20 my-8 ${customClass}`}>
+  
+  <!-- Contenedor Principal ajustado a la paleta de la imagen (Bordes Morados) -->
+  <div class={`relative w-full ${heightClass} overflow-hidden shadow-xl bg-white border-y-2 border-[#4A1D96] group`}>
+    
+    <!-- Resplandor/Glow de Bordes (Morado arriba, Cian abajo) -->
+    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#4A1D96] to-transparent z-30 opacity-80"></div>
+    <div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00D09C] to-transparent z-30 opacity-80"></div>
 
-        <!-- Contenido dinámico usando <slot /> -->
-        <!-- Mantenemos el texto base en blanco para contraste máximo -->
-        <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-white text-center px-4 tracking-tight drop-shadow-lg italic">
-                <slot />
-            </h2>
-        </div>
+    <!-- Imagen de Fondo: 100% nítida -->
+    <img 
+      src={image} 
+      alt={alt} 
+      loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[2.5s] ease-out opacity-100"
+    />
+    
+    <!-- Capa Clara AJUSTADA: Reducida al mínimo (10% a transparente) para que la imagen se vea nítida -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
+
+    <!-- Malla Sutil sobre la Imagen (reducida al 10% para no ensuciar la foto) -->
+    <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-10 z-10 pointer-events-none"></div>
+
+    <!-- Contenido Dinámico con Cápsula Traslúcida Blanca -->
+    <!-- Al usar bg-white/85 en la cápsula, no importa qué tan nítida esté la foto atrás, el texto siempre resaltará -->
+    <div class="absolute inset-0 flex items-center justify-center z-20 px-4">
+      <div class="px-6 py-4 rounded-3xl bg-white/85 border border-slate-200 backdrop-blur-md shadow-xl text-center max-w-4xl group-hover:border-[#4A1D96]/50 transition-colors duration-500">
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight uppercase italic drop-shadow-sm">
+          <slot />
+        </h2>
+      </div>
     </div>
 
-    <!-- Decoración de borde inferior con gradiente utilizando el Azul Noche -->
-    <div class="absolute -bottom-1 left-0 w-full h-4 bg-gradient-to-t from-[#0A0E17] to-transparent"></div>
+  </div>
+
+  <!-- Sombra de Fusión Inferior -->
+  <div class="absolute -bottom-2 left-0 w-full h-6 bg-gradient-to-b from-slate-200/50 to-transparent pointer-events-none"></div>
 </div>

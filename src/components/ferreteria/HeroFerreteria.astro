@@ -7,71 +7,67 @@ interface Props {
 
 const { 
   heroImage = "/ferreteria/ferreteria-hero-mockup.webp", 
-  imageAlt = "Vista del sistema de punto de venta para ferreterías" 
+  imageAlt = "Vista del sistema de punto de venta" 
 } = Astro.props;
+
+const metricasRapidas = [
+  { valor: "+100k", etiqueta: "Productos en catálogo" },
+  { valor: "100%", etiqueta: "Control de inventario" },
+  { valor: "24/7", etiqueta: "Disponibilidad del sistema" }
+];
 ---
 
-<section class="relative overflow-hidden bg-slate-950 py-12 lg:py-20 text-white">
-  <!-- Efectos de luz de fondo industrial (Amarillo/Ámbar) -->
-  <div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-amber-500/15 blur-3xl pointer-events-none animate-pulse"></div>
-  <div class="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl pointer-events-none"></div>
+<section class="relative overflow-hidden bg-slate-50 py-16 lg:py-24 text-slate-950 border-b border-slate-200">
+  <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none"></div>
+  <div class="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 h-[400px] w-[400px] rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
-      <!-- 1. TEXTO Y DESCRIPCIÓN PRINCIPAL (Lado Izquierdo) -->
-      <div class="lg:col-span-7 text-left space-y-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md hover:border-amber-500/60 transition-all duration-300">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-          Control de Inventario y Punto de Venta
+      <div class="lg:col-span-7 text-left space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-purple-500/30 text-purple-700 text-xs font-semibold uppercase tracking-wider shadow-inner">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-600 animate-pulse"></span>
+          Sistema Especializado
         </div>
 
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-          Acelera la venta de mostrador y el control de inventario en tu <span class="bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">ferretería</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-950 leading-[1.12]">
+          Acelera las ventas de mostrador y domina tu <span class="bg-gradient-to-r from-purple-700 via-indigo-600 to-violet-600 bg-clip-text text-transparent">inventario</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
-          Busca entre miles de artículos por código, medida o clave al instante. Vende por piezas, metros o granel y mantén las existencias de tu mostrador siempre bajo control.
+        <p class="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl">
+          Un sistema de inventario para controlar las ventas en mostrador, la búsqueda ágil de artículos por nombre o categoría y el stock en tiempo real.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-start gap-4 pt-3">
-          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-center transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-1">
-            Ver Planes para Ferretería
+        <div class="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
+          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-center transition-all duration-300 shadow-xl shadow-purple-500/25 hover:shadow-purple-500/35 hover:-translate-y-0.5 active:translate-y-0">
+            Ver Planes y Precios
           </a>
-          <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-500 font-semibold text-center transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
-            Solicitar Demo
+          <a href="#demo" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 hover:border-slate-400 font-semibold text-center transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2.5 group shadow-sm">
+            <svg class="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Solicitar Demo en Vivo
           </a>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 max-w-xl">
+          {metricasRapidas.map((m) => (
+            <div>
+              <p class="text-xl sm:text-2xl font-extrabold text-purple-700 tracking-tight">{m.valor}</p>
+              <p class="text-xs text-slate-600 font-medium mt-0.5">{m.etiqueta}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <!-- 2. MOCKUP DE PANTALLA POS / MONITOR (Lado Derecho) -->
-      <div class="lg:col-span-5 w-full max-w-lg mx-auto flex justify-center">
-        <div class="relative w-full bg-slate-900 border border-slate-800 rounded-3xl p-3 shadow-2xl shadow-amber-950/20 group hover:border-amber-500/40 transition-all duration-500">
-          
-          <!-- Resplandor exterior de la pantalla -->
-          <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 -z-10"></div>
-
-          <!-- Barra superior estilo software POS -->
-          <div class="flex items-center justify-between px-3 pb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 mb-2">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-              <span class="text-slate-300 font-sans font-semibold ml-2">Ferretería POS v2.0</span>
-            </div>
-            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold text-[9px]">Lector de Código Activo</span>
-          </div>
-
-          <!-- Pantalla Principal -->
-          <div class="relative overflow-hidden rounded-2xl bg-slate-950 aspect-[4/3] border border-slate-800/90 shadow-inner">
-            <img 
-              src={heroImage} 
-              alt={imageAlt}
-              loading="eager"
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-          </div>
-
+      <div class="lg:col-span-5 w-full max-w-lg lg:max-w-none mx-auto relative flex items-center justify-center">
+        <div class="relative w-full rounded-2xl bg-white p-2 shadow-2xl border border-slate-200/80">
+          <img 
+            src={heroImage} 
+            alt={imageAlt} 
+            class="w-full h-auto rounded-xl object-cover"
+          />
         </div>
       </div>
 
