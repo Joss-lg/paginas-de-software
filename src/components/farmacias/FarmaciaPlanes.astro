@@ -59,7 +59,7 @@ const planes = [
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
       {planes.map((plan) => (
-        <div class={`relative rounded-3xl p-8 transition-all duration-300 ${
+        <div class={`relative rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 cursor-pointer ${
           plan.highlight 
             ? 'bg-[#006C5B] text-white shadow-2xl shadow-[#006C5B]/40 lg:-translate-y-4 border-none' 
             : 'bg-white text-[#006C5B] border border-[#7CC6C1]/30 hover:border-[#29A09B]'

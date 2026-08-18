@@ -26,7 +26,7 @@ const modulos: Modulo[] = [
   {
     codigo: "03",
     nombre: "Proveedores y Compras",
-    detalle: "historial de costos y sugeridos de compra inteligentes.",
+    detalle: "Historial de costos y sugeridos de compra inteligentes.",
     imagen: "/ferreteria/modulo-compras.webp",
     altImagen: "Captura del módulo de compras"
   },
@@ -40,44 +40,49 @@ const modulos: Modulo[] = [
 ];
 ---
 
-<section id="modulos" class="py-20 bg-slate-50 border-y border-slate-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="modulos" class="relative overflow-hidden py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white border-y border-slate-800">
+  <!-- Luces y patrón de fondo -->
+  <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+  <div class="absolute top-1/4 -left-32 h-[400px] w-[400px] rounded-full bg-purple-600/20 blur-[130px] pointer-events-none"></div>
+  <div class="absolute bottom-10 -right-32 h-[400px] w-[400px] rounded-full bg-indigo-600/20 blur-[130px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-purple-600 font-extrabold text-sm uppercase tracking-wider">Módulos Integrados</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-2">
+      <span class="text-purple-400 font-extrabold text-sm uppercase tracking-wider">Módulos Integrados</span>
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl mt-2 tracking-tight">
         Todo lo que tu negocio necesita en un solo lugar
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {modulos.map((m) => (
-        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-purple-300 transition-all duration-300">
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800/80 shadow-xl hover:border-2 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 group">
           <div>
             <div class="flex gap-4 items-start mb-4">
-              <span class="text-2xl font-black text-purple-600">{m.codigo}</span>
+              <span class="text-2xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
               <div>
-                <h3 class="text-lg font-bold text-slate-900 mb-1">{m.nombre}</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">{m.detalle}</p>
+                <h3 class="text-lg font-bold text-white mb-1">{m.nombre}</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">{m.detalle}</p>
               </div>
             </div>
           </div>
 
           <!-- ESPACIO / CONTENEDOR DE LA IMAGEN -->
-          <div class="mt-4 pt-4 border-t border-slate-100">
+          <div class="mt-4 pt-4 border-t border-slate-800">
             {m.imagen ? (
-              <div class="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
+              <div class="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
                 <img 
                   src={m.imagen} 
                   alt={m.altImagen || m.nombre} 
-                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 opacity-90 hover:opacity-100"
                 />
               </div>
             ) : (
-              <div class="w-full h-48 rounded-xl border-2 border-dashed border-purple-200 bg-purple-50/50 flex flex-col items-center justify-center text-purple-400 p-4">
+              <div class="w-full h-48 rounded-xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-4">
                 <svg class="w-8 h-8 mb-2 stroke-current" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span class="text-xs font-medium text-purple-600/70">Inserta la ruta de la imagen en <code class="bg-purple-100 px-1 py-0.5 rounded">imagen</code></span>
+                <span class="text-xs font-medium text-purple-300/80">Inserta la ruta de la imagen en <code class="bg-purple-900/50 px-1 py-0.5 rounded text-purple-200">imagen</code></span>
               </div>
             )}
           </div>

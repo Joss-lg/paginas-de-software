@@ -16,7 +16,8 @@ const checklist = [
     <div class="grid lg:grid-cols-12 gap-12 items-center">
 
       <div class="lg:col-span-7">
-        <div class="rounded-2xl border border-[#1C1917]/15 shadow-xl overflow-hidden bg-white">
+        <!-- Contenedor del video con animación de agrandamiento e inclinación de -2° (izquierda) al hover -->
+        <div class="rounded-2xl border border-[#1C1917]/15 shadow-xl overflow-hidden bg-white transition-all duration-300 ease-out transform hover:scale-105 hover:-rotate-2 cursor-pointer origin-center">
           <div class="flex items-center gap-1.5 px-4 py-3 border-b border-[#1C1917]/10 bg-neutral-50">
             <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-yellow-300"></span>

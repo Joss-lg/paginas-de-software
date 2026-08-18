@@ -17,52 +17,76 @@ const metricasRapidas = [
 ];
 ---
 
-<section class="relative overflow-hidden bg-slate-50 py-16 lg:py-24 text-slate-950 border-b border-slate-200">
-  <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none"></div>
-  <div class="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[140px] pointer-events-none"></div>
-  <div class="absolute -bottom-24 -right-24 h-[400px] w-[400px] rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none"></div>
+<section class="relative overflow-hidden bg-gradient-to-br from-purple-700 via-purple-800 to-indigo-900 py-16 lg:py-24 text-white border-b border-purple-900">
+  <!-- Patrón de puntos de alto contraste y destellos -->
+  <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+  <div class="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[140px] pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 h-[400px] w-[400px] rounded-full bg-indigo-500/30 blur-[130px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
       <div class="lg:col-span-7 text-left space-y-8">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-purple-500/30 text-purple-700 text-xs font-semibold uppercase tracking-wider shadow-inner">
-          <span class="w-2.5 h-2.5 rounded-full bg-purple-600 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-purple-950 animate-pulse"></span>
           Sistema Especializado
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-950 leading-[1.12]">
-          Acelera las ventas de mostrador y domina tu <span class="bg-gradient-to-r from-purple-700 via-indigo-600 to-violet-600 bg-clip-text text-transparent">inventario</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
+          Acelera las ventas de mostrador y domina tu <span class="px-2 py-0.5 rounded-xl bg-white text-purple-950 shadow-md inline-block">inventario</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl">
+        <p class="text-base sm:text-lg text-purple-100 font-normal leading-relaxed max-w-2xl">
           Un sistema de inventario para controlar las ventas en mostrador, la búsqueda ágil de artículos por nombre o categoría y el stock en tiempo real.
         </p>
 
+        <!-- BOTONES -->
         <div class="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
-          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-center transition-all duration-300 shadow-xl shadow-purple-500/25 hover:shadow-purple-500/35 hover:-translate-y-0.5 active:translate-y-0">
-            Ver Planes y Precios
-          </a>
-          <a href="#demo" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 hover:border-slate-400 font-semibold text-center transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2.5 group shadow-sm">
-            <svg class="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
+          <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white text-purple-950 hover:bg-purple-50 font-black text-center transition-all duration-300 shadow-xl shadow-purple-950/40 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 group">
+            <span>Agendar demostración</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
-            Solicitar Demo en Vivo
+          </a>
+          <a href="#planes" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-purple-900/40 hover:bg-purple-900/60 text-white border border-white/30 hover:border-white/50 font-semibold text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 shadow-sm">
+            Ver tarifas
           </a>
         </div>
 
-        <div class="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 max-w-xl">
+        <!-- CERTIFICACIONES / VENTAJAS DEBAJO DE LOS BOTONES -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 text-xs sm:text-sm text-purple-200 font-medium">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-purple-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Basado en la nube</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-purple-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Accesos controlados</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-purple-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Sin instalaciones</span>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 max-w-xl">
           {metricasRapidas.map((m) => (
             <div>
-              <p class="text-xl sm:text-2xl font-extrabold text-purple-700 tracking-tight">{m.valor}</p>
-              <p class="text-xs text-slate-600 font-medium mt-0.5">{m.etiqueta}</p>
+              <p class="text-xl sm:text-2xl font-black text-white tracking-tight">{m.valor}</p>
+              <p class="text-xs text-purple-200 font-medium mt-0.5">{m.etiqueta}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div class="lg:col-span-5 w-full max-w-lg lg:max-w-none mx-auto relative flex items-center justify-center">
-        <div class="relative w-full rounded-2xl bg-white p-2 shadow-2xl border border-slate-200/80">
+        <div class="relative w-full rounded-2xl bg-white/10 backdrop-blur-md p-2 shadow-2xl border border-white/20">
           <img 
             src={heroImage} 
             alt={imageAlt} 

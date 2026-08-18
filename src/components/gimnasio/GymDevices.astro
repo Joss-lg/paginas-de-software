@@ -18,60 +18,69 @@
       </p>
     </div>
 
+    <!-- Contenedor Principal con Grid -->
     <div class="grid lg:grid-cols-12 gap-px bg-[#1C1917]/10 border border-[#1C1917]/10 shadow-xl rounded-2xl overflow-hidden">
 
-      <div class="lg:col-span-8 bg-white p-8">
+      <!-- Card 1: Panel Web (Agrandamiento suave e interacción con imagen al hover) -->
+      <div class="group lg:col-span-8 bg-white p-8 transition-all duration-300 hover:bg-[#EAB308]/[0.02]">
         <div class="flex items-center justify-between mb-6 font-mono text-[11px] tracking-widest text-[#1C1917]/50">
           <span>TERMINAL // PANEL-WEB</span>
-          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#EAB308]"></span>ACTIVO</span>
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-pulse"></span>ACTIVO
+          </span>
         </div>
 
-        <div class="relative rounded-xl overflow-hidden shadow-md border border-[#1C1917]/10">
-          <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-[#EAB308] z-10"></div>
-          <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-[#EAB308] z-10"></div>
-          <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-[#EAB308] z-10"></div>
-          <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-[#EAB308] z-10"></div>
-          <div class="aspect-[16/9]">
+        <div class="relative rounded-xl overflow-hidden shadow-md border border-[#1C1917]/10 group-hover:border-[#EAB308]/50 group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-[1.01]">
+          <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+          <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+          <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+          <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+          
+          <div class="aspect-[16/9] overflow-hidden">
             <img
               src="https://placehold.co/1000x560/FFFFFF/1C1917?font=roboto&text=Dashboard+completo+de+gesti%C3%B3n"
               alt="Panel de escritorio del sistema"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>
         </div>
 
         <div class="mt-6">
-          <h3 class="text-xl font-bold text-[#1C1917]">Panel administrativo completo</h3>
+          <h3 class="text-xl font-bold text-[#1C1917] transition-colors group-hover:text-[#CA8A04]">Panel administrativo completo</h3>
           <p class="text-[#1C1917]/70 text-sm mt-2 max-w-lg">
             Controla membresías, accesos, cobros y reportes desde una sola pantalla en recepción, sin instalar nada adicional.
           </p>
         </div>
       </div>
 
-      <div class="lg:col-span-4 bg-white p-8 flex flex-col justify-between">
+      <!-- Card 2: App Móvil (Agrandamiento e inclinación al hover) -->
+      <div class="group lg:col-span-4 bg-white p-8 flex flex-col justify-between transition-all duration-300 hover:bg-[#EAB308]/[0.02]">
         <div>
           <div class="flex items-center justify-between mb-6 font-mono text-[11px] tracking-widest text-[#1C1917]/50">
             <span>APP-MOVIL</span>
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#EAB308]"></span>SYNC</span>
+            <span class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-pulse"></span>SYNC
+            </span>
           </div>
 
-          <div class="relative mx-auto max-w-[220px] w-full rounded-xl overflow-hidden shadow-md border border-[#1C1917]/10">
-            <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-[#EAB308] z-10"></div>
-            <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-[#EAB308] z-10"></div>
-            <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-[#EAB308] z-10"></div>
-            <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-[#EAB308] z-10"></div>
-            <div class="aspect-[9/16]">
+          <div class="relative mx-auto max-w-[220px] w-full rounded-xl overflow-hidden shadow-md border border-[#1C1917]/10 group-hover:border-[#EAB308]/50 group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 group-hover:rotate-2">
+            <div class="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+            <div class="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+            <div class="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+            <div class="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-[#EAB308] z-10 transition-all duration-300 group-hover:w-7 group-hover:h-7"></div>
+            
+            <div class="aspect-[9/16] overflow-hidden">
               <img
                 src="https://placehold.co/450x800/FFFFFF/1C1917?font=roboto&text=App+para+socios"
                 alt="App móvil del sistema"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </div>
           </div>
         </div>
 
         <div class="mt-6 text-center">
-          <h3 class="text-xl font-bold text-[#1C1917]">Supervisión desde tu celular</h3>
+          <h3 class="text-xl font-bold text-[#1C1917] transition-colors group-hover:text-[#CA8A04]">Supervisión desde tu celular</h3>
           <p class="text-[#1C1917]/70 text-sm mt-2">
             Revisa accesos, ingresos del día y nuevas inscripciones sin estar en el gimnasio.
           </p>
@@ -80,22 +89,27 @@
 
     </div>
 
+    <!-- Cards inferiores (Elevación, borde activo e iluminación de números) -->
     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm">
-        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold">01</span>
-        <h4 class="font-bold text-[#1C1917] mt-2">Sincronización total</h4>
+      
+      <div class="group p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm transition-all duration-300 transform hover:-translate-y-1.5 hover:border-[#EAB308] hover:shadow-lg hover:shadow-[#EAB308]/10 cursor-pointer">
+        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold inline-block transition-transform duration-300 group-hover:scale-125 group-hover:translate-x-1">01</span>
+        <h4 class="font-bold text-[#1C1917] mt-2 transition-colors group-hover:text-[#CA8A04]">Sincronización total</h4>
         <p class="text-[#1C1917]/70 text-sm mt-1">Los cambios en accesos y pagos se reflejan al instante en todos los dispositivos.</p>
       </div>
-      <div class="p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm">
-        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold">02</span>
-        <h4 class="font-bold text-[#1C1917] mt-2">Acceso desde cualquier lugar</h4>
+
+      <div class="group p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm transition-all duration-300 transform hover:-translate-y-1.5 hover:border-[#EAB308] hover:shadow-lg hover:shadow-[#EAB308]/10 cursor-pointer">
+        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold inline-block transition-transform duration-300 group-hover:scale-125 group-hover:translate-x-1">02</span>
+        <h4 class="font-bold text-[#1C1917] mt-2 transition-colors group-hover:text-[#CA8A04]">Acceso desde cualquier lugar</h4>
         <p class="text-[#1C1917]/70 text-sm mt-1">Supervisa tu gimnasio desde casa, otra sucursal o de viaje, sin restricciones.</p>
       </div>
-      <div class="p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm">
-        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold">03</span>
-        <h4 class="font-bold text-[#1C1917] mt-2">Sin instalaciones</h4>
+
+      <div class="group p-6 bg-white border border-[#1C1917]/10 rounded-xl shadow-sm transition-all duration-300 transform hover:-translate-y-1.5 hover:border-[#EAB308] hover:shadow-lg hover:shadow-[#EAB308]/10 cursor-pointer">
+        <span class="font-mono text-xs text-[#CA8A04] tracking-widest font-bold inline-block transition-transform duration-300 group-hover:scale-125 group-hover:translate-x-1">03</span>
+        <h4 class="font-bold text-[#1C1917] mt-2 transition-colors group-hover:text-[#CA8A04]">Sin instalaciones</h4>
         <p class="text-[#1C1917]/70 text-sm mt-1">Funciona desde el navegador o la app, sin equipos costosos ni configuraciones complejas.</p>
       </div>
+
     </div>
 
   </div>

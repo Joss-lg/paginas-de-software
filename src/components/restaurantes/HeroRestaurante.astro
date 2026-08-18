@@ -11,62 +11,77 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-slate-950 py-12 lg:py-20 text-white">
-  <!-- Efectos de luz de fondo animados -->
-  <div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-orange-600/20 blur-3xl pointer-events-none animate-pulse duration-10000"></div>
-  <div class="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-amber-500/15 blur-3xl pointer-events-none animate-pulse duration-7000"></div>
+<section class="relative overflow-hidden bg-slate-800 py-12 lg:py-20 text-white border-b border-slate-700">
+  <!-- Destello de fondo sutil -->
+  <div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-slate-700/50 blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- 1. TEXTO Y DESCRIPCIÓN PRINCIPAL (Izquierda) -->
+      <!-- 1. TEXTO Y DESCRIPCIÓN PRINCIPAL -->
       <div class="lg:col-span-7 text-left space-y-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md transition-all duration-300 hover:border-orange-500/60 hover:bg-orange-500/20">
-          <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-700 border border-slate-600 text-slate-200 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-slate-400 animate-ping"></span>
           Sistema de Comandas y Mesas
         </div>
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-          Agiliza la toma de comandas y el control de mesas en tu <span class="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent animate-gradient">restaurante</span>
+          Agiliza la toma de comandas y el control de mesas en tu <span class="text-slate-300">restaurante</span>
         </h1>
 
         <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl">
           Diseñado para el flujo dinámico de meseros y cocina. Levanta comandas al instante desde cualquier dispositivo, divide cuentas y gestiona el mapa de mesas en tiempo real.
         </p>
 
+        <!-- BOTONES -->
         <div class="flex flex-col sm:flex-row items-center justify-start gap-4 pt-3">
-          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-center transition-all duration-300 shadow-lg shadow-orange-600/30 hover:shadow-orange-500/50 hover:-translate-y-1">
-            Ver Planes para Restaurante
+          <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-center transition-all duration-300 shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 group">
+             <span>Agendar demostración</span>
+             <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+             </svg>
           </a>
-          <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-500 font-semibold text-center transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
-            Solicitar Demo
+          <a href="#planes" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-700 hover:bg-slate-600 text-white border border-slate-600 font-semibold text-center transition-all duration-300 hover:-translate-y-1">
+            Ver tarifas
           </a>
+        </div>
+
+        <!-- CERTIFICACIONES / VENTAJAS DEBAJO DE LOS BOTONES -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-slate-300 font-medium">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Basado en la nube</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Accesos controlados</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Sin instalaciones</span>
+          </div>
         </div>
       </div>
 
-      <!-- 2. MOCKUP DE TABLET VERTICAL COMPACTA (Derecha) -->
+      <!-- 2. MOCKUP DE TABLET VERTICAL -->
       <div class="lg:col-span-5 w-full max-w-xs sm:max-w-sm mx-auto flex justify-center">
-        <div class="relative w-full bg-slate-900 border-[6px] border-slate-800 rounded-[36px] p-2 sm:p-3 shadow-2xl shadow-orange-950/30 hover:shadow-orange-500/20 transition-all duration-700 animate-float group">
+        <div class="relative w-full bg-slate-900 border-[6px] border-slate-700 rounded-[36px] p-2 sm:p-3 shadow-2xl transition-all duration-500 group">
           
-          <!-- Resplandor exterior al pasar el cursor -->
-          <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-[40px] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 -z-10"></div>
-
-          <!-- Lente / Cámara frontal superior -->
-          <div class="absolute top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 z-20">
-            <span class="w-2 h-2 rounded-full bg-slate-950 border border-slate-700"></span>
-          </div>
-
-          <!-- Barra superior de la tablet -->
-          <div class="flex items-center justify-between px-3 pt-3 pb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/60 mb-2">
+          <div class="flex items-center justify-between px-3 pt-3 pb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 mb-2">
             <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="w-2 h-2 rounded-full bg-slate-400 animate-pulse"></span>
               <span class="text-slate-300 font-sans font-semibold">POS Tablet</span>
             </div>
-            <span class="px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-bold text-[9px]">1080p HD</span>
+            <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-bold text-[9px]">1080p HD</span>
           </div>
 
-          <!-- Pantalla de la Tablet -->
-          <div class="relative overflow-hidden rounded-[20px] bg-slate-950 aspect-[3/4] border border-slate-800/90 shadow-inner">
+          <div class="relative overflow-hidden rounded-[20px] bg-slate-950 aspect-[3/4] border border-slate-800 shadow-inner">
             <img 
               src={heroImage} 
               alt={imageAlt}
@@ -75,9 +90,8 @@ const {
             />
           </div>
 
-          <!-- Home Indicator (Barra táctil inferior) -->
           <div class="flex justify-center mt-2">
-            <span class="w-20 h-1 rounded-full bg-slate-700/80"></span>
+            <span class="w-20 h-1 rounded-full bg-slate-700"></span>
           </div>
 
         </div>
@@ -86,13 +100,3 @@ const {
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>

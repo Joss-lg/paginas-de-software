@@ -4,83 +4,102 @@ const caracteristicas = [
   {
     titulo: "Levantamiento de Comandas Digitales",
     descripcion: "Toma de pedidos en mesa desde smartphones o tablets que envían las órdenes directamente a la impresora o pantalla de cocina.",
-    icono: "📝",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+      </svg>
+    `,
     imagen: "/restaurante/comanda.webp"
   },
   {
     titulo: "Administración y Mapa de Mesas",
     descripcion: "Visualiza rápidamente qué mesas están disponibles, ocupadas, en espera de comida o listas para pedir la cuenta.",
-    icono: "🪑",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5h15m-15 0a2.25 2.25 0 01-2.25-2.25V6a2.25 2.25 0 012.25-2.25h15A2.25 2.25 0 0121 6v2.25a2.25 2.25 0 01-2.25 2.25m-15 0V19.5m15-9V19.5" />
+      </svg>
+    `,
     imagen: "/restaurante/mesa.webp"
   },
   {
     titulo: "Control de Roles y Permisos",
     descripcion: "Configura accesos específicos para meseros, cajeros, capitán de meseros y administradores del restaurante.",
-    icono: "👥",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+      </svg>
+    `,
     imagen: "/restaurante/role.webp"
   },
   {
     titulo: "Cobro y División de Cuentas",
     descripcion: "Soporta cobros parciales, cuentas separadas por comensal y múltiples formas de pago.",
-    icono: "💳",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5pt1.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+      </svg>
+    `,
     imagen: "/restaurante/cobros.webp"
   },
   {
     titulo: "Gestión de Menú y Productos",
     descripcion: "Agrega, modifica o deshabilita platillos, bebidas y modificadores (sin cebolla, término medio, extras) en tiempo real.",
-    icono: "🍽️",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+    `,
     imagen: "/restaurante/menu.webp"
   },
   {
     titulo: "Reportes Diarios y Mensuales",
     descripcion: "Obtén el cierre de caja exacto, ventas por mesero, platos más vendidos y registro de consumo total del día.",
-    icono: "📊",
+    iconoSvg: `
+      <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+      </svg>
+    `,
     imagen: "/restaurante/reportes.webp"
   }
 ];
 ---
-<section class="py-20 bg-slate-950 text-white relative">
+<section class="py-20 bg-white text-slate-800 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-      <h2 class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 border border-orange-500/20 px-3.5 py-1 rounded-full inline-block">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-slate-700 bg-slate-100 border border-slate-300 px-3.5 py-1 rounded-full inline-block">
         Diseñado para un mejor control
       </h2>
-      <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+      <p class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
         Funcionalidades Diseñadas para tu Restaurante
       </p>
-      <p class="text-slate-400 text-base sm:text-lg">
+      <p class="text-slate-600 text-base sm:text-lg">
         Conoce los módulos visuales creados para agilizar el servicio al cliente.
       </p>
     </div>
 
-    <!-- Grid de Tarjetas con Imagen Grande Arriba -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {caracteristicas.map((item) => (
-        <div class="rounded-3xl bg-slate-900/80 border border-slate-800/90 overflow-hidden hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col group backdrop-blur-sm">
+        <div class="rounded-3xl bg-white border-2 border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-slate-500 hover:shadow-xl hover:shadow-slate-400/20 flex flex-col group overflow-hidden cursor-pointer">
           
-          <!-- 1. IMAGEN EN GRANDE (ARRIBA) -->
           <div class="p-3 pb-0">
-            <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 aspect-[16/8]">
+            <div class="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 aspect-[16/8]">
               <img 
                 src={item.imagen} 
                 alt={item.titulo} 
                 loading="lazy"
-                class="w-full h-full object-cover object-top group-hover:scale-108 transition-transform duration-700 ease-out"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <!-- Overay suave en hover -->
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
 
-          <!-- 2. ICONO, TÍTULO Y DESCRIPCIÓN (ABAJO) -->
-          <div class="p-6 sm:p-7 flex-1 flex flex-col justify-start">
-            <div class="w-12 h-12 rounded-2xl bg-slate-800/90 border border-slate-700/60 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
-              <span class="group-hover:rotate-12 transition-transform duration-300 inline-block">{item.icono}</span>
+          <div class="p-6 sm:p-7 flex-1 flex flex-col justify-start bg-white">
+            <div class="w-14 h-14 rounded-2xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center text-slate-700 mb-4 group-hover:scale-110 group-hover:bg-slate-700 group-hover:text-white group-hover:border-slate-700 transition-all duration-300">
+              <span class="group-hover:rotate-6 transition-transform duration-300 inline-flex items-center justify-center" set:html={item.iconoSvg} />
             </div>
 
-            <h3 class="text-xl font-bold text-white mb-2.5 leading-snug group-hover:text-orange-400 transition-colors duration-300">{item.titulo}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed font-normal">{item.descripcion}</p>
+            <h3 class="text-xl font-bold text-slate-800 mb-2.5 leading-snug group-hover:text-slate-600 transition-colors duration-300">{item.titulo}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed font-normal">{item.descripcion}</p>
           </div>
 
         </div>
