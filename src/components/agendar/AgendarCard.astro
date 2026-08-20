@@ -1,0 +1,15 @@
+---
+// src/components/agendar/AgendarCard.astro
+import CalendarioSection from './CalendarioSection.astro';
+import HorariosSection from './HorariosSection.astro';
+---
+
+<section class="w-full max-w-4xl mx-auto px-4 py-8">
+  <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl shadow-2xl shadow-slate-950/80 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <!-- Componente Calendario (Izquierda) -->
+    <CalendarioSection />
+
+    <!-- Componente Horarios (Derecha) -->
+    <HorariosSection />
+  </div>
+</section>

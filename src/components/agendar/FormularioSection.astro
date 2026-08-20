@@ -1,0 +1,74 @@
+---
+// src/components/agendar/FormularioSection.astro
+---
+
+<div class="w-full max-w-4xl mx-auto px-4 pt-8 pb-4">
+  <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl shadow-slate-950/80">
+    <div class="mb-6">
+      <h2 class="text-xl md:text-2xl font-bold text-slate-100 tracking-tight">
+        Información de Contacto
+      </h2>
+      <p class="text-sm text-slate-400 mt-1">
+        Por favor, ingrese sus datos para personalizar su sesión de atención.
+      </p>
+    </div>
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;">
+      <!-- Campo 1: Nombre del Contratista -->
+      <div class="space-y-2">
+        <label for="nombre-contratista" class="block text-sm font-semibold text-slate-200">
+          Nombre de la empresa o contratista <span class="text-emerald-400">*</span>
+        </label>
+        <div class="relative">
+          <input 
+            type="text" 
+            id="nombre-contratista" 
+            name="nombreContratista" 
+            placeholder="Ej. Constructora Global S.A." 
+            required 
+            class="w-full bg-slate-950/60 border border-slate-800 focus:border-emerald-400 text-slate-100 placeholder-slate-500 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 transition duration-200"
+          />
+        </div>
+      </div>
+
+      <!-- Campo 2: Producto de su Interés -->
+      <div class="space-y-2">
+        <label for="producto-interes" class="block text-sm font-semibold text-slate-200">
+          Producto o servicio de su interés <span class="text-emerald-400">*</span>
+        </label>
+        <div class="relative">
+          <select 
+            id="producto-interes" 
+            name="productoInteres" 
+            required 
+            class="w-full bg-slate-950/60 border border-slate-800 focus:border-emerald-400 text-slate-100 text-sm rounded-xl px-4 py-3.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 transition duration-200 appearance-none cursor-pointer"
+          >
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="punto-de-venta">Sistema de Punto de Venta</option>
+            <option value="gestion-empresarial">Plataforma de Gestión Empresarial</option>
+            <option value="control-inventarios">Módulo de Control de Inventarios</option>
+            <option value="consultoria">Consultoría en Desarrollo de Software</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Notifica la modificación de los datos de contacto a los demás componentes
+  const nombreInput = document.getElementById('nombre-contratista');
+  const productoSelect = document.getElementById('producto-interes');
+
+  function notificarCambioFormulario() {
+    window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
+  }
+
+  nombreInput?.addEventListener('input', notificarCambioFormulario);
+  productoSelect?.addEventListener('change', notificarCambioFormulario);
+</script>

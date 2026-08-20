@@ -1,0 +1,110 @@
+---
+// src/components/agendar/CalendarioSection.astro
+---
+
+<div class="bg-slate-950/80 p-6 md:p-8 flex flex-col justify-between text-white border-b md:border-b-0 md:border-r border-slate-800">
+  <div>
+    <!-- Logo o Icono de la empresa -->
+    <div class="flex justify-center mb-6">
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 p-0.5 shadow-lg shadow-emerald-500/20 flex items-center justify-center">
+        <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
+          <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Título principal -->
+    <h2 class="text-xl md:text-2xl font-bold text-center text-slate-100 mb-6">
+      Reunirse con representante Ollintem
+    </h2>
+
+    <!-- Navegación del Mes -->
+    <div class="flex items-center justify-between text-slate-300 mb-6 px-2">
+      <button id="btn-prev-month" type="button" aria-label="Mes anterior" class="p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-emerald-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <span class="font-semibold text-lg tracking-wide text-slate-200">agosto 2026</span>
+      <button id="btn-next-month" type="button" aria-label="Mes siguiente" class="p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-emerald-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Encabezado de Días de la Semana -->
+    <div class="grid grid-cols-7 gap-1 text-center text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">
+      <span>Lun.</span>
+      <span>Mar.</span>
+      <span>Mié.</span>
+      <span>Jue.</span>
+      <span>Vie.</span>
+      <span>Sáb.</span>
+      <span>Dom.</span>
+    </div>
+
+    <!-- Grid del Calendario -->
+    <div class="grid grid-cols-7 gap-1 text-center font-medium text-sm" id="calendar-days">
+      <!-- Días vacíos de alineación -->
+      <div></div><div></div><div></div><div></div><div></div>
+
+      <!-- Días del mes -->
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">1</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">2</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="3">3</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="4">4</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="5">5</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="6">6</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="7">7</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">8</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">9</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="10">10</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="11">11</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="12">12</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="13">13</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="14">14</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">15</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">16</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="17">17</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="18">18</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="19">19</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="20">20</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="21">21</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">22</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">23</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="24">24</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="25">25</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="26">26</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="27">27</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="28">28</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">29</button>
+      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">30</button>
+      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="31">31</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Manejo interactivo de la selección obligatoria de fecha
+  const dayButtons = document.querySelectorAll('.day-btn:not(.cursor-not-allowed)');
+  const dateDisplay = document.getElementById('selected-date-text');
+
+  dayButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      dayButtons.forEach(b => {
+        b.classList.remove('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
+        b.classList.add('text-slate-400');
+      });
+
+      btn.classList.add('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
+      btn.classList.remove('text-slate-400');
+
+      const dayNum = btn.getAttribute('data-day') || btn.textContent?.trim();
+      if (dateDisplay && dayNum) {
+        dateDisplay.textContent = `${dayNum} de agosto de 2026`;
+      }
+
+      // Notifica que se seleccionó una fecha válida
+      window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
+    });
+  });
+</script>
