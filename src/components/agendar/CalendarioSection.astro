@@ -22,10 +22,10 @@
 
     <!-- Navegación del Mes -->
     <div class="flex items-center justify-between text-slate-300 mb-6 px-2">
-      <button id="btn-prev-month" type="button" aria-label="Mes anterior" class="p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-emerald-400">
+      <button id="btn-prev-month" type="button" aria-label="Mes anterior" class="p-1.5 rounded-lg transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
       </button>
-      <span class="font-semibold text-lg tracking-wide text-slate-200">agosto 2026</span>
+      <span id="month-year-display" class="font-semibold text-lg tracking-wide text-slate-200"></span>
       <button id="btn-next-month" type="button" aria-label="Mes siguiente" class="p-1.5 rounded-lg hover:bg-slate-800 transition-colors text-slate-400 hover:text-emerald-400">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </button>
@@ -42,69 +42,132 @@
       <span>Dom.</span>
     </div>
 
-    <!-- Grid del Calendario -->
+    <!-- Grid del Calendario (Se llena dinámicamente) -->
     <div class="grid grid-cols-7 gap-1 text-center font-medium text-sm" id="calendar-days">
-      <!-- Días vacíos de alineación -->
-      <div></div><div></div><div></div><div></div><div></div>
-
-      <!-- Días del mes -->
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">1</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">2</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="3">3</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="4">4</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="5">5</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="6">6</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="7">7</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">8</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">9</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="10">10</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="11">11</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="12">12</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="13">13</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="14">14</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">15</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">16</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="17">17</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="18">18</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="19">19</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="20">20</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="21">21</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">22</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">23</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="24">24</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="25">25</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="26">26</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="27">27</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="28">28</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">29</button>
-      <button type="button" class="day-btn text-slate-500 cursor-not-allowed py-2 rounded-full">30</button>
-      <button type="button" class="day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition" data-day="31">31</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Manejo interactivo de la selección obligatoria de fecha
-  const dayButtons = document.querySelectorAll('.day-btn:not(.cursor-not-allowed)');
-  const dateDisplay = document.getElementById('selected-date-text');
+  const monthNames = [
+    "enero", "febrero", "marzo", "abril", "mayo", "junio", 
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+  ];
+  
+  // Obtenemos la fecha exacta del sistema en el momento de carga
+  const fechaActual = new Date();
+  fechaActual.setHours(0, 0, 0, 0); // Normalizamos a la medianoche para comparaciones exactas de días
 
-  dayButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      dayButtons.forEach(b => {
-        b.classList.remove('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
-        b.classList.add('text-slate-400');
-      });
+  // Iniciar el calendario en el mes y año real actual
+  let currentDate = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), 1);
 
-      btn.classList.add('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
-      btn.classList.remove('text-slate-400');
+  const monthYearDisplay = document.getElementById('month-year-display');
+  const calendarDays = document.getElementById('calendar-days');
+  const prevBtn = document.getElementById('btn-prev-month');
+  const nextBtn = document.getElementById('btn-next-month');
 
-      const dayNum = btn.getAttribute('data-day') || btn.textContent?.trim();
-      if (dateDisplay && dayNum) {
-        dateDisplay.textContent = `${dayNum} de agosto de 2026`;
+  function renderCalendar(date) {
+    if (!calendarDays || !monthYearDisplay) return;
+    
+    calendarDays.innerHTML = ''; 
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    
+    monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
+
+    // LÓGICA DE BLOQUEO DE MESES PASADOS
+    // Comparamos el mes y año que estamos renderizando contra la fecha actual real
+    const isPastMonth = year < fechaActual.getFullYear() || (year === fechaActual.getFullYear() && month <= fechaActual.getMonth());
+
+    if (isPastMonth) {
+      // Bloqueamos la flecha hacia atrás si estamos en el mes actual o en uno anterior
+      prevBtn.disabled = true;
+      prevBtn.classList.add('opacity-20', 'cursor-not-allowed', 'text-slate-600');
+      prevBtn.classList.remove('hover:bg-slate-800', 'hover:text-emerald-400', 'text-slate-400');
+    } else {
+      // Habilitamos la flecha si estamos explorando meses futuros
+      prevBtn.disabled = false;
+      prevBtn.classList.remove('opacity-20', 'cursor-not-allowed', 'text-slate-600');
+      prevBtn.classList.add('hover:bg-slate-800', 'hover:text-emerald-400', 'text-slate-400');
+    }
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const emptyDays = firstDay === 0 ? 6 : firstDay - 1;
+
+    for (let i = 0; i < emptyDays; i++) {
+      const div = document.createElement('div');
+      calendarDays.appendChild(div);
+    }
+
+    for (let i = 1; i <= daysInMonth; i++) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      
+      const btnDate = new Date(year, month, i);
+      const dayOfWeek = btnDate.getDay();
+      
+      // Evaluamos dos condiciones de bloqueo: si es fin de semana, o si el día ya pasó
+      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+      const isPastDay = btnDate.getTime() < fechaActual.getTime();
+
+      if (isWeekend || isPastDay) {
+        // Estilo atenuado para identificar los días bloqueados
+        btn.className = "day-btn text-slate-600/50 bg-slate-900/10 cursor-not-allowed py-2 rounded-full";
+        btn.textContent = i;
+        btn.disabled = true;
+      } else {
+        btn.className = "day-btn text-slate-400 hover:bg-slate-800 hover:text-emerald-400 py-2 rounded-full transition";
+        btn.textContent = i;
+        btn.dataset.fullDate = `${i} de ${monthNames[month]} de ${year}`;
+        
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.day-btn:not(:disabled)').forEach(b => {
+            b.classList.remove('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
+            b.classList.add('text-slate-400');
+          });
+
+          const target = e.currentTarget;
+          target.classList.add('bg-emerald-400', 'text-slate-950', 'font-bold', 'shadow-lg', 'shadow-emerald-500/30', 'scale-105', 'active-day');
+          target.classList.remove('text-slate-400');
+
+          window.dispatchEvent(new CustomEvent('agenda-fecha-seleccionada', { 
+            detail: target.dataset.fullDate 
+          }));
+          
+          window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
+        });
       }
+      calendarDays.appendChild(btn);
+    }
 
-      // Notifica que se seleccionó una fecha válida
+    const dateDisplay = document.getElementById('selected-date-text');
+    if (dateDisplay && !document.querySelector('.active-day')) {
+      dateDisplay.textContent = 'Seleccione un día';
       window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      // Prevención extra para evitar clics forzados mediante consola
+      const isPastMonth = currentDate.getFullYear() < fechaActual.getFullYear() || 
+                         (currentDate.getFullYear() === fechaActual.getFullYear() && currentDate.getMonth() <= fechaActual.getMonth());
+      
+      if (!isPastMonth) {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar(currentDate);
+      }
     });
-  });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    });
+  }
+
+  // Inicialización con el mes actual asegurado
+  renderCalendar(currentDate);
 </script>

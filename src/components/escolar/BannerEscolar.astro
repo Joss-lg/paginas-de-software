@@ -20,11 +20,9 @@ const { image, alt, customClass = "" } = Astro.props;
             class="absolute inset-0 w-full h-full object-cover object-center scale-105 transform hover:scale-110 transition-transform duration-[2s] ease-out"
         />
         
-        <!-- Capa oscura AJUSTADA: Tono verde oscuro de la paleta con 45% de opacidad -->
-        <div class="absolute inset-0 bg-[#2A4B2A]/45"></div>
+        <!-- Película verde eliminada para mostrar la imagen totalmente limpia -->
 
         <!-- Contenido dinámico usando <slot /> -->
-        <!-- Cambiamos el text-white por el tono más claro de la paleta: #E2F6E3 -->
         <div class="absolute inset-0 flex items-center justify-center">
             <h2 class="text-3xl md:text-5xl font-extrabold text-[#E2F6E3] text-center px-4 tracking-tight drop-shadow-lg italic">
                 <slot />

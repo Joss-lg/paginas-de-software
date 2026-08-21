@@ -13,7 +13,7 @@
         <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span>30 min</span>
+        <span>1 hora</span>
       </div>
     </div>
 
@@ -39,70 +39,49 @@
       </div>
     </div>
 
-    <!-- Lista de Horarios Delimitados (11:00 AM - 6:00 PM) -->
+    <!-- Lista de Horarios Disponibles (Intervalos de 1 hora de 10:00 AM a 6:00 PM) -->
     <div class="space-y-2.5 max-h-[290px] overflow-y-auto pr-1 text-sm scrollbar-thin scrollbar-thumb-slate-700" id="time-slots-container">
-      
-      <!-- 11:00 AM -->
+      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
+        <span>10:00 AM</span>
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
+      </button>
       <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
         <span>11:00 AM</span>
         <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
-      <!-- 11:30 AM -->
-      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
-        <span>11:30 AM</span>
-        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
-      </button>
-
-      <!-- 12:00 PM -->
       <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
         <span>12:00 PM</span>
         <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
-      <!-- 1:00 PM (Ocupado / Agendado) -->
-      <button disabled type="button" class="w-full bg-slate-950/40 border border-slate-800/80 text-slate-600 font-medium py-2.5 px-4 rounded-xl flex items-center justify-between cursor-not-allowed opacity-60">
-        <span class="line-through">1:00 PM</span>
-        <span class="text-xs bg-rose-500/10 text-rose-400/80 border border-rose-500/20 px-2.5 py-1 rounded-full font-bold">Agendado</span>
-      </button>
-
-      <!-- 2:30 PM -->
       <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
-        <span>2:30 PM</span>
+        <span>1:00 PM</span>
         <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
-      <!-- 4:00 PM (Ocupado / Agendado) -->
-      <button disabled type="button" class="w-full bg-slate-950/40 border border-slate-800/80 text-slate-600 font-medium py-2.5 px-4 rounded-xl flex items-center justify-between cursor-not-allowed opacity-60">
-        <span class="line-through">4:00 PM</span>
-        <span class="text-xs bg-rose-500/10 text-rose-400/80 border border-rose-500/20 px-2.5 py-1 rounded-full font-bold">Agendado</span>
+      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
+        <span>2:00 PM</span>
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
-      <!-- 5:00 PM -->
+      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
+        <span>3:00 PM</span>
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
+      </button>
+      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
+        <span>4:00 PM</span>
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
+      </button>
       <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
         <span>5:00 PM</span>
         <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
-      <!-- 5:30 PM -->
-      <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
-        <span>5:30 PM</span>
-        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
-      </button>
-
-      <!-- 6:00 PM -->
       <button type="button" class="slot-btn group w-full bg-slate-800/40 hover:bg-emerald-500/10 border border-slate-700/80 hover:border-emerald-400 text-slate-200 hover:text-emerald-300 font-semibold py-2.5 px-4 rounded-xl transition duration-200 flex items-center justify-between shadow-sm">
         <span>6:00 PM</span>
         <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full group-hover:bg-emerald-400 group-hover:text-slate-950 font-bold transition">Disponible</span>
       </button>
-
     </div>
   </div>
 
-  <!-- Contenedor Inferior: Mensaje Prediseñado y Botón de Confirmación -->
+  <!-- Contenedor Inferior: Mensaje Prediseñado y Enlace API WhatsApp -->
   <div class="pt-4 border-t border-slate-800 mt-6 space-y-3">
-    
-    <!-- Etiqueta de Mensaje Prediseñado para el Operador -->
     <div id="preview-message-box" class="bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 text-xs text-slate-300 transition duration-300">
       <div class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-1.5">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,27 +94,36 @@
       </p>
     </div>
 
-    <!-- Botón de Confirmación deshabilitado por defecto -->
-    <button 
+    <!-- Botón de Confirmación convertido dinámicamente a enlace de WhatsApp con la paleta de colores de la app -->
+    <a 
       id="confirm-booking-btn" 
-      disabled 
-      type="button" 
-      class="w-full bg-slate-800 text-slate-500 font-bold py-3.5 px-6 rounded-xl shadow-none cursor-not-allowed opacity-50 transition duration-200 flex items-center justify-center gap-2 pointer-events-none"
+      href="#" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="group relative w-full bg-slate-800 text-slate-500 font-bold py-3.5 px-6 rounded-xl shadow-none cursor-not-allowed opacity-50 transition-all duration-300 transform pointer-events-none flex items-center justify-center gap-2 text-center"
     >
-      <span>Confirmar Cita</span>
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-    </button>
+      <span>Confirmar Cita por WhatsApp</span>
+      <svg class="w-5 h-5 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
   </div>
 </div>
 
 <script>
-  // Control de selección de hora y validación centralizada de todos los campos
   const slotButtons = document.querySelectorAll('.slot-btn');
-  const confirmBtn = document.getElementById('confirm-booking-btn') as HTMLButtonElement | null;
+  const confirmBtn = document.getElementById('confirm-booking-btn') as HTMLAnchorElement;
   const messageBox = document.getElementById('preview-message-box');
   const messageText = document.getElementById('preview-message-text');
 
-  // Manejo visual de botones de hora
+  window.addEventListener('agenda-fecha-seleccionada', (e: Event) => {
+    const customEvent = e as CustomEvent;
+    const dateDisplay = document.getElementById('selected-date-text');
+    if (dateDisplay) {
+      dateDisplay.textContent = customEvent.detail; 
+    }
+  });
+
   slotButtons.forEach(slot => {
     slot.addEventListener('click', () => {
       slotButtons.forEach(s => {
@@ -143,30 +131,30 @@
       });
       slot.classList.add('border-emerald-400', 'bg-emerald-500/20', 'ring-2', 'ring-emerald-400/50', 'active-slot');
 
-      // Notifica que se seleccionó un horario válido
       window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
     });
   });
 
-  // Función encargada de evaluar el cumplimiento de requisitos y redactar la solicitud formal
   function verificarRequisitosFormulario() {
-    const nombreInput = document.getElementById('nombre-contratista') as HTMLInputElement | null;
-    const productoSelect = document.getElementById('producto-interes') as HTMLSelectElement | null;
-    const diaSeleccionado = document.querySelector('.active-day');
+    const nombreInput = document.getElementById('nombre-contratista') as HTMLInputElement;
+    const productoSelect = document.getElementById('producto-interes') as HTMLSelectElement;
+    
+    const diaSeleccionado = document.querySelector('.active-day') as HTMLElement;
     const horaSeleccionada = document.querySelector('.active-slot');
 
     const nombre = nombreInput ? nombreInput.value.trim() : '';
     const productoTexto = productoSelect && productoSelect.selectedIndex > 0 
       ? productoSelect.options[productoSelect.selectedIndex].text 
       : '';
-    const diaTexto = diaSeleccionado ? (diaSeleccionado.getAttribute('data-day') || diaSeleccionado.textContent?.trim()) : '';
+      
+    const diaTexto = diaSeleccionado ? diaSeleccionado.dataset.fullDate : '';
     const horaTexto = horaSeleccionada ? horaSeleccionada.querySelector('span')?.textContent?.trim() : '';
 
     const esValido = Boolean(nombre) && Boolean(productoTexto) && Boolean(diaTexto) && Boolean(horaTexto);
 
     if (messageText && messageBox) {
       if (esValido) {
-        messageText.innerHTML = `Estimado equipo de atención: Se solicita agendar una sesión de atención con la empresa <strong class="text-slate-100 font-semibold">${nombre}</strong> para abordar el tema de <strong class="text-emerald-400 font-semibold">${productoTexto}</strong>, programada para el <strong class="text-slate-100 font-semibold">${diaTexto} de agosto de 2026</strong> a las <strong class="text-emerald-400 font-semibold">${horaTexto}</strong>.`;
+        messageText.innerHTML = `Estimado equipo de atención: Se solicita agendar una sesión de atención con la empresa <strong class="text-slate-100 font-semibold">${nombre}</strong> para abordar el tema de <strong class="text-emerald-400 font-semibold">${productoTexto}</strong>, programada para el <strong class="text-slate-100 font-semibold">${diaTexto}</strong> a las <strong class="text-emerald-400 font-semibold">${horaTexto}</strong>.`;
         messageText.classList.remove('italic', 'text-slate-400');
         messageText.classList.add('text-slate-200');
         messageBox.classList.remove('border-slate-800');
@@ -181,16 +169,33 @@
     }
 
     if (confirmBtn) {
-      if (esValido) {
-        confirmBtn.removeAttribute('disabled');
-        confirmBtn.className = "w-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition duration-200 flex items-center justify-center gap-2 transform active:scale-[0.99] cursor-pointer opacity-100 pointer-events-auto";
+      if (esValido && messageText) {
+        // Se construye el mensaje dinámico para enviarlo estructurado a WhatsApp
+        const textoMensaje = `Hola, me interesa agendar una demostración de la plataforma. Datos de la cita: Empresa/Contratista: ${nombre} | Servicio: ${productoTexto} | Fecha: ${diaTexto} | Hora: ${horaTexto}`;
+        const urlWhatsApp = `https://wa.me/5215651318645?text=${encodeURIComponent(textoMensaje)}`;
+
+        confirmBtn.href = urlWhatsApp;
+        confirmBtn.classList.remove('bg-slate-800', 'text-slate-500', 'shadow-none', 'cursor-not-allowed', 'opacity-50', 'pointer-events-none');
+        confirmBtn.classList.add(
+          'bg-gradient-to-r', 'from-emerald-400', 'to-teal-500', 
+          'hover:from-emerald-300', 'hover:to-teal-400', 'text-slate-950', 
+          'shadow-lg', 'shadow-emerald-500/25', 'hover:shadow-xl', 
+          'hover:shadow-emerald-500/40', 'hover:-translate-y-0.5', 
+          'hover:scale-[1.02]', 'active:scale-[0.98]', 'cursor-pointer', 'opacity-100', 'pointer-events-auto'
+        );
       } else {
-        confirmBtn.setAttribute('disabled', 'true');
-        confirmBtn.className = "w-full bg-slate-800 text-slate-500 font-bold py-3.5 px-6 rounded-xl shadow-none cursor-not-allowed opacity-50 transition duration-200 flex items-center justify-center gap-2 pointer-events-none";
+        confirmBtn.href = "#";
+        confirmBtn.classList.remove(
+          'bg-gradient-to-r', 'from-emerald-400', 'to-teal-500', 
+          'hover:from-emerald-300', 'hover:to-teal-400', 'text-slate-950', 
+          'shadow-lg', 'shadow-emerald-500/25', 'hover:shadow-xl', 
+          'hover:shadow-emerald-500/40', 'hover:-translate-y-0.5', 
+          'hover:scale-[1.02]', 'active:scale-[0.98]', 'cursor-pointer', 'opacity-100', 'pointer-events-auto'
+        );
+        confirmBtn.classList.add('bg-slate-800', 'text-slate-500', 'shadow-none', 'cursor-not-allowed', 'opacity-50', 'pointer-events-none');
       }
     }
   }
 
-  // Escucha los cambios emitidos por los componentes
   window.addEventListener('agenda-validar-estado', verificarRequisitosFormulario);
 </script>
