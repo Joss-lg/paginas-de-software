@@ -14,7 +14,7 @@
     </div>
 
     <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;">
-      <!-- Campo 1: Nombre del Contratista -->
+      <!-- Campo 1: Nombre de la Empresa o Contratista -->
       <div class="space-y-2">
         <label for="nombre-contratista" class="block text-sm font-semibold text-slate-200">
           Nombre de la empresa o contratista <span class="text-emerald-400">*</span>
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <!-- Campo 2: Producto de su Interés -->
+      <!-- Campo 2: Producto o Servicio de su Interés -->
       <div class="space-y-2">
         <label for="producto-interes" class="block text-sm font-semibold text-slate-200">
           Producto o servicio de su interés <span class="text-emerald-400">*</span>
@@ -61,6 +61,40 @@
           </div>
         </div>
       </div>
+
+      <!-- Campo 3: Correo Electrónico Profesional -->
+      <div class="space-y-2">
+        <label for="correo-electronico" class="block text-sm font-semibold text-slate-200">
+          Correo electrónico profesional <span class="text-emerald-400">*</span>
+        </label>
+        <div class="relative">
+          <input 
+            type="email" 
+            id="correo-electronico" 
+            name="correoElectronico" 
+            placeholder="Ej. contacto@empresa.com" 
+            required 
+            class="w-full bg-slate-950/60 border border-slate-800 focus:border-emerald-400 text-slate-100 placeholder-slate-500 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 transition duration-200"
+          />
+        </div>
+      </div>
+
+      <!-- Campo 4: Número de Contacto Profesional -->
+      <div class="space-y-2">
+        <label for="telefono-contacto" class="block text-sm font-semibold text-slate-200">
+          Número de contacto profesional <span class="text-emerald-400">*</span>
+        </label>
+        <div class="relative">
+          <input 
+            type="tel" 
+            id="telefono-contacto" 
+            name="telefonoContacto" 
+            placeholder="Ej. 55 1234 5678" 
+            required 
+            class="w-full bg-slate-950/60 border border-slate-800 focus:border-emerald-400 text-slate-100 placeholder-slate-500 text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 transition duration-200"
+          />
+        </div>
+      </div>
     </form>
   </div>
 </div>
@@ -69,6 +103,8 @@
   // Notifica la modificación de los datos de contacto a los demás componentes
   const nombreInput = document.getElementById('nombre-contratista');
   const productoSelect = document.getElementById('producto-interes');
+  const correoInput = document.getElementById('correo-electronico');
+  const telefonoInput = document.getElementById('telefono-contacto');
 
   function notificarCambioFormulario() {
     window.dispatchEvent(new CustomEvent('agenda-validar-estado'));
@@ -76,4 +112,6 @@
 
   nombreInput?.addEventListener('input', notificarCambioFormulario);
   productoSelect?.addEventListener('change', notificarCambioFormulario);
+  correoInput?.addEventListener('input', notificarCambioFormulario);
+  telefonoInput?.addEventListener('input', notificarCambioFormulario);
 </script>
