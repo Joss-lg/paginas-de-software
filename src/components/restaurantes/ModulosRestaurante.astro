@@ -45,12 +45,12 @@ const planes = [
 
 <section id="planes" class="py-20 bg-slate-50 text-slate-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-6 pb-6">
       {planes.map((plan) => (
-        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 ${
+        <div class={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:z-20 ${
           plan.destacado 
-            ? 'bg-slate-950 text-white shadow-2xl scale-105 border-2 border-slate-800' 
-            : 'bg-white text-slate-800 border-2 border-slate-200 shadow-sm'
+            ? 'bg-slate-950 text-white shadow-2xl scale-105 hover:scale-110 border-2 border-slate-800 hover:shadow-3xl' 
+            : 'bg-white text-slate-800 border-2 border-slate-200 shadow-sm hover:scale-105 hover:shadow-xl hover:border-slate-300'
         }`}>
           
           {plan.destacado && (
@@ -91,8 +91,8 @@ const planes = [
               href="/agendar"
               class={`w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 shadow-md ${
                 plan.destacado
-                  ? 'bg-white text-slate-950 hover:bg-slate-100 shadow-white/10'
-                  : 'bg-slate-900 text-white hover:bg-slate-800 shadow-slate-900/10'
+                  ? 'bg-white text-slate-950 hover:bg-slate-100 hover:shadow-white/20'
+                  : 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-slate-900/20'
               }`}
             >
               Contrata nuestro plan

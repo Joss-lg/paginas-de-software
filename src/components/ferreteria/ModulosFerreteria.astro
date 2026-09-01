@@ -63,10 +63,10 @@ const modulos: Modulo[] = [
       <!-- ================= FILA 1: Textos a la izquierda (01 y 02) | Imagen unificada a la derecha ================= -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
-        <!-- Columna de Textos (Módulos 01 y 02 apilados) -->
+        <!-- Columna de Textos (Módulos 01 y 02 apilados con animación de crecimiento) -->
         <div class="lg:col-span-6 flex flex-col justify-between gap-8">
           {modulos.slice(0, 2).map((m) => (
-            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group flex flex-col justify-center">
+            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-center">
               <div class="flex items-center gap-4 mb-4">
                 <span class="text-2xl sm:text-3xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
                 <div class="h-px bg-slate-800 flex-1"></div>
@@ -81,9 +81,9 @@ const modulos: Modulo[] = [
           ))}
         </div>
 
-        <!-- Columna de Imagen Unificada (Abarca la altura completa de los dos módulos de la izquierda) -->
+        <!-- Columna de Imagen Unificada (Abarca altura completa, crecimiento e inclinación de 2°) -->
         <div class="lg:col-span-6 flex">
-          <div class="w-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-300 hover:border-purple-500/50 flex flex-col group">
+          <div class="w-full h-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-500 hover:border-purple-500/50 hover:scale-[1.03] hover:rotate-2 flex flex-col group">
             <!-- Barra de Navegador simulada -->
             <div class="bg-slate-800/90 px-4 py-3 flex items-center gap-2 border-b border-slate-700/80 shrink-0">
               <div class="flex items-center gap-1.5">
@@ -96,14 +96,14 @@ const modulos: Modulo[] = [
               </div>
             </div>
 
-            <!-- Contenedor de la imagen (O espacio temporal si no existe) -->
+            <!-- Contenedor de la imagen -->
             <div class="p-4 bg-slate-950 flex-1 flex items-center justify-center">
               {modulos[0].imagen ? (
                 <img 
                   src={modulos[0].imagen} 
                   alt={modulos[0].altImagen || modulos[0].nombre} 
                   loading="lazy"
-                  class="w-full h-full object-cover rounded-xl shadow-inner group-hover:scale-[1.01] transition-transform duration-300 min-h-[320px] lg:min-h-full"
+                  class="w-full h-full object-cover rounded-xl shadow-inner min-h-[320px] lg:min-h-full"
                 />
               ) : (
                 <div class="w-full h-full min-h-[320px] rounded-2xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-6">
@@ -122,9 +122,9 @@ const modulos: Modulo[] = [
       <!-- ================= FILA 2: Imagen unificada a la izquierda | Textos a la derecha (03 y 04) ================= -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
-        <!-- Columna de Imagen Unificada (Izquierda en la segunda fila) -->
+        <!-- Columna de Imagen Unificada (Abarca altura completa, crecimiento e inclinación de 2°) -->
         <div class="lg:col-span-6 flex order-2 lg:order-1">
-          <div class="w-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-300 hover:border-purple-500/50 flex flex-col group">
+          <div class="w-full h-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-500 hover:border-purple-500/50 hover:scale-[1.03] hover:rotate-2 flex flex-col group">
             <!-- Barra de Navegador simulada -->
             <div class="bg-slate-800/90 px-4 py-3 flex items-center gap-2 border-b border-slate-700/80 shrink-0">
               <div class="flex items-center gap-1.5">
@@ -137,14 +137,14 @@ const modulos: Modulo[] = [
               </div>
             </div>
 
-            <!-- Contenedor de la imagen (O espacio temporal si no existe) -->
+            <!-- Contenedor de la imagen -->
             <div class="p-4 bg-slate-950 flex-1 flex items-center justify-center">
               {modulos[2].imagen ? (
                 <img 
                   src={modulos[2].imagen} 
                   alt={modulos[2].altImagen || modulos[2].nombre} 
                   loading="lazy"
-                  class="w-full h-full object-cover rounded-xl shadow-inner group-hover:scale-[1.01] transition-transform duration-300 min-h-[320px] lg:min-h-full"
+                  class="w-full h-full object-cover rounded-xl shadow-inner min-h-[320px] lg:min-h-full"
                 />
               ) : (
                 <div class="w-full h-full min-h-[320px] rounded-2xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-6">
@@ -158,10 +158,10 @@ const modulos: Modulo[] = [
           </div>
         </div>
 
-        <!-- Columna de Textos (Módulos 03 y 04 apilados a la derecha) -->
+        <!-- Columna de Textos (Módulos 03 y 04 apilados con animación de crecimiento) -->
         <div class="lg:col-span-6 flex flex-col justify-between gap-8 order-1 lg:order-2">
           {modulos.slice(2, 4).map((m) => (
-            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group flex flex-col justify-center">
+            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-center">
               <div class="flex items-center gap-4 mb-4">
                 <span class="text-2xl sm:text-3xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
                 <div class="h-px bg-slate-800 flex-1"></div>
