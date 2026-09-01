@@ -1,0 +1,76 @@
+---
+// src/components/restaurante/AccesoDispositivosRestaurante.astro
+---
+
+<section id="responsivo-restaurante" class="relative overflow-hidden py-32 bg-white text-gray-900 font-sans">
+  <!-- Patrón de fondo sutil y limpio -->
+  <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] opacity-60 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Encabezado de la sección con texto oscuro y alta legibilidad -->
+    <div class="text-center max-w-4xl mx-auto mb-20 space-y-6">
+      <span class="text-orange-600 font-extrabold text-sm uppercase tracking-widest bg-orange-50 px-5 py-2 rounded-full border border-orange-200 shadow-sm">
+        Ecosistema Multiplataforma
+      </span>
+      <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl tracking-tight leading-tight">
+        Cada etapa del servicio conectada a la perfección
+      </h2>
+      <p class="text-gray-600 text-xl font-normal leading-relaxed px-4">
+        Desde la terminal principal de caja hasta el celular del mesero en la mesa. Las pantallas se adaptan al rol de tu personal para que las órdenes vuelen sin confusiones.
+      </p>
+    </div>
+
+    <!-- Contenedor principal de la demostración responsiva -->
+    <div class="relative max-w-5xl mx-auto mt-12 flex justify-center pb-16">
+      
+      <!-- ================= MOCKUP ESCRITORIO (COMPUTADORA / CAJA) - MARGEN OSCURO ================= -->
+      <div class="relative w-full md:w-11/12 rounded-[2rem] bg-gray-900 border-4 border-gray-800 shadow-[0_25px_60px_rgba(0,0,0,0.15)] z-10 transition-all duration-700 hover:scale-[1.02] hover:border-orange-500 group overflow-hidden">
+        
+        <!-- Barra superior simulada (Oscura) -->
+        <div class="bg-gray-950 px-6 py-4 flex items-center justify-between border-b border-gray-800 shrink-0">
+          <div class="flex items-center gap-2">
+            <div class="w-3.5 h-3.5 rounded-full bg-red-500"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-yellow-400"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-green-500"></div>
+          </div>
+          <span class="text-xs text-gray-400 font-semibold tracking-wider uppercase">Terminal Principal - Caja</span>
+          <div class="w-16"></div> <!-- Espaciador para centrar el título -->
+        </div>
+
+        <!-- Área de imagen para Escritorio -->
+        <div class="aspect-video bg-gray-900 relative overflow-hidden flex items-center justify-center">
+          
+          <!-- Etiqueta IMG para la vista de Escritorio (Estática para que no se deforme ni corte al hacer hover) -->
+          <img 
+            src="/public/restaurante/restauranteresponsivo2.webp" 
+            alt="Sistema de restaurante en vista de computadora o caja" 
+            class="absolute inset-0 w-full h-full object-cover object-top"
+          />
+
+        </div>
+      </div>
+
+      <!-- ================= MOCKUP MÓVIL (TELÉFONO / COMANDERA) - MARGEN OSCURO ================= -->
+      <!-- Posicionado de forma absoluta superpuesto en la esquina inferior derecha -->
+      <div class="absolute -bottom-10 -right-2 sm:-right-6 md:-right-10 w-[140px] sm:w-[180px] md:w-[240px] lg:w-[270px] aspect-[9/19] rounded-[2.2rem] sm:rounded-[2.7rem] bg-gray-950 border-[6px] sm:border-8 border-gray-900 shadow-[0_25px_60px_rgba(0,0,0,0.3)] z-20 transition-all duration-700 hover:-translate-y-6 hover:scale-[1.05] group overflow-hidden">
+        
+        <!-- Pantalla interna del móvil -->
+        <div class="w-full h-full bg-gray-900 relative overflow-hidden flex items-center justify-center">
+          
+          <!-- Notch / Isla superior del celular -->
+          <div class="absolute top-0 inset-x-0 h-4 sm:h-6 bg-gray-950 rounded-b-xl w-[40%] sm:w-[50%] mx-auto z-30 pointer-events-none"></div>
+
+          <!-- Etiqueta IMG para la vista Móvil (Estática) -->
+          <img 
+            src="/public/restaurante/RestauranteResponsivo1.webp" 
+            alt="Comandera móvil para meseros de restaurante" 
+            class="absolute inset-0 w-full h-full object-cover object-top"
+          />
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

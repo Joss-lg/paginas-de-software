@@ -11,83 +11,174 @@ interface Modulo {
 const modulos: Modulo[] = [
   {
     codigo: "01",
-    nombre: "Caja y Punto de Venta",
-    detalle: "Cobros rápidos en efectivo, tarjeta o transferencias con emisión inmediata de tickets.",
+    nombre: "Mostrador y Cobranza Ágil",
+    detalle: "Facilita transacciones sumamente fluidas en efectivo, tarjeta o transferencias, asegurando la entrega instantánea de comprobantes de pago a cada comprador.",
     imagen: "/ferreteria/modulo-caja.webp",
     altImagen: "Captura del módulo de caja"
   },
   {
     codigo: "02",
-    nombre: "Gestión de Inventarios",
-    detalle: "Multialmacén, kardex detallado, transferencias entre sucursales y ajustes de stock.",
+    nombre: "Control Minucioso de Existencias",
+    detalle: "Administra múltiples almacenes con un registro histórico impecable, gestionando traslados fluidos entre sucursales y ajustes precisos en la disponibilidad de mercancías.",
     imagen: "/ferreteria/modulo-inventarios.webp",
     altImagen: "Captura del módulo de inventarios"
   },
   {
     codigo: "03",
-    nombre: "Proveedores y Compras",
-    detalle: "Historial de costos y sugeridos de compra inteligentes.",
+    nombre: "Abastecimiento y Proveedores",
+    detalle: "Conserva un registro detallado de costos anteriores y recibe recomendaciones inteligentes para optimizar el reabastecimiento de tus productos.",
     imagen: "/ferreteria/modulo-compras.webp",
     altImagen: "Captura del módulo de compras"
   },
   {
     codigo: "04",
-    nombre: "Créditos y Clientes",
-    detalle: "Manejo de cuentas por cobrar, límites de crédito para maestros de obra y estados de cuenta.",
+    nombre: "Financiación y Relación con Clientes",
+    detalle: "Administra con elegancia las cuentas por cobrar, establece límites de crédito personalizados para maestros de obra y genera estados de cuenta claros y transparentes.",
     imagen: "/ferreteria/modulo-creditos.webp",
     altImagen: "Captura del módulo de créditos"
   }
 ];
 ---
 
-<section id="modulos" class="relative overflow-hidden py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white border-y border-slate-800">
+<section id="modulos" class="relative overflow-hidden py-28 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white border-y border-slate-800">
   <!-- Luces y patrón de fondo -->
   <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-  <div class="absolute top-1/4 -left-32 h-[400px] w-[400px] rounded-full bg-purple-600/20 blur-[130px] pointer-events-none"></div>
-  <div class="absolute bottom-10 -right-32 h-[400px] w-[400px] rounded-full bg-indigo-600/20 blur-[130px] pointer-events-none"></div>
+  <div class="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-purple-600/15 blur-[150px] pointer-events-none"></div>
+  <div class="absolute bottom-10 -right-32 h-[500px] w-[500px] rounded-full bg-indigo-600/15 blur-[150px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-purple-400 font-extrabold text-sm uppercase tracking-wider">Módulos Integrados</span>
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl mt-2 tracking-tight">
-        Todo lo que tu negocio necesita en un solo lugar
+    <div class="text-center max-w-3xl mx-auto mb-24 space-y-4">
+      <span class="text-purple-400 font-extrabold text-xs uppercase tracking-widest bg-purple-500/10 px-4 py-1.5 rounded-full border border-purple-500/20">Excelencia Operativa Integrada</span>
+      <h2 class="text-3xl font-extrabold text-white sm:text-5xl tracking-tight leading-tight">
+        Una solución integral diseñada para elevar cada rincón de tu establecimiento
       </h2>
+      <p class="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed">
+        Descubre herramientas de gran distinción concebidas para ofrecerte el dominio absoluto sobre el mostrador, las existencias y la administración financiera de tu ferretería.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {modulos.map((m) => (
-        <div class="flex flex-col justify-between p-6 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800/80 shadow-xl hover:border-2 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1 transition-all duration-300 group">
-          <div>
-            <div class="flex gap-4 items-start mb-4">
-              <span class="text-2xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
-              <div>
-                <h3 class="text-lg font-bold text-white mb-1">{m.nombre}</h3>
-                <p class="text-slate-300 text-sm leading-relaxed">{m.detalle}</p>
+    <!-- Contenedor general en bloques simétricos por filas -->
+    <div class="flex flex-col gap-16 lg:gap-24">
+
+      <!-- ================= FILA 1: Textos a la izquierda (01 y 02) | Imagen unificada a la derecha ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Columna de Textos (Módulos 01 y 02 apilados) -->
+        <div class="lg:col-span-6 flex flex-col justify-between gap-8">
+          {modulos.slice(0, 2).map((m) => (
+            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group flex flex-col justify-center">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-2xl sm:text-3xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
+                <div class="h-px bg-slate-800 flex-1"></div>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                {m.nombre}
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                {m.detalle}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Columna de Imagen Unificada (Abarca la altura completa de los dos módulos de la izquierda) -->
+        <div class="lg:col-span-6 flex">
+          <div class="w-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-300 hover:border-purple-500/50 flex flex-col group">
+            <!-- Barra de Navegador simulada -->
+            <div class="bg-slate-800/90 px-4 py-3 flex items-center gap-2 border-b border-slate-700/80 shrink-0">
+              <div class="flex items-center gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
+              <div class="ml-4 flex items-center gap-2">
+                <div class="w-28 sm:w-36 h-3.5 bg-white/10 rounded-md"></div>
               </div>
             </div>
-          </div>
 
-          <!-- ESPACIO / CONTENEDOR DE LA IMAGEN -->
-          <div class="mt-4 pt-4 border-t border-slate-800">
-            {m.imagen ? (
-              <div class="relative w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
+            <!-- Contenedor de la imagen (O espacio temporal si no existe) -->
+            <div class="p-4 bg-slate-950 flex-1 flex items-center justify-center">
+              {modulos[0].imagen ? (
                 <img 
-                  src={m.imagen} 
-                  alt={m.altImagen || m.nombre} 
-                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 opacity-90 hover:opacity-100"
+                  src={modulos[0].imagen} 
+                  alt={modulos[0].altImagen || modulos[0].nombre} 
+                  loading="lazy"
+                  class="w-full h-full object-cover rounded-xl shadow-inner group-hover:scale-[1.01] transition-transform duration-300 min-h-[320px] lg:min-h-full"
                 />
-              </div>
-            ) : (
-              <div class="w-full h-48 rounded-xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-4">
-                <svg class="w-8 h-8 mb-2 stroke-current" fill="none" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span class="text-xs font-medium text-purple-300/80">Inserta la ruta de la imagen en <code class="bg-purple-900/50 px-1 py-0.5 rounded text-purple-200">imagen</code></span>
-              </div>
-            )}
+              ) : (
+                <div class="w-full h-full min-h-[320px] rounded-2xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-6">
+                  <svg class="w-10 h-10 mb-3 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span class="text-sm font-medium text-purple-300/80 text-center">Espacio reservado para imagen principal (Módulos 01 y 02)</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      ))}
+
+      </div>
+
+      <!-- ================= FILA 2: Imagen unificada a la izquierda | Textos a la derecha (03 y 04) ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Columna de Imagen Unificada (Izquierda en la segunda fila) -->
+        <div class="lg:col-span-6 flex order-2 lg:order-1">
+          <div class="w-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-all duration-300 hover:border-purple-500/50 flex flex-col group">
+            <!-- Barra de Navegador simulada -->
+            <div class="bg-slate-800/90 px-4 py-3 flex items-center gap-2 border-b border-slate-700/80 shrink-0">
+              <div class="flex items-center gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
+              <div class="ml-4 flex items-center gap-2">
+                <div class="w-28 sm:w-36 h-3.5 bg-white/10 rounded-md"></div>
+              </div>
+            </div>
+
+            <!-- Contenedor de la imagen (O espacio temporal si no existe) -->
+            <div class="p-4 bg-slate-950 flex-1 flex items-center justify-center">
+              {modulos[2].imagen ? (
+                <img 
+                  src={modulos[2].imagen} 
+                  alt={modulos[2].altImagen || modulos[2].nombre} 
+                  loading="lazy"
+                  class="w-full h-full object-cover rounded-xl shadow-inner group-hover:scale-[1.01] transition-transform duration-300 min-h-[320px] lg:min-h-full"
+                />
+              ) : (
+                <div class="w-full h-full min-h-[320px] rounded-2xl border-2 border-dashed border-purple-500/30 bg-purple-950/20 flex flex-col items-center justify-center text-purple-300 p-6">
+                  <svg class="w-10 h-10 mb-3 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span class="text-sm font-medium text-purple-300/80 text-center">Espacio reservado para imagen principal (Módulos 03 y 04)</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de Textos (Módulos 03 y 04 apilados a la derecha) -->
+        <div class="lg:col-span-6 flex flex-col justify-between gap-8 order-1 lg:order-2">
+          {modulos.slice(2, 4).map((m) => (
+            <div class="flex-1 p-8 sm:p-10 rounded-3xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-2xl hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 group flex flex-col justify-center">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-2xl sm:text-3xl font-black text-purple-400 group-hover:scale-110 transition-transform">{m.codigo}</span>
+                <div class="h-px bg-slate-800 flex-1"></div>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                {m.nombre}
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                {m.detalle}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </section>

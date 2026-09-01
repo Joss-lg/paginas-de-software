@@ -85,6 +85,20 @@ const planes = [
             </ul>
           </div>
 
+          <!-- Botón de contratación -->
+          <div class="pt-4">
+            <a
+              href="/agendar"
+              class={`w-full py-3.5 px-6 rounded-xl font-bold text-center block transition-all duration-300 shadow-md ${
+                plan.destacado
+                  ? 'bg-white text-slate-950 hover:bg-slate-100 shadow-white/10'
+                  : 'bg-slate-900 text-white hover:bg-slate-800 shadow-slate-900/10'
+              }`}
+            >
+              Contrata nuestro plan
+            </a>
+          </div>
+
         </div>
       ))}
     </div>

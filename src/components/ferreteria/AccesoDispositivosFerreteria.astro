@@ -1,0 +1,85 @@
+---
+// src/components/ferreteria/AccesoDispositivosFerreteria.astro
+---
+
+<section id="responsivo" class="relative overflow-hidden py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
+  <!-- Luces ambientales de fondo -->
+  <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_2px,transparent_2px)] [background-size:40px_40px] pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/4 h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[150px] -translate-y-1/2 pointer-events-none"></div>
+  <div class="absolute top-1/2 right-1/4 h-[500px] w-[500px] rounded-full bg-indigo-600/10 blur-[150px] -translate-y-1/2 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Encabezado de la sección -->
+    <div class="text-center max-w-4xl mx-auto mb-20 space-y-6">
+      <span class="text-purple-400 font-extrabold text-sm uppercase tracking-widest bg-purple-500/10 px-5 py-2 rounded-full border border-purple-500/20">
+        Multiplataforma
+      </span>
+      <h2 class="text-4xl font-extrabold text-white sm:text-5xl tracking-tight leading-tight">
+        El control de tu ferretería, en cualquier pantalla
+      </h2>
+      <p class="text-slate-300 text-xl font-normal leading-relaxed px-4">
+        Desde la computadora del mostrador hasta el celular en tu bolsillo. La interfaz se adapta perfectamente para que operes y supervises tu negocio dondequiera que estés.
+      </p>
+    </div>
+
+    <!-- Contenedor de la demostración responsiva -->
+    <div class="relative max-w-5xl mx-auto mt-12 flex justify-center pb-16">
+      
+      <!-- ================= MOCKUP ESCRITORIO (COMPUTADORA) ================= -->
+      <div class="relative w-full md:w-11/12 rounded-[2rem] bg-slate-900/80 backdrop-blur-xl border-2 border-slate-800 shadow-2xl z-10 transition-all duration-700 hover:scale-[1.02] hover:border-purple-500/30 group">
+        
+        <!-- Barra superior del navegador/pantalla -->
+        <div class="bg-slate-800/90 rounded-t-[1.8rem] px-6 py-4 flex items-center gap-3 border-b border-slate-700/80 shrink-0">
+          <div class="flex items-center gap-2">
+            <div class="w-3.5 h-3.5 rounded-full bg-red-500/80"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-yellow-400/80"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-green-500/80"></div>
+          </div>
+          <!-- Barra de búsqueda simulada -->
+          <div class="ml-4 flex-1 max-w-md h-6 bg-slate-950/50 rounded-md border border-slate-700/50"></div>
+        </div>
+
+        <!-- Área de contenido (Reemplazar este div con tu etiqueta <img>) -->
+        <div class="aspect-video bg-slate-950 rounded-b-[1.8rem] p-6 sm:p-10 flex items-center justify-center overflow-hidden relative">
+          <!-- Placeholder de imagen -->
+          <div class="w-full h-full rounded-2xl border-2 border-dashed border-purple-500/20 bg-purple-950/10 flex flex-col items-center justify-center text-purple-300/60 transition-colors group-hover:border-purple-500/40 group-hover:bg-purple-900/20">
+            <svg class="w-16 h-16 mb-4 stroke-current opacity-70" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+            </svg>
+            <span class="text-lg font-medium tracking-wide">Imagen Vista Escritorio (16:9)</span>
+          </div>
+          
+          <!-- Si usas una imagen real, reemplaza el div de arriba por esto:
+          <img src="/ruta-a-tu-imagen-escritorio.jpg" alt="Vista en computadora" class="absolute inset-0 w-full h-full object-cover object-top" /> 
+          -->
+        </div>
+      </div>
+
+      <!-- ================= MOCKUP MÓVIL (CELULAR) ================= -->
+      <!-- Posicionado de forma absoluta en la esquina inferior derecha -->
+      <div class="absolute -bottom-12 -right-2 sm:-right-8 md:-right-12 w-[140px] sm:w-[180px] md:w-[240px] lg:w-[280px] aspect-[9/19] rounded-[2rem] sm:rounded-[2.5rem] bg-slate-800 border-[6px] sm:border-8 border-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.7)] z-20 transition-all duration-700 hover:-translate-y-6 hover:scale-[1.05] group">
+        
+        <!-- Pantalla interna del móvil -->
+        <div class="w-full h-full bg-slate-950 rounded-[1.5rem] sm:rounded-[2rem] relative overflow-hidden flex items-center justify-center">
+          
+          <!-- "Notch" o Isla dinámica superior -->
+          <div class="absolute top-0 inset-x-0 h-4 sm:h-6 bg-slate-900 rounded-b-xl w-[40%] sm:w-[50%] mx-auto z-30"></div>
+
+          <!-- Área de contenido (Reemplazar este div con tu etiqueta <img>) -->
+          <div class="w-full h-full border-2 border-dashed border-indigo-500/20 bg-indigo-950/10 flex flex-col items-center justify-center text-indigo-300/60 p-4 text-center transition-colors group-hover:border-indigo-500/40 group-hover:bg-indigo-900/20">
+            <svg class="w-10 h-10 sm:w-12 sm:h-12 mb-3 stroke-current opacity-70" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+            </svg>
+            <span class="text-xs sm:text-sm font-medium tracking-wide">Imagen Móvil<br>(9:19)</span>
+          </div>
+
+          <!-- Si usas una imagen real, reemplaza el div de arriba por esto:
+          <img src="/ruta-a-tu-imagen-movil.jpg" alt="Vista en celular" class="absolute inset-0 w-full h-full object-cover object-top" /> 
+          -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

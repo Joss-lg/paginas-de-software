@@ -43,18 +43,18 @@
             required 
             class="w-full bg-slate-950/60 border border-slate-800 focus:border-emerald-400 text-slate-100 text-sm rounded-xl px-4 py-3.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 transition duration-200 appearance-none cursor-pointer"
           >
-            <option value="" disabled selected>Seleccione una opción</option>
-            <option value="pizzeria">Gestión y control para pizzerías</option>
-            <option value="restaurante">Administración integral para restaurantes</option>
-            <option value="panaderia">Control operativo para panaderías</option>
-            <option value="institucion-educativa">Plataforma administrativa para instituciones educativas</option>
-            <option value="abarrotes">Punto de venta y control para abarroteras</option>
-            <option value="inventario">Sistema centralizado de gestión de inventarios</option>
-            <option value="farmacia">Administración y control para farmacias</option>
-            <option value="gimnasio">Gestión integral para gimnasios y centros deportivos</option>
-            <option value="llantera">Solución operativa para empresas llanteras</option>
+            <option value="" disabled selected class="bg-slate-900 text-slate-400">Seleccione una opción</option>
+            <option value="pizzeria" class="bg-slate-900 text-slate-200 py-2"> Gestión y control para pizzerías</option>
+            <option value="restaurante" class="bg-slate-900 text-slate-200 py-2"> Administración integral para restaurantes</option>
+            <option value="panaderia" class="bg-slate-900 text-slate-200 py-2"> Control operativo para panaderías</option>
+            <option value="institucion-educativa" class="bg-slate-900 text-slate-200 py-2"> Plataforma administrativa para instituciones educativas</option>
+            <option value="abarrotera" class="bg-slate-900 text-slate-200 py-2"> Punto de venta y control para abarroteras</option>
+            <option value="ferreteria" class="bg-slate-900 text-slate-200 py-2"> Sistema centralizado de gestión de inventarios</option>
+            <option value="farmacia" class="bg-slate-900 text-slate-200 py-2"> Administración y control para farmacias</option>
+            <option value="gimnasio" class="bg-slate-900 text-slate-200 py-2"> Gestión integral para gimnasios y centros deportivos</option>
+            <option value="llantera" class="bg-slate-900 text-slate-200 py-2"> Solución operativa para empresas llanteras</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-emerald-400">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
               <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
             </svg>
@@ -100,9 +100,8 @@
 </div>
 
 <script>
-  // Notifica la modificación de los datos de contacto a los demás componentes
   const nombreInput = document.getElementById('nombre-contratista');
-  const productoSelect = document.getElementById('producto-interes');
+  const productoSelect = document.getElementById('producto-interes') as HTMLSelectElement;
   const correoInput = document.getElementById('correo-electronico');
   const telefonoInput = document.getElementById('telefono-contacto');
 
@@ -114,4 +113,16 @@
   productoSelect?.addEventListener('change', notificarCambioFormulario);
   correoInput?.addEventListener('input', notificarCambioFormulario);
   telefonoInput?.addEventListener('input', notificarCambioFormulario);
+
+  // Leer parámetros de la URL para preseleccionar el producto automáticamente
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const productoParam = params.get('producto');
+    
+    if (productoParam && productoSelect) {
+      productoSelect.value = productoParam;
+      // Notificamos el cambio para que la interfaz y el cuadro de resumen se sincronicen
+      notificarCambioFormulario();
+    }
+  });
 </script>

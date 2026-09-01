@@ -1,0 +1,37 @@
+---
+// src/pages/agendar.astro
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import FormularioSection from '../components/agendar/FormularioSection.astro';
+import ModalExito from '../components/agendar/ModalExito.astro';
+import AgendarCard from '../components/agendar/AgendarCard.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Agendar Cita | Ollintem - Ecosistema de Software">
+  
+  <!-- Navegación Superior -->
+  <Navbar />
+  
+  <!-- Contenedor principal estilizado con el fondo general slate-900 -->
+  <main class="w-full bg-slate-900 min-h-screen flex flex-col justify-center items-center py-12 relative overflow-hidden">
+    
+    <!-- Luces de fondo (Glow Effect) con paleta Ollintem -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- 1. Formulario de Datos Previos (Ubicado encima de AgendarCard) -->
+    <FormularioSection />
+
+    <!-- 2. Sección del Calendario y Selección de Horario -->
+    <AgendarCard />
+
+  </main>
+  <!-- Colocas el modal aquí para que esté disponible en toda la vista -->
+<ModalExito />
+
+  <!-- Pie de página -->
+  <Footer />
+
+</Layout>
