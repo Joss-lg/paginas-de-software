@@ -12,7 +12,7 @@ const planesOriginales = [
       "Ventas rápidas de mostrador",
       "Soporte por correo"
     ],
-    ctaText: "Comenzar Plan Inicial",
+    ctaText: "contrata nuestro plan",
     ctaHref: "#contacto"
   },
   {
@@ -27,7 +27,7 @@ const planesOriginales = [
       "Alertas de stock mínimo",
       "Soporte prioritario 24/7"
     ],
-    ctaText: "Probar Gratis 14 Días",
+    ctaText: "contrata nuestro plan",
     ctaHref: "#contacto"
   },
   {
@@ -42,7 +42,7 @@ const planesOriginales = [
       "Ajustes masivos por XML/Excel",
       "Asesor dedicado"
     ],
-    ctaText: "Contactar Ventas",
+    ctaText: "contrata nuestro plan",
     ctaHref: "#contacto"
   }
 ];
@@ -64,8 +64,8 @@ const planesOriginales = [
       {planesOriginales.map((plan) => (
         <div class={`relative flex flex-col justify-between p-8 rounded-3xl transition-all duration-300 ${
           plan.popular 
-            ? 'bg-black text-white border-2 border-purple-600 shadow-2xl shadow-purple-950/30 lg:-translate-y-2 hover:border-purple-500 hover:shadow-purple-950/50' 
-            : 'bg-white text-slate-900 border border-slate-200 shadow-md hover:border-2 hover:border-purple-600 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1'
+            ? 'bg-black text-white border-2 border-purple-600 shadow-2xl shadow-purple-950/30 lg:-translate-y-2 hover:border-purple-500 hover:shadow-purple-950/50 hover:scale-[1.03]' 
+            : 'bg-white text-slate-900 border border-slate-200 shadow-md hover:border-2 hover:border-purple-600 hover:shadow-xl hover:shadow-purple-500/10 hover:scale-[1.03]'
         }`}>
           {plan.popular && (
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-purple-600 text-white text-xs font-black uppercase tracking-wider rounded-full shadow-md shadow-purple-600/40">
